@@ -1,6 +1,7 @@
 'use strict'
 
 const mongoose = require('mongoose');
+const { db } = require('./User');
 
 const postSchema = mongoose.Schema({
     title: String,
@@ -9,7 +10,20 @@ const postSchema = mongoose.Schema({
         type: Date,
         default: Date.now
     },
-    author: {}
+    author: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
+    }]
 })
 
 module.exports = mongoose.model('Post', postSchema)
+
+
+
+
+// db.posts.insert({
+//     title: 'Test Post',
+//     body: 'Body of post one',
+//     author: 'TestUser',
+//     date: Date()
+// })
