@@ -4,11 +4,11 @@ module.exports = app => {
     const posts = require('./routes/users')
 
 
-    let middleware = 'TBD'
+    // let middleware = 'TBD'
     // User Routes
-    app.use('/tbd', middleware)
+    app.use('/tbd', users)
 
     // Blog Post Routes
-    app.use('/TBD', middleware)
+    app.use('/TBD', posts)
 
 }
