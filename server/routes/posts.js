@@ -5,13 +5,13 @@ const postController = require('../controllers/posts')
 const authCheck = require('../config/middleware/authCheck')
 
 // CLIENT side blog posts
-router.get('/blogPosts', postController.findPost)
+router.get('/posts', postController.findPost)
 
 
 // MANAGER side blog posts
 router.get('/allposts', authCheck, postController.findPost)
 
-router.post('/newpost', authCheck, postController.createPost)
+router.post('/newpost', postController.createPost)
 
 router.delete('/deletepost', authCheck, postController.deletePost)
 
