@@ -1,12 +1,11 @@
 'use strict';
-// app/models/user.js
-// load the things we need
-var mongoose = require('mongoose');
-// look up documentation for update bcrypt
-var bcrypt = require('bcrypt');
 
-// define the schema for our user model
-var userSchema = mongoose.Schema({
+const mongoose = require('mongoose');
+// look up documentation for update bcrypt
+const bcrypt = require('bcrypt');
+
+
+const userSchema = mongoose.Schema({
 
     email: {
         type: String,
@@ -25,7 +24,6 @@ var userSchema = mongoose.Schema({
 
 });
 
-// methods ======================
 // generating a hash
 userSchema.methods.generateHash = function (password) {
     return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);

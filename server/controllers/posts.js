@@ -15,6 +15,8 @@ exports.createPost = (req, res) => {
         res.json(dbPost)
     })
 
+    newPost.creat(req.body)
+
 }
 
 exports.deletePost = (req, res) => {
@@ -22,3 +24,4 @@ exports.deletePost = (req, res) => {
     Post.remove({ id: "objectId" })
 
 }
+
