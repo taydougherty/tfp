@@ -9,16 +9,12 @@ exports.findPost = (req, res) => {
 }
 
 exports.createPost = (req, res) => {
-
     // req.body.UserId = req.user.id;
     let newPost = new Post(req.body);
-
-
     newPost.save()
         .then(dbPost => {
             res.json(dbPost)
         })
-
     // newPost.create(req.body)
 }
 
@@ -28,6 +24,5 @@ exports.deletePost = (req, res) => {
         .then(resp => {
             res.send(resp)
         })
-
 }
 

@@ -6,7 +6,7 @@ var User = require("../models/User.js");
 passport.use(new LocalStrategy(
     // Our user will sign in using an email, rather than a "username"
     {
-        emailField: "email",
+        usernameField: "email",
         passwordField: 'password'
     },
     function (email, password, done) {

@@ -4,7 +4,7 @@ module.exports = app => {
     const posts = require('./routes/posts')
 
 
-    // let middleware = 'TBD'
+    // let authCheck = require('./config/middleware/authCheck')
     // User Routes
     app.use('/user', users)
 
