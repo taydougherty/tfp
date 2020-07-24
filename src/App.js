@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import ContactUs from '../src/Components/contactUs/contactUs'
 import Footer from '../src/Components/footer/footer'
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
 
         </div>
       </div>
+      <ContactUs />
       <Footer />
     </div>
   );
