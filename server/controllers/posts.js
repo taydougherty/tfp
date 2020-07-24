@@ -13,17 +13,21 @@ exports.createPost = (req, res) => {
     // req.body.UserId = req.user.id;
     let newPost = new Post(req.body);
 
-    newPost.save().then(dbPost => {
-        res.json(dbPost)
-    })
+
+    newPost.save()
+        .then(dbPost => {
+            res.json(dbPost)
+        })
 
     // newPost.create(req.body)
-
 }
 
 exports.deletePost = (req, res) => {
     // deletes post from the Manager Side
-    Post.remove({ id: "objectId" })
+    Post.find({ _id: req.body._id }).remove({ _id: req.body._id })
+        .then(resp => {
+            res.send(resp)
+        })
 
 }
 

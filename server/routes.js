@@ -6,7 +6,7 @@ module.exports = app => {
 
     // let middleware = 'TBD'
     // User Routes
-    app.use('/tbd', users)
+    app.use('/user', users)
 
     // Blog Post Routes
     app.use('/blog', posts)
