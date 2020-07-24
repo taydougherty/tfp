@@ -4,8 +4,14 @@ const mongoose = require('mongoose');
 
 
 const postSchema = mongoose.Schema({
-    title: String,
-    body: String,
+    title: {
+        type: String,
+        required: [true, "Please enter Blog Title"]
+    },
+    body: {
+        type: String,
+        required: [true, "Please enter Blog Post"]
+    },
     date: {
         type: Date,
         default: Date.now
