@@ -37,6 +37,13 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
+### `npm run server`
+
+Run `npm install` prior to running the Server.
+Local MongoDB will have to be running to connect to the database.
+Express server is running on Localhost:8080.
+Use Localhost:8080 to test routes.
+
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
