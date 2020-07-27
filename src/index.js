@@ -2,11 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import newBlogPost from './admin/newBlogPost'
+import previousBlogPost from './admin/previousBlogPost'
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
+
     <App />
+    <newBlogPost />
+    <previousBlogPost />
+
   </React.StrictMode>,
   document.getElementById('root')
 );
