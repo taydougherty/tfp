@@ -8,6 +8,7 @@ class contactUs extends Component {
     super(props);
     this.state = {
       name: '',
+      subject: '',
       email: '',
       message: ''
     }
@@ -15,6 +16,10 @@ class contactUs extends Component {
 
   onNameChange(event) {
     this.setState({name: event.target.value})
+    }
+
+  onSubjectChange(event) {
+    this.setState({subject: event.target.value})
     }
   
   onEmailChange(event) {
@@ -67,7 +72,11 @@ class contactUs extends Component {
                       <input type="text" className="form-control" value={this.state.name} onChange={this.onNameChange.bind(this)}/>
                   </div>
                   <div className="form-group">
-                      <label htmlFor="exampleInputEmail1">Email address</label>
+                      <label htmlFor="subject">Subject</label>
+                      <input type="text" className="form-control" value={this.state.subject} onChange={this.onSubjectChange.bind(this)}/>
+                  </div>
+                  <div className="form-group">
+                      <label htmlFor="email">Email address</label>
                       <input type="email" className="form-control" aria-describedby="emailHelp" value={this.state.email} onChange={this.onEmailChange.bind(this)}/>
                   </div>
                   <div className="form-group">
