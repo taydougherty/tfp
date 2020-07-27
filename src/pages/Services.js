@@ -29,7 +29,8 @@ tempor incididunt ut labore</p>
                                 <div class="card-body d-flex flex-column">
                                     <h5 class="card-title">Client Services</h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <button type="button" class="btn btn-outline-info mt-auto " href="#" style={{ height: 75 + "px", width: 150 + "px" }}>Learn More</button>
+                                    <a type="button" class="btn btn-outline-info mt-auto" href="sampleservice" style={{ height: 75 + "px", width: 150 + "px", lineHeight: 62.5 + "px" }}>Learn More
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -38,7 +39,7 @@ tempor incididunt ut labore</p>
                                 <div class="card-body d-flex flex-column">
                                     <h5 class="card-title">Attorney Partnerships</h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <button type="button" class="btn btn-outline-info mt-auto" href="#" style={{ height: 75 + "px", width: 150 + "px" }} > Learn More</button>
+                                    <a type="button" class="btn btn-outline-info mt-auto" href="sampleservice" style={{ height: 75 + "px", width: 150 + "px", lineHeight: 62.5 + "px" }} > Learn More</a>
                                 </div>
                             </div>
                         </div>

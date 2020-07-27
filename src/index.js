@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import Home from './pages/Home';
 import Services from './pages/Services';
-import NavBar from './components/NavBar'
+import SampleService from './pages/SampleService';
+import NavBar from './components/NavBar';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
@@ -15,6 +16,7 @@ ReactDOM.render(
         <Route exact path="/" component={Home} />
         <Route exact path="/home" component={Home} />
         <Route exact path="/services" component={Services} />
+        <Route exact path="/sampleservice" component={SampleService} />
       </Switch>
     </Router>
   </React.StrictMode>,
