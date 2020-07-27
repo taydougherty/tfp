@@ -5,7 +5,7 @@ import "./Navbar.scss";
 function Navigation() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-dark">
-      <div className="navbar-brand">
+      <div className="navbar-brand ml-auto">
         <img src={logo} alt="logo" style={{ width: "35px" }}></img>
       </div>
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
