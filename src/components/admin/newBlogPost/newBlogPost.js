@@ -13,7 +13,27 @@ class newBlogPost extends Component {
         }
     }
 
+    //  async function
+    newPost(form) {
+        axios.post('/blog/newpost', form)
+            .then(resp => {
+                console.log(resp.data)
+            }
+            )
+    }
 
+    // handleSubmit(event) {
+    //     event.preventDefault();
+
+    //     const blog = {
+    //         title = this.state.title,
+    //         blog = this.state.blog
+    //     }
+
+    //     this.newPost(blog)
+    // }
+
+    // clear form method
 
     render() {
         return (

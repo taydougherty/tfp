@@ -5,12 +5,24 @@ require('./previousBlogPost.css')
 
 class previousBlogPost extends Component {
 
-    constructor(props) {
-        super(props)
-        this.state = {}
-    }
+    // constructor(props) {
+    //     super(props)
+    //     this.state = {
+    //         posts: []
+    //     }
+    // }
 
     handleDelete(event) {
+
+    }
+
+    // populate history table
+    getHistory() {
+        axios.get('/blog/posts').
+            then(resp => {
+                console.log(resp)
+            }
+            )
 
     }
 
