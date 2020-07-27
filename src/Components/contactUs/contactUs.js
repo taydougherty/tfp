@@ -1,29 +1,55 @@
 import React, {Component} from "react";
-import {Card, Form, Button} from "react-bootstrap"
 import axios from "axios"
 import './contactUs.scss'
 
 class contactUs extends Component {
-  state = {
-    name: "",
-    subject: "",
-    email: "",
-    message: ""
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: '',
+      email: '',
+      message: ''
+    }
+    }
+
+  onNameChange(event) {
+    this.setState({name: event.target.value})
+    }
+  
+  onEmailChange(event) {
+  this.setState({email: event.target.value})
+  }
+  
+  onMessageChange(event) {
+  this.setState({message: event.target.value})
   }
 
   // Submit function
-  handleSubmit = (event) => {
-    event.preventDefault();
-    const form = {
-      form: this.state
-    }
-    // axios post request
-    axios.post('some_route_here', {form})
-      .then(res => {
-        console.log(res);
-        console.log(res.data)
-      })
+  handleSubmit(e){
+    e.preventDefault();
     console.log(this.state)
+    axios({
+      method: "POST", 
+      url:"http://localhost:3000/send", 
+      data:  this.state
+    }).then((response)=>{
+      if (response.data.status === 'success'){
+        alert("Message Sent."); 
+        this.resetForm()
+      }else if(response.data.status === 'fail'){
+        alert("Message failed to send.")
+      }
+    })
+  }
+
+  resetForm(){
+    
+    this.setState({
+      name: "", 
+      email: "", 
+      message: ""
+    })
   }
 
   render() {
@@ -34,18 +60,22 @@ class contactUs extends Component {
             <div className="row">
               {/* note card column*/}
               <div className="col container">
-                  <Card className="notecard">
-                    <Card.Title>Send Us A Note</Card.Title>
-                    <Form>
-                      <Form.Group controlId="sendNote" onSubmit={this.form}>
-                        <Form.Control className="cardInputs" required type="text" placeholder="Name" value={this.state.name} onChange={event => this.setState({name: event.target.value})}></Form.Control>
-                        <Form.Control className="cardInputs" required type="text" placeholder="Subject" value={this.state.subject} onChange={event => this.setState({subject: event.target.value})}></Form.Control>
-                        <Form.Control className="cardInputs" required type="email" placeholder="Email Address" value={this.state.email} onChange={event => this.setState({email: event.target.value})}></Form.Control>
-                        <Form.Control className="cardInputs" required type="text" as="textarea" rows="5" placeholder="Message" value={this.state.message} onChange={event => this.setState({message: event.target.value})}></Form.Control>
-                      </Form.Group>
-                      <Button className="submitBtn" type="submit" onClick={this.handleSubmit}>Submit</Button>
-                    </Form>
-                  </Card>
+                <h1>Contact Us</h1>
+                <form id="contact-form" onSubmit={this.handleSubmit.bind(this)} method="POST">
+                  <div className="form-group">
+                      <label htmlFor="name">Name</label>
+                      <input type="text" className="form-control" value={this.state.name} onChange={this.onNameChange.bind(this)}/>
+                  </div>
+                  <div className="form-group">
+                      <label htmlFor="exampleInputEmail1">Email address</label>
+                      <input type="email" className="form-control" aria-describedby="emailHelp" value={this.state.email} onChange={this.onEmailChange.bind(this)}/>
+                  </div>
+                  <div className="form-group">
+                      <label htmlFor="message">Message</label>
+                      <textarea className="form-control" rows="5" value={this.state.message} onChange={this.onMessageChange.bind(this)}></textarea>
+                  </div>
+                    <button type="submit" className="btn btn-primary">Submit</button>
+                </form>
               </div>
               {/* image column */}
               <div className="col blah">

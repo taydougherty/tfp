@@ -5,27 +5,7 @@ const footer = () => {
 
     return (
         <div className="mainWrapper">
-          <div className="container">
-            <div className="row">
-              {/* Logo column */}
-              <div className="col">
-                <h1>insert Logo here</h1>
-              </div>
-              {/* navlinks column */}
-              <div className="col navLinks">
-              <h3>Sheila Mojtehedi</h3>
-                  <ul>
-                    <li><a href="some linkage" >Services</a></li>
-                    <li><a href="some linkage" >Leadership</a></li>
-                    <li><a href="some linkage" >Blog</a></li>
-                    <li><a href="some linkage" >Contact Us</a></li>
-                  </ul>
-              </div>
-            </div>
-          </div>
-
             <hr />
-
           <div className="container">
             <div className="row">
               {/* Copyright */}
