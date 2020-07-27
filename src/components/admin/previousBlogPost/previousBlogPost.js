@@ -3,18 +3,16 @@ import axios from 'axios';
 
 require('./previousBlogPost.css')
 
-class previousBlogPost extends Component {
+class PreviousBlogPost extends Component {
 
-    // constructor(props) {
-    //     super(props)
-    //     this.state = {
-    //         posts: []
-    //     }
-    // }
-
-    handleDelete(event) {
-
+    constructor(props) {
+        super(props)
+        this.state = {
+            posts: []
+        }
     }
+
+    handleDelete(event) { }
 
     // populate history table
     getHistory() {
@@ -23,7 +21,7 @@ class previousBlogPost extends Component {
                 console.log(resp)
             }
             )
-
+        // maybe implement a looping list component?
     }
 
     render() {
@@ -37,9 +35,8 @@ class previousBlogPost extends Component {
                 {/* DELETE button*/}
 
             </div>
-
         )
     }
 }
 
-export default previousBlogPost;
+export default PreviousBlogPost;

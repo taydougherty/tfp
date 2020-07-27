@@ -3,7 +3,7 @@ import axios from 'axios';
 
 require('./newBlogPost.css')
 
-class newBlogPost extends Component {
+class NewBlogPost extends Component {
 
     constructor(props) {
         super(props)
@@ -22,16 +22,16 @@ class newBlogPost extends Component {
             )
     }
 
-    // handleSubmit(event) {
-    //     event.preventDefault();
+    handleSubmit(event) {
+        event.preventDefault();
 
-    //     const blog = {
-    //         title = this.state.title,
-    //         blog = this.state.blog
-    //     }
+        const blog = {
+            title: this.state.title,
+            blog: this.state.blog
+        }
 
-    //     this.newPost(blog)
-    // }
+        this.newPost(blog)
+    }
 
     // clear form method
 
@@ -50,4 +50,4 @@ class newBlogPost extends Component {
     }
 }
 
-export default newBlogPost
+export default NewBlogPost
