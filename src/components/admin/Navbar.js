@@ -8,7 +8,7 @@ function Navigation() {
         <img src={logo} alt="logo" style={{ width: "35px" }}></img>
       </div>
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
-        <button className="btn btn-light my-2 my-sm-0" type="submit">
+        <button className="btn btn-light my-2 my-sm-0 ml-auto" type="submit">
           Register
         </button>
       </div>
