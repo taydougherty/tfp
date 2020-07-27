@@ -1,29 +1,37 @@
 import React from "react";
-import { Container } from "react-bootstrap";
+import "./footer.scss";
 
-function Footer() {
+const Footer = () => {
   return (
-    <div className="admin-footer">
-      <Container>
-        <div>
-          <h4>Company</h4>
-          <ul className="list-unstyled">
-            <li>Services</li>
-            <li>Leadership</li>
-            <li>Blog</li>
-            <li>Contact Us</li>
-          </ul>
+    <div className="mainWrapper">
+      <hr />
+      <div className="container">
+        <div className="row">
+          {/* Copyright */}
+          <div className="col copyright">
+            <p>&copy; Sheila Mojtehedi {new Date().getFullYear()}</p>
+          </div>
+          {/* navlinks column */}
+          <div className="col socialMedia">
+            <div>
+              <p>
+                Follow Us:
+                <a href="#twitterLink" className="fa fa-twitter">
+                  {" "}
+                </a>
+                <a href="#twitterLink" className="fa fa-instagram">
+                  {" "}
+                </a>
+                <a href="#twitterLink" className="fa fa-facebook">
+                  {" "}
+                </a>
+              </p>
+            </div>
+          </div>
         </div>
-        {/* Footer Bottom */}
-        <div className="footer-bottom">
-          <p className="text-xs-center">
-            &copy;{new Date().getFullYear()} The Fine Print - All Rights
-            Reserved
-          </p>
-        </div>
-      </Container>
+      </div>
     </div>
   );
-}
+};
 
 export default Footer;
