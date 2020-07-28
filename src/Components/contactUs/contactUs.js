@@ -41,10 +41,10 @@ class contactUs extends Component {
     }).then((response)=>{
       if (response.data.status === 'success'){
         alert("Message Sent."); 
-        this.resetForm()
       }else if(response.data.status === 'fail'){
         alert("Message failed to send.")
       }
+      this.resetForm()
     })
   }
 
@@ -52,9 +52,11 @@ class contactUs extends Component {
     
     this.setState({
       name: "", 
+      subject: "",
       email: "", 
       message: ""
     })
+    console.log(this.state)
   }
 
   render() {
@@ -65,8 +67,9 @@ class contactUs extends Component {
             <div className="row">
               {/* note card column*/}
               <div className="col container">
-                <h1>Contact Us</h1>
+                
                 <form id="contact-form" onSubmit={this.handleSubmit.bind(this)} method="POST">
+                <h3>Send Us A Note</h3>
                   <div className="form-group">
                       <label htmlFor="name">Name</label>
                       <input type="text" className="form-control" value={this.state.name} onChange={this.onNameChange.bind(this)}/>

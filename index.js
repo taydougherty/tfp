@@ -37,7 +37,7 @@ var smtpTransport = nodemailer.createTransport({
 // Must write in a recipient email. Using environment variable will not work
 var mailOptions = {
   from: data.email,
-  to: "email here",
+  to: "your email here",
   subject: data.subject,
   text: data.message
 };
