@@ -32,7 +32,7 @@ class NewBlogPost extends Component {
     //  make into async function
     newPost(form) {
 
-        axios.post('localhost:3000/blog/newpost', form).then(res => {
+        axios.post('/blog/newpost', form).then(res => {
             console.log(res)
             console.log("here")
         }
@@ -48,7 +48,7 @@ class NewBlogPost extends Component {
             blog: this.state.blog,
             author: "5f1b2bb5c5120f4b9c7efb54"
         }
-
+        console.log(blogPost)
         this.newPost(blogPost)
         this.clearForm()
     };

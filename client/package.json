@@ -26,8 +26,13 @@
     "react-redux": "^7.2.0",
     "react-scripts": "3.4.1"
   },
+  "proxy": "http://localhost:3001",
+  "secure": false,
   "scripts": {
-    "start": "nodemon ./server/bin/www"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
