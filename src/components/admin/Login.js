@@ -105,7 +105,7 @@ export default class Login extends Component {
               <label for="exampleInputPassword1">Password</label>
               <input
                 type="password"
-                className="form-control is-valid"
+                className="form-control is-invalid"
                 id="password-input"
                 name="pass"
                 placeholder="Password"
