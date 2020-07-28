@@ -86,34 +86,45 @@ export default class Login extends Component {
           logout={this.props.logout}
         />
         <div className="loginmodal-container">
-          <h1 className="">Log In to Your Account</h1>
+          <h1>Log In</h1>
           <br />
           <form className="login" onSubmit={this.handleSubmit.bind(this)}>
-            <input
-              id="email-input"
-              ref="email"
-              type="text"
-              name="email"
-              placeholder="Email"
-              onChange={this.handleemailChange}
-              value={this.state.email}
-            />
-            <input
-              id="password-input"
-              ref="password"
-              type="password"
-              name="pass"
-              placeholder="Password"
-              onChange={this.handlePasswordChange}
-              value={this.state.password}
-            />
-            <input
+            <div className="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input
+                type="email"
+                className="form-control"
+                id="email-input"
+                name="email"
+                placeholder="Email"
+                onChange={this.handleemailChange}
+                value={this.state.email}
+              />
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input
+                type="password"
+                className="form-control is-valid"
+                id="password-input"
+                name="pass"
+                placeholder="Password"
+                onChange={this.handlePasswordChange}
+                value={this.state.password}
+                required
+              />
+              <div class="invalid-feedback">Please enter a valid password.</div>
+            </div>
+            <button
               type="submit"
               name="login"
-              className="login loginmodal-submit"
+              className="btn btn-primary login loginmodal-submit"
               value="Login"
-            />
+            >
+              Submit
+            </button>
           </form>
+
           <div className="login-help">
             <Link to={"/register"}> Register </Link>
           </div>
