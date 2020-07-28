@@ -16,6 +16,8 @@ class NewBlogPost extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     };
 
+    // componentDidMount = set state user object id
+
     handleChange(event) {
         const value = event.target.value
         const name = event.target.name
@@ -27,11 +29,12 @@ class NewBlogPost extends Component {
     };
 
 
-    //  async function
+    //  make into async function
     newPost(form) {
 
-        axios.post('/blog/newpost', form).then(res => {
+        axios.post('localhost:3000/blog/newpost', form).then(res => {
             console.log(res)
+            console.log("here")
         }
         ).catch(err => {
             console.log(err)
@@ -42,10 +45,12 @@ class NewBlogPost extends Component {
         event.preventDefault();
         let blogPost = {
             title: this.state.title,
-            blog: this.state.blog
+            blog: this.state.blog,
+            author: "5f1b2bb5c5120f4b9c7efb54"
         }
 
         this.newPost(blogPost)
+        this.clearForm()
     };
 
     // clear form method
@@ -66,7 +71,7 @@ class NewBlogPost extends Component {
                     {/* boostrap form Title */}
                     <div className="form-group">
                         <label for="exampleFormControlTextarea1" >Blog Title</label>
-                        <input type="text" name="title" value={this.state.title} onChange={this.handleChange} className="form-control" placeholder="Blog Title Here" />
+                        <input name="title" value={this.state.title} onChange={this.handleChange} type="text" className="form-control" placeholder="Blog Title Here" />
                     </div>
 
                     {/* boostrap form Content */}

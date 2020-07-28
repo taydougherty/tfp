@@ -12,15 +12,17 @@ class PreviousBlogPost extends Component {
         }
     }
 
-    handleDelete(event) { }
+    // handleDelete(event) { }
 
     // populate history table
     getHistory() {
-        axios.get('/blog/posts').
-            then(resp => {
+        axios.get('/blog/posts')
+            .then(resp => {
                 console.log(resp)
-            }
-            )
+            })
+            .catch(err => {
+                console.log(err)
+            })
         // maybe implement a looping list component?
     }
 

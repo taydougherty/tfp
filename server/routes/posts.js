@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 
 const postController = require('../controllers/posts')
-const authCheck = require('../config/middleware/authCheck')
+// const authCheck = require('../config/middleware/authCheck')
 
 // CLIENT/MANAGER side blog posts
 router.get('/posts', postController.findPost)
