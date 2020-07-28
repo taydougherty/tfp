@@ -9,7 +9,7 @@ class NewBlogPost extends Component {
         super(props)
         this.state = {
             title: '',
-            blog: ''
+            body: ''
         }
 
         this.handleChange = this.handleChange.bind(this);
@@ -32,20 +32,21 @@ class NewBlogPost extends Component {
     //  make into async function
     newPost(form) {
 
-        axios.post('/blog/newpost', form).then(res => {
-            console.log(res)
-            console.log("here")
-        }
-        ).catch(err => {
-            console.log(err)
-        })
+        axios.post("/blog/newpost", form)
+            .then(res => {
+                console.log(res)
+                console.log("here")
+            }
+            ).catch(err => {
+                console.log(`Error: ${err}`)
+            })
     };
 
     handleSubmit(event) {
         event.preventDefault();
         let blogPost = {
             title: this.state.title,
-            blog: this.state.blog,
+            body: this.state.body,
             author: "5f1b2bb5c5120f4b9c7efb54"
         }
         console.log(blogPost)
@@ -57,7 +58,7 @@ class NewBlogPost extends Component {
     clearForm = () => {
         this.setState({
             title: '',
-            blog: ''
+            body: ''
         })
     };
 
@@ -77,7 +78,7 @@ class NewBlogPost extends Component {
                     {/* boostrap form Content */}
                     <div className="form-group">
                         <label for="exampleFormControlTextarea1">Blog Content</label>
-                        <textarea name="blog" value={this.state.blog} onChange={this.handleChange} type="text" className="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Blog Content Here"></textarea>
+                        <textarea name="body" value={this.state.body} onChange={this.handleChange} type="text" className="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Blog Content Here"></textarea>
                     </div>
 
                     {/* boostrap form Send It! button */}

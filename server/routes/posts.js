@@ -9,7 +9,7 @@ router.get('/posts', postController.findPost)
 
 
 // MANAGER side blog posts
-// add authCheck middleware
+// add authCheck middleware once user Front end is complete
 router.post('/newpost', postController.createPost)
 
 router.delete('/deletepost', postController.deletePost)
