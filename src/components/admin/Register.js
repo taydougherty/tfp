@@ -5,6 +5,68 @@ import Auth from "./utils/Auth";
 import Navigation from "./Navbar";
 import "./Register.scss";
 
+// function Register() {
+//   return (
+//     <div id="registration-container" className="container-fluid">
+//       <section className="container">
+//         <div className="container-page">
+//           <form>
+//             <div className="col-md-6">
+//               <h3 className="dark-grey">Registration</h3>
+
+//               <div id="email-form" className="form-group col-lg-12">
+//                 <label>Email Address</label>
+//                 <input type="email" className="form-control" id="email-input" />
+
+//                 <p id="email-feedback"></p>
+//                 <small
+//                   id="email-additional-feedback"
+//                   className="form-text text-muted"
+//                 ></small>
+//               </div>
+
+//               <div id="email-repeat-form" className="form-group col-lg-12">
+//                 <label>Repeat Email Address</label>
+//                 <input
+//                   type="email"
+//                   className="form-control"
+//                   id="repeat-email-input"
+//                 />
+//                 <small id="email-repeat-feedback"></small>
+//               </div>
+
+//               <div id="password-form" className="form-group col-lg-12">
+//                 <label>Password</label>
+//                 <input
+//                   type="password"
+//                   className="form-control"
+//                   id="password-input"
+//                 />
+//                 <small id="password-feedback"></small>
+//               </div>
+
+//               <div id="repeat-password-form" className="form-group col-lg-12">
+//                 <label>Repeat Password</label>
+//                 <input
+//                   type="password"
+//                   className="form-control"
+//                   id="repeat-password-input"
+//                 />
+//                 <small id="repeat-password-feedback"></small>
+//               </div>
+//             </div>
+//             <button type="submit" className="btn btn-primary register">
+//               Register
+//             </button>
+//           </form>
+//         </div>
+//       </section>
+//     </div>
+//   );
+// }
+
+// export default Register;
+
 export default class Register extends Component {
   constructor(props) {
     super(props);
@@ -194,94 +256,60 @@ export default class Register extends Component {
                 <div className="col-md-6">
                   <h3 className="dark-grey">Registration</h3>
 
-                  <div
-                    id="email-form"
-                    className="form-group col-lg-12"
-                    ref="emailForm"
-                  >
+                  <div id="email-form" className="form-group col-lg-12">
                     <label>Email Address</label>
                     <input
                       type="email"
-                      name=""
-                      ref="email"
                       className="form-control"
                       id="email-input"
                       value={this.state.email}
                       onChange={this.handleEmailValidation}
                     />
 
-                    <p id="email-feedback" className="" ref="emailFeedback"></p>
+                    <p id="email-feedback"></p>
                     <small
                       id="email-additional-feedback"
-                      ref="emailAdditionalFeedback"
                       className="form-text text-muted"
                     ></small>
                   </div>
 
-                  <div
-                    id="email-repeat-form"
-                    className="form-group col-lg-12"
-                    ref="emailRepeatForm"
-                  >
+                  <div id="email-repeat-form" className="form-group col-lg-12">
                     <label>Repeat Email Address</label>
                     <input
                       type="email"
-                      name=""
-                      ref="emailRepeat"
                       className="form-control"
                       id="repeat-email-input"
                       value={this.state.emailRepeat}
                       onChange={this.handleEmailRepeat}
                     />
-                    <small
-                      id="email-repeat-feedback"
-                      className=""
-                      ref="emailRepeatFeedback"
-                    ></small>
+                    <small id="email-repeat-feedback"></small>
                   </div>
 
-                  <div
-                    id="password-form"
-                    className="form-group col-lg-12"
-                    ref="passwordForm"
-                  >
+                  <div id="password-form" className="form-group col-lg-12">
                     <label>Password</label>
                     <input
                       type="password"
-                      name=""
-                      ref="password"
                       className="form-control"
                       id="password-input"
                       value={this.state.password}
                       onChange={this.handlePasswordValidation}
                     />
-                    <small
-                      id="password-feedback"
-                      ref="passwordFeedback"
-                      className=""
-                    ></small>
+                    <small id="password-feedback"></small>
                   </div>
 
                   <div
                     id="repeat-password-form"
                     className="form-group col-lg-12"
-                    ref="repeatPasswordForm"
                   >
                     <label>Repeat Password</label>
                     <input
                       type="password"
-                      name=""
-                      ref="repeatPassword"
                       className="form-control"
                       id="repeat-password-input"
                       value={this.state.passwordRepeat}
                       onChange={this.handlePasswordRepeat}
                     />
-                    <small
-                      id="repeat-password-feedback"
-                      className=""
-                      ref="repeatPasswordFeedback"
-                    ></small>
+                    <small id="repeat-password-feedback"></small>
                   </div>
                 </div>
                 <button type="submit" className="btn btn-primary register">
