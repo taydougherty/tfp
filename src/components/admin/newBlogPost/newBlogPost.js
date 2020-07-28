@@ -11,15 +11,25 @@ class NewBlogPost extends Component {
             title: '',
             blog: ''
         }
+
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    handleChange(event) {
+        this.setState({ title: event.target.title });
+        this.setState({ blog: event.target.blog })
+    }
+    // eslint-disable-next-line
     //  async function
     newPost(form) {
-        axios.post('/blog/newpost', form)
-            .then(resp => {
-                console.log(resp.data)
-            }
-            )
+        axios.post('localhost:8080/blog/newpost', form).then(post => {
+            console.log(post)
+        }
+        ).catch(err => {
+            console.log(err)
+        })
+        console.log("HERE")
     }
 
     handleSubmit(event) {
@@ -29,7 +39,7 @@ class NewBlogPost extends Component {
             title: this.state.title,
             blog: this.state.blog
         }
-
+        console.log(blog)
         this.newPost(blog)
     }
 
@@ -38,13 +48,27 @@ class NewBlogPost extends Component {
     render() {
         return (
             <div>
+                {/* NEW BLOG POST */}
                 <h2>New Blog Post</h2>
                 {/* box - centered */}
-                {/* NEW BLOG POST */}
-                {/* boostrap form Title */}
-                {/* boostrap form Content */}
-                {/* boostrap form Send It! button */}
-            </div>
+                <form onSubmit={this.handleSubmit}>
+                    {/* boostrap form Title */}
+                    <div className="form-group">
+                        <label for="exampleFormControlTextarea1" >Blog Title</label>
+                        <input value={this.state.title} onChange={this.handleChange} className="form-control" type="text" placeholder="Blog Title Here" />
+                    </div>
+
+                    {/* boostrap form Content */}
+                    <div className="form-group">
+                        <label for="exampleFormControlTextarea1">Blog Content</label>
+                        <textarea value={this.state.blog} onChange={this.handleChange} className="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Blog Content Here"></textarea>
+                    </div>
+
+                    {/* boostrap form Send It! button */}
+                    <button className="btn btn-primary" type="submit">Submit Post</button>
+
+                </form>
+            </div >
 
         )
     }

@@ -4,6 +4,7 @@ exports.findPost = (req, res) => {
     // find posts to display on the client side & manager side
     Post.find().then(dbPost => {
         res.json(dbPost)
+        res.send(dbPost)
     })
 
 }
