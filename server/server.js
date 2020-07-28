@@ -4,7 +4,7 @@ const bodyParser = require('body-parser')
 const passport = require('./config/passport')
 const session = require('express-session')
 const config = require('./config/extra-config')
-const cors = require('cors')
+// const cors = require('cors')
 
 // Express App Instantiation
 const app = express();
@@ -12,8 +12,7 @@ const app = express();
 // const PORT = process.env.PORT || 8080
 
 // Authentication/CORS
-
-app.use(cors())
+// app.use(cors())
 app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
