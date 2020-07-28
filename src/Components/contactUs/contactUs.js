@@ -51,10 +51,10 @@ class contactUs extends Component {
   resetForm(){
     
     this.setState({
-      name: "", 
-      subject: "",
-      email: "", 
-      message: ""
+      name: '', 
+      subject: '',
+      email: '', 
+      message: ''
     })
     console.log(this.state)
   }
