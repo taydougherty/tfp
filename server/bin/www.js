@@ -11,8 +11,8 @@ const debug = require('debug')('express-example');
 const app = require('../server');
 
 // we set the port of the app
-// app.set('port', process.env.PORT || 8080);
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 8080);
+// app.set('port', process.env.PORT || 3000);
 
 // set our app to listen to the port we set above
 const server = app.listen(app.get('port'), function () {

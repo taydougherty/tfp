@@ -31,6 +31,7 @@
     "eject": "react-scripts eject",
     "server": "nodemon ./server/bin/www"
   },
+  "proxy": "http://localhost:8080",
   "eslintConfig": {
     "extends": "react-app"
   },

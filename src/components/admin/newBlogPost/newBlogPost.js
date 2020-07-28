@@ -28,11 +28,10 @@ class NewBlogPost extends Component {
 
 
     //  async function
-    async newPost(form) {
-        console.log(form)
-        await axios.post('/blog/newpost', form).then(res => {
-            console.log(res)
+    newPost(form) {
 
+        axios.post('/blog/newpost', form).then(res => {
+            console.log(res)
         }
         ).catch(err => {
             console.log(err)
