@@ -24,7 +24,6 @@ class NewBlogPost extends Component {
             [name]: value
         })
 
-
     };
 
 
