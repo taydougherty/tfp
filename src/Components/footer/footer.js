@@ -17,8 +17,8 @@ const footer = () => {
                 <div>
                   <p>Follow Us:
                       <a href="#twitterLink" className="fa fa-twitter"> </a>
-                      <a href="#twitterLink" className="fa fa-instagram"> </a>
-                      <a href="#twitterLink" className="fa fa-facebook"> </a>
+                      <a href="#instagram" className="fa fa-instagram"> </a>
+                      <a href="#facebook" className="fa fa-facebook"> </a>
                   </p>
                 </div>
               </div>

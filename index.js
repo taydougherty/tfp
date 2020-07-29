@@ -26,6 +26,10 @@ app.get('/', (req, res) => {
 app.post('/send', (req,res) => {
   var data = req.body;
 console.log(data)
+
+// Create a .env file and make sure to add it to your .gitignore. 
+// If you want to test out the email and use gmail as the recipient service, you will need to     turn ON less secure apps on your google account https://myaccount.google.com/lesssecureapps
+
 var smtpTransport = nodemailer.createTransport({
   service: 'gmail',
   auth: {
