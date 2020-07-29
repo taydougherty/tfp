@@ -1,5 +1,5 @@
 
-import './Services.css';
+import './[Services.css]';
 import React, { Component } from "react";
 import NavBar from '../components/NavBar'
 
