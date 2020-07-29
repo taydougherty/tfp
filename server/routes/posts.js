@@ -13,6 +13,6 @@ router.get('/posts/author/:id', postController.findAuthorPosts)
 // add authCheck middleware once user Front end is complete
 router.post('/newpost', postController.createPost)
 
-router.delete('/deletepost', postController.deletePost)
+router.delete('/deletepost/:id', postController.deletePost)
 
 module.exports = router;

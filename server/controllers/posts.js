@@ -27,7 +27,7 @@ exports.createPost = (req, res) => {
 
 // Delete post from Admin Portal, auth required
 exports.deletePost = (req, res) => {
-    Post.findOneAndRemove({ _id: req.body._id })
+    Post.findOneAndRemove({ _id: req.params.id })
         .then(resp => {
             res.json(resp)
         })

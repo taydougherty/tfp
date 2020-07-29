@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import moment from 'moment'
 
 require('./previousBlogPost.css')
 
@@ -16,14 +17,12 @@ class PreviousBlogPost extends Component {
 
     componentDidMount() {
         this.getHistory()
-        console.log(this.state.posts)
-
     }
 
     handleDelete(event) {
-        event.preventDefaul()
-        let objId = "TESTID "
-        axios.delete('/blog/deletepost', objId)
+        let objId = event.target.value
+        console.log(objId)
+        axios.delete(`/blog/deletepost/${objId}`)
             .then(resp => {
                 console.log(resp)
             })
@@ -32,44 +31,44 @@ class PreviousBlogPost extends Component {
     // populate history table
     getHistory() {
 
+        // 
         axios.get(`/blog/posts/author/${this.state.author}`)
+            // .then(resp => {
+            //     resp.data.map(post => ({
+            //         title: `${post.title}`,
+            //         body: `${post.body}`,
+            //         date: `${new Intl.DateTimeFormat('en-US').format(post.date)}`,
+            //         author: `${post.author}`
+            //     }))
+            // })
             .then(resp => {
-                console.log(resp)
                 this.setState({
                     posts: resp.data
                 })
             })
-            .then(resp => {
-                resp.data.map(post => ({
-                    title: `${post.title}`,
-                    body: `${post.body}`,
-                    date: `${post.date}`,
-                    author: `${post.author}`
-                }))
 
-            })
-            .then(resp => {
-                console.log(resp)
-                this.setState({
-                    posts: resp.data
-                })
-            })
+
             .catch(err => {
                 console.log(err)
             })
         // maybe implement a looping list component?
     }
 
-
+    componentDidUpdate(prevState) {
+        if (prevState.posts !== this.state.posts) {
+            this.getHistory()
+        }
+    }
 
     render() {
         const { posts } = this.state
+
         return (
             <div>
                 <h2>Blog History</h2>
                 {/* box - centered */}
                 {/* PREVIOUS BLOG POST */}
-                <table class="table">
+                <table className="table">
                     {/* boostrap TABLE HEADERS - Date, Title, Content */}
                     <thead>
                         <tr>
@@ -85,10 +84,13 @@ class PreviousBlogPost extends Component {
                         {posts.map((post, i) =>
 
                             <tr key={i}>
-                                <td>{this.state.posts[i].date}</td>
-                                <td class="card-title" defaultValue={post.title}>{this.state.posts[i].title}</td>
-                                <td class="card-text" defaultValue={post.body}>{this.state.posts[i].body}</td>
-                                <td ><button className="btn btn-primary" type="submit" onSubmit={this.handleDelete}>DELETE</button></td>
+
+                                <td>
+                                    {moment(this.state.posts[i].date).format("MMM Do YY")}
+                                </td>
+                                <td className="card-title" defaultValue={post.title}>{this.state.posts[i].title}</td>
+                                <td className="card-text" defaultValue={post.body}>{this.state.posts[i].body}</td>
+                                <td ><button className="btn btn-primary" value={this.state.posts[i]._id} type="submit" onClick={this.handleDelete}>DELETE</button></td>
                             </tr>
 
                         )}
