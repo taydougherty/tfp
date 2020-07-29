@@ -35,13 +35,15 @@ class PreviousBlogPost extends Component {
 
         axios.get(`/blog/posts/author/${this.state.author}`)
             .then(resp => {
-                this.setState({ posts: resp.data },
-                    () => { })
+                console.log(resp.data)
+                this.setState({ posts: resp.data })
             })
             .catch(err => {
                 console.log(err)
             })
         // maybe implement a looping list component?
+        console.log(this.state.posts)
+
     }
 
 
@@ -68,7 +70,7 @@ class PreviousBlogPost extends Component {
                         {/* For Loop Row Data*/}
 
                         <tr>
-                            <th scope="row">04/20/2020</th>
+                            <td scope="row">04/20/2020</td>
                             <td>Lorem Ipsum</td>
 
                             <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam luctus consequat pellentesque. Ut id hendrerit ex. Morbi gravida, arcu vitae venenatis vestibulum, leo sapien blandit turpis, ut tempus enim nunc at felis. Mauris dictum sem nec ultrices commodo. Mauris aliquam venenatis mi in viverra. Maecenas vitae fermentum neque. Proin tincidunt risus non nisl ultrices, non consectetur metus facilisis. Mauris ante sem, sollicitudin et eros nec, fringilla luctus leo. </td>
@@ -77,8 +79,16 @@ class PreviousBlogPost extends Component {
                             <td><button className="btn btn-primary" type="submit" onSubmit={this.handleDelete}>DELETE</button></td>
                         </tr>
 
+                        {posts.map((post, i) =>
 
+                            <tr key={i}>
+                                <td>DATE</td>
+                                <td class="card-title" defaultValue={post.title}>{this.state.posts.title}</td>
+                                <td class="card-text" defaultValue={post.body}>{this.state.posts.body}</td>
+                                <td ><button className="btn btn-primary" type="submit" onSubmit={this.handleDelete}>DELETE</button></td>
+                            </tr>
 
+                        )}
 
                     </tbody>
                 </table>
