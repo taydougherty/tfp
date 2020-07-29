@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
 import axios from "axios";
 import Navigation from "./Navbar";
-import "./Login.scss";
+// import "./Login.scss";
 
 // function Login() {
 //   return (
@@ -129,50 +129,38 @@ export default class Login extends Component {
           deAuthenticate={this.props.deAuthenticate}
           logout={this.props.logout}
         />
-        <div className="loginmodal-container">
-          <h1>Log In</h1>
-          <br />
-          <form className="login" onSubmit={this.handleSubmit.bind(this)}>
-            <div className="form-group">
-              <label for="exampleInputEmail1">Email address</label>
-              <input
-                type="email"
-                className="form-control"
-                id="email-input"
-                name="email"
-                placeholder="Email"
-                onChange={this.handleemailChange}
-                value={this.state.email}
-              />
-            </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Password</label>
-              <input
-                type="password"
-                className="form-control is-invalid"
-                id="password-input"
-                name="pass"
-                placeholder="Password"
-                onChange={this.handlePasswordChange}
-                value={this.state.password}
-                required
-              />
-              <div class="invalid-feedback">Please enter a valid password.</div>
-            </div>
-            <button
-              type="submit"
-              name="login"
-              className="btn btn-primary login loginmodal-submit"
-              value="Login"
-            >
-              Submit
-            </button>
-          </form>
+        <form onSubmit={this.handleSubmit.bind(this)}>
+          <h3>Sign In</h3>
 
-          <div className="login-help">
-            <Link to={"/register"}> Register </Link>
+          <div className="form-group">
+            <label for="emailInput">Email address</label>
+            <input
+              type="email"
+              className="form-control"
+              placeholder="Enter email"
+              onChange={this.handleEmailChange}
+              value={this.state.email}
+            />
           </div>
-        </div>
+
+          <div className="form-group">
+            <label>Password</label>
+            <input
+              type="password"
+              className="form-control is-invalid"
+              placeholder="Enter password"
+              onChange={this.handlePasswordChange}
+              value={this.state.password}
+            />
+            <div class="invalid-feedback">Please enter a valid password.</div>
+          </div>
+          <button type="submit" className="btn btn-primary btn-block">
+            Submit
+          </button>
+          <p className="register text-right">
+            <Link to={"/register"}> Register </Link>
+          </p>
+        </form>
       </div>
     );
   }

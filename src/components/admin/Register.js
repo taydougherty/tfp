@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Redirect } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import Navigation from "./Navbar";
 import "./Register.scss";
 
@@ -314,6 +314,9 @@ export default class Register extends Component {
                 <button type="submit" className="btn btn-primary register">
                   Register
                 </button>
+                <p className="register text-right">
+                  <Link to={"/login"}> Login </Link>
+                </p>
               </form>
             </div>
           </section>
