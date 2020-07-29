@@ -35,7 +35,6 @@ class NewBlogPost extends Component {
         axios.post("/blog/newpost", form)
             .then(res => {
                 console.log(res)
-                console.log("here")
             }
             ).catch(err => {
                 console.log(`Error: ${err}`)
@@ -49,7 +48,6 @@ class NewBlogPost extends Component {
             body: this.state.body,
             author: "5f1b2bb5c5120f4b9c7efb54"
         }
-        console.log(blogPost)
         this.newPost(blogPost)
         this.clearForm()
     };

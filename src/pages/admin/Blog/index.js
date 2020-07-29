@@ -10,6 +10,7 @@ function Blog() {
     return (
         <div>
             <NewBlogPost />
+            <br /><br />
             <PreviousBlogPost />
         </div>
     )

@@ -6,6 +6,7 @@ const postController = require('../controllers/posts')
 
 // CLIENT/MANAGER side blog posts
 router.get('/posts', postController.findPost)
+router.get('/posts/author/:id', postController.findAuthorPosts)
 
 
 // MANAGER side blog posts
