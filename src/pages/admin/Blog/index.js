@@ -9,6 +9,7 @@ import PreviousBlogPost from "../../../components/admin/PreviousBlogPost/Previou
 function Blog() {
     return (
         <div>
+            {/* will need to pass props of user information to NewBlogPost */}
             <NewBlogPost />
             <br /><br />
             <PreviousBlogPost />
