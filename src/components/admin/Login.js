@@ -133,7 +133,7 @@ export default class Login extends Component {
           <h3>Sign In</h3>
 
           <div className="form-group">
-            <label for="emailInput">Email address</label>
+            <label htmlFor="emailInput">Email address</label>
             <input
               type="email"
               className="form-control"
@@ -152,7 +152,9 @@ export default class Login extends Component {
               onChange={this.handlePasswordChange}
               value={this.state.password}
             />
-            <div class="invalid-feedback">Please enter a valid password.</div>
+            <div className="invalid-feedback">
+              Please enter a valid password.
+            </div>
           </div>
           <button type="submit" className="btn btn-primary btn-block">
             Submit
