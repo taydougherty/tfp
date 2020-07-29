@@ -36,7 +36,15 @@ class PreviousBlogPost extends Component {
         axios.get(`/blog/posts/author/${this.state.author}`)
             .then(resp => {
                 console.log(resp.data)
-                this.setState({ posts: resp.data })
+                this.setState({
+                    posts: resp.data
+                })
+            })
+            .then(resp => {
+                console.log(resp.data)
+                this.setState({
+                    posts: resp.data
+                })
             })
             .catch(err => {
                 console.log(err)
@@ -82,9 +90,9 @@ class PreviousBlogPost extends Component {
                         {posts.map((post, i) =>
 
                             <tr key={i}>
-                                <td>DATE</td>
-                                <td class="card-title" defaultValue={post.title}>{this.state.posts.title}</td>
-                                <td class="card-text" defaultValue={post.body}>{this.state.posts.body}</td>
+                                <td>{this.state.posts[i].date}</td>
+                                <td class="card-title" defaultValue={post.title}>{this.state.posts[i].title}</td>
+                                <td class="card-text" defaultValue={post.body}>{this.state.posts[i].body}</td>
                                 <td ><button className="btn btn-primary" type="submit" onSubmit={this.handleDelete}>DELETE</button></td>
                             </tr>
 
