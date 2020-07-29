@@ -12,19 +12,28 @@ class PreviousBlogPost extends Component {
         }
     }
 
+
+    componentDidMount() {
+        this.getHistory()
+        console.log(this.state.posts)
+    }
     // handleDelete(event) { }
 
     // populate history table
     getHistory() {
         axios.get('/blog/posts')
             .then(resp => {
-                console.log(resp)
+                console.log(resp.data)
+                this.setState({ posts: resp.data })
             })
             .catch(err => {
                 console.log(err)
             })
         // maybe implement a looping list component?
+
     }
+
+
 
     render() {
         return (
