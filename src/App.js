@@ -14,9 +14,9 @@ function App() {
         <div className="auth-wrapper">
           <div className="auth-inner">
             <Switch>
-              <Route exact path="/" component={Login} />
-              <Route path="/login" component={Login} />
-              <Route path="/register" component={Register} />
+              <Route exact path="admin/" component={Login} />
+              <Route path="admin/login" component={Login} />
+              <Route path="admin/register" component={Register} />
             </Switch>
           </div>
         </div>
