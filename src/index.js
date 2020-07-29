@@ -7,15 +7,11 @@ import SampleService from './pages/SampleService';
 import NavBar from './components/NavBar';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import App from './App'
 
 ReactDOM.render(
   <React.StrictMode>
-<<<<<<< HEAD
 
-    <App />
-
-
-=======
     <NavBar />
     <Router>
       <Switch>
@@ -23,9 +19,12 @@ ReactDOM.render(
         <Route exact path="/home" component={Home} />
         <Route exact path="/services" component={Services} />
         <Route exact path="/sampleservice" component={SampleService} />
+        <Route exact path="/admin" component={App} />
+
       </Switch>
     </Router>
->>>>>>> master
+
+
   </React.StrictMode>,
   document.getElementById('root')
 );
