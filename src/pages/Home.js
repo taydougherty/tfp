@@ -1,5 +1,6 @@
 import image from '../rockclimber.png';
-import NavBar from '../components/NavBar';
+import NavBar from '../Components/NavBar';
+import Footer from '../Components/footer/footer'
 import './Home.css';
 import React, { Component } from "react";
 
@@ -21,6 +22,7 @@ class Services extends Component {
                         </div>
                     </div>
                 </div>
+                <Footer />
             </div>
         )
     }
