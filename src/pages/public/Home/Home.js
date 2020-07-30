@@ -1,4 +1,4 @@
-import image from "../../rockclimber.png";
+import image from "../../../assets/images/rockclimber.png";
 import NavBar from "../../components/public/NavBar";
 import "./Home.css";
 import React, { Component } from "react";

@@ -5,7 +5,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Login from "./pages/admin/Login/Login";
 import Register from "./pages/admin/Register/Register";
-import Footer from "./components/admin/Footer";
+import Blog from "./pages/admin/Blog/index";
+import Footer from "./components/admin/Footer/Footer";
 import Home from "./pages/public/Home";
 import Services from "./pages/public/Services";
 import SampleService from "./pages/public/SampleService";
@@ -20,6 +21,7 @@ function App() {
               <Route exact path="/admin" component={Login} />
               <Route path="/admin/login" component={Login} />
               <Route path="/admin/register" component={Register} />
+              <Route path="/admin/blog" component={Blog} />
               <Route exact path="/" component={Home} />
               <Route exact path="/home" component={Home} />
               <Route exact path="/services" component={Services} />

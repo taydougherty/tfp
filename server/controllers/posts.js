@@ -4,25 +4,32 @@ exports.findPost = (req, res) => {
     // find posts to display on the client side & manager side
     Post.find().then(dbPost => {
         res.json(dbPost)
+        res.send(dbPost)
     })
 
 }
 
+// Find all posts by Author.user.id
+exports.findAuthorPosts = (req, res) => {
+    Post.find({ "author.user": req.param.id }).then(dbPost => {
+        res.json(dbPost)
+    })
+}
+
+// New post from Admin Portal, auth required
 exports.createPost = (req, res) => {
-    // req.body.UserId = req.user.id;
     let newPost = new Post(req.body);
     newPost.save()
         .then(dbPost => {
             res.json(dbPost)
         })
-    // newPost.create(req.body)
 }
 
+// Delete post from Admin Portal, auth required
 exports.deletePost = (req, res) => {
-    // deletes post from the Manager Side
-    Post.find({ _id: req.body._id }).remove({ _id: req.body._id })
+    Post.findOneAndRemove({ _id: req.params.id })
         .then(resp => {
-            res.send(resp)
+            res.json(resp)
         })
 }
 
