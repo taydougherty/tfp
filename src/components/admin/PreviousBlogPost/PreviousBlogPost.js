@@ -30,7 +30,6 @@ class PreviousBlogPost extends Component {
 
     // populate history table
     getHistory() {
-
         // 
         axios.get(`/blog/posts/author/${this.state.author}`)
             // .then(resp => {
