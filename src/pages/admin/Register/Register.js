@@ -1,70 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Link, Redirect } from "react-router-dom";
-import Navigation from "../../../components/admin/Navbar";
+import Navigation from "../../../components/admin/Navbar/Navbar";
 import "./Register.scss";
-
-// function Register() {
-//   return (
-//     <div id="registration-container" className="container-fluid">
-//       <section className="container">
-//         <div className="container-page">
-//           <form>
-//             <div className="col-md-6">
-//               <h3 className="dark-grey">Registration</h3>
-
-//               <div id="email-form" className="form-group col-lg-12">
-//                 <label>Email Address</label>
-//                 <input type="email" className="form-control" id="email-input" />
-
-//                 <p id="email-feedback"></p>
-//                 <small
-//                   id="email-additional-feedback"
-//                   className="form-text text-muted"
-//                 ></small>
-//               </div>
-
-//               <div id="email-repeat-form" className="form-group col-lg-12">
-//                 <label>Repeat Email Address</label>
-//                 <input
-//                   type="email"
-//                   className="form-control"
-//                   id="repeat-email-input"
-//                 />
-//                 <small id="email-repeat-feedback"></small>
-//               </div>
-
-//               <div id="password-form" className="form-group col-lg-12">
-//                 <label>Password</label>
-//                 <input
-//                   type="password"
-//                   className="form-control"
-//                   id="password-input"
-//                 />
-//                 <small id="password-feedback"></small>
-//               </div>
-
-//               <div id="repeat-password-form" className="form-group col-lg-12">
-//                 <label>Repeat Password</label>
-//                 <input
-//                   type="password"
-//                   className="form-control"
-//                   id="repeat-password-input"
-//                 />
-//                 <small id="repeat-password-feedback"></small>
-//               </div>
-//             </div>
-//             <button type="submit" className="btn btn-primary register">
-//               Register
-//             </button>
-//           </form>
-//         </div>
-//       </section>
-//     </div>
-//   );
-// }
-
-// export default Register;
 
 export default class Register extends Component {
   constructor(props) {

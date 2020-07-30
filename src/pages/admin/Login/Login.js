@@ -1,52 +1,7 @@
 import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
 import axios from "axios";
-import Navigation from "../../../components/admin/Navbar";
-// import "./Login.scss";
-
-// function Login() {
-//   return (
-//     <div className="loginmodal-container">
-//       <h1>Log In</h1>
-//       <br />
-//       <form className="login">
-//         <div className="form-group">
-//           <label for="exampleInputEmail1">Email address</label>
-//           <input
-//             type="email"
-//             className="form-control"
-//             id="email-input"
-//             name="email"
-//             placeholder="Email"
-//           />
-//         </div>
-//         <div class="form-group">
-//           <label for="exampleInputPassword1">Password</label>
-//           <input
-//             type="password"
-//             className="form-control is-invalid"
-//             id="password-input"
-//             name="pass"
-//             placeholder="Password"
-//             required
-//           />
-//           <div class="invalid-feedback">Please enter a valid password.</div>
-
-//           <button
-//             type="submit"
-//             name="login"
-//             className="btn btn-primary login loginmodal-submit"
-//             value="Login"
-//           >
-//             Submit
-//           </button>
-//         </div>
-//       </form>
-//     </div>
-//   );
-// }
-
-// export default Login;
+import Navigation from "../../../components/admin/Navbar/Navbar";
 
 export default class Login extends Component {
   constructor(props) {
