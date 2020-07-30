@@ -3,8 +3,8 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import Login from "./components/admin/Login";
-import Register from "./components/admin/Register";
+import Login from "./pages/admin/Login/Login";
+import Register from "./pages/admin/Register/Register";
 import Footer from "./components/admin/Footer";
 import Home from "./pages/public/Home";
 import Services from "./pages/public/Services";

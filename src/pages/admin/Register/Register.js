@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Link, Redirect } from "react-router-dom";
-import Navigation from "./Navbar";
+import Navigation from "../../../components/admin/Navbar";
 import "./Register.scss";
 
 // function Register() {
@@ -315,7 +315,7 @@ export default class Register extends Component {
                   Register
                 </button>
                 <p className="register text-right">
-                  <Link to={"/login"}> Login </Link>
+                  <Link to={"/admin/login"}> Login </Link>
                 </p>
               </form>
             </div>
