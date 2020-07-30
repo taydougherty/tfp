@@ -1,52 +1,8 @@
 import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
 import axios from "axios";
-import Navigation from "../../../components/admin/Navbar";
+import Navigation from "../../../components/admin/Navbar/Navbar";
 // import "./Login.scss";
-
-// function Login() {
-//   return (
-//     <div className="loginmodal-container">
-//       <h1>Log In</h1>
-//       <br />
-//       <form className="login">
-//         <div className="form-group">
-//           <label for="exampleInputEmail1">Email address</label>
-//           <input
-//             type="email"
-//             className="form-control"
-//             id="email-input"
-//             name="email"
-//             placeholder="Email"
-//           />
-//         </div>
-//         <div class="form-group">
-//           <label for="exampleInputPassword1">Password</label>
-//           <input
-//             type="password"
-//             className="form-control is-invalid"
-//             id="password-input"
-//             name="pass"
-//             placeholder="Password"
-//             required
-//           />
-//           <div class="invalid-feedback">Please enter a valid password.</div>
-
-//           <button
-//             type="submit"
-//             name="login"
-//             className="btn btn-primary login loginmodal-submit"
-//             value="Login"
-//           >
-//             Submit
-//           </button>
-//         </div>
-//       </form>
-//     </div>
-//   );
-// }
-
-// export default Login;
 
 export default class Login extends Component {
   constructor(props) {
@@ -56,6 +12,9 @@ export default class Login extends Component {
       password: "",
       redirectToReferrer: false,
     };
+
+    this.handlePasswordChange = this.handlePasswordChange.bind(this);
+    this.loginUser = this.loginUser.bind(this);
   }
 
   handleEmailChange = (event) => {
@@ -72,7 +31,7 @@ export default class Login extends Component {
 
   loginUser = (submitObject) => {
     axios
-      .post("/apis/users/login", submitObject)
+      .post("/user/login", submitObject)
       .then(
         function (data) {
           console.log(data.data);
