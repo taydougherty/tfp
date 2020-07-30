@@ -6,9 +6,9 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Login from "./components/admin/Login";
 import Register from "./components/admin/Register";
 import Footer from "./components/admin/Footer";
-import Home from "./pages/Home";
-import Services from "./pages/Services";
-import SampleService from "./pages/SampleService";
+import Home from "./pages/public/Home";
+import Services from "./pages/public/Services";
+import SampleService from "./pages/public/SampleService";
 
 function App() {
   return (
