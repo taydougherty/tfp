@@ -4,7 +4,7 @@ import './index.css';
 import Home from './pages/Home';
 import Services from './pages/Services';
 import SampleService from './pages/SampleService';
-import NavBar from './components/NavBar';
+import NavBar from './Components/NavBar';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import App from './App'

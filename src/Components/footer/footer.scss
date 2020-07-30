@@ -1,0 +1,49 @@
+.mainWrapper {
+  color: black;
+  padding-top: 3em;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+.navLinks {
+  text-align: right;
+}
+.copyright {
+  text-align: left;
+  margin-top: 20px;
+}
+
+.socialMedia * {
+  text-align: right;
+}
+
+// Font Awesome Icons
+.fa {
+  padding: 11px;
+  font-size: 20px;
+  text-align: center;
+  text-decoration: none;
+  margin: 10px 5px;
+  border-radius: 50%;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+  width: 40px;
+}
