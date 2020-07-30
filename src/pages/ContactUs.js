@@ -1,13 +1,9 @@
-import NavBar from '../Components/NavBar';
-import ContactUsForm from '../Components/contactUs/'
-import Footer from '../Components/footer/footer'
+import NavBar from '../components/NavBar';
+import ContactUsForm from '../components/contactUs/contactUsForm'
+import Footer from '../components/footer/footer'
 import React, { Component } from "react";
 
 class ContactUsPage extends Component {
-
-    state = {
-
-    };
 
     render() {
         return (

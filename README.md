@@ -41,8 +41,8 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 Run `npm install` prior to running the Server.
 Local MongoDB will have to be running to connect to the database.
-Express server is running on Localhost:8080.
-Use Localhost:8080 to test routes.
+Express server is running on Localhost:3001.
+Use Localhost:3001 to test routes.
 
 ## Learn More
 
