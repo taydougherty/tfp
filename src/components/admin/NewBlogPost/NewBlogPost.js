@@ -16,7 +16,7 @@ class NewBlogPost extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     };
 
-    // componentDidMount = set state user object id
+    // componentDidMount() tp set state user object id
 
     handleChange(event) {
         const value = event.target.value

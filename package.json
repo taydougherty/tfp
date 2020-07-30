@@ -34,7 +34,7 @@
   },
   "proxy": "http://localhost:3001",
   "scripts": {
-    "start": "concurrently \"react-scripts start\" \"nodemon ./server/bin/www\" ",
+    "start": "concurrently \"nodemon ./server/bin/www\" \"react-scripts start\"  ",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",

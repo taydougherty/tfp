@@ -81,17 +81,12 @@ class PreviousBlogPost extends Component {
                     <tbody>
                         {/* For Loop Row Data*/}
                         {posts.map((post, i) =>
-
                             <tr key={i}>
-
-                                <td>
-                                    {moment(this.state.posts[i].date).format("MMM Do YY")}
-                                </td>
+                                <td> {moment(this.state.posts[i].date).format("MMM Do YY")} </td>
                                 <td className="card-title" defaultValue={post.title}>{this.state.posts[i].title}</td>
                                 <td className="card-text" defaultValue={post.body}>{this.state.posts[i].body}</td>
                                 <td ><button className="btn btn-primary" value={this.state.posts[i]._id} type="submit" onClick={this.handleDelete}>DELETE</button></td>
                             </tr>
-
                         )}
 
                     </tbody>

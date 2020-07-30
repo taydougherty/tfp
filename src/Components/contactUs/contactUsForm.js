@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios"
 import './contactUs.scss'
 
-class contactUs extends Component {
+class contactUsForm extends Component {
 
   constructor(props) {
     super(props);
@@ -102,4 +102,4 @@ class contactUs extends Component {
   }
 }
 
-export default contactUs
+export default contactUsForm
