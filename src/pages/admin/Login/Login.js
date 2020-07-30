@@ -27,7 +27,7 @@ export default class Login extends Component {
 
   loginUser = (submitObject) => {
     axios
-      .post("/apis/users/login", submitObject)
+      .post("/users/login", submitObject)
       .then(
         function (data) {
           console.log(data.data);
@@ -69,7 +69,9 @@ export default class Login extends Component {
   };
 
   render() {
-    const { from } = this.props.location.state || { from: { pathname: "/" } };
+    const { from } = this.props.location.state || {
+      from: { pathname: "/admin/blog" },
+    };
     const { redirectToReferrer } = this.state;
 
     if (redirectToReferrer) {
