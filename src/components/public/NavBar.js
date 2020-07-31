@@ -9,13 +9,13 @@ function NavBar() {
           <Link to={"/services"}> Services </Link>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="/leadership">Leadership</a>
+          <Link to={"/leadership"}> Leadership </Link>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="/blog">Blog</a>
+          <Link to={"/blog"}> Blog </Link>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="/contactus">Contact Us</a>
+          <Link to={"/contact"}> Contact Us </Link>
         </li>
       </ul>
     </div>

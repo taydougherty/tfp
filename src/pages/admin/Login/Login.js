@@ -75,7 +75,9 @@ export default class Login extends Component {
   };
 
   render() {
-    const { from } = this.props.location.state || { from: { pathname: "/admin/blog" } };
+    const { from } = this.props.location.state || {
+      from: { pathname: "/admin/blog" },
+    };
     const { redirectToReferrer } = this.state;
 
     if (redirectToReferrer) {

@@ -72,7 +72,7 @@ class NewBlogPost extends Component {
                 <form onSubmit={this.handleSubmit}>
                     {/* boostrap form Title */}
                     <div className="form-group">
-                        <label for="exampleFormControlTextarea1" >Blog Title</label>
+                        <label htmlFor="exampleFormControlTextarea1" >Blog Title</label>
                         <input name="title" value={this.state.title} onChange={this.handleChange} type="text" className="form-control" placeholder="Blog Title Here" />
                     </div>
 

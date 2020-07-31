@@ -21,7 +21,6 @@ export default class Register extends Component {
     this.handleEmailRepeat = this.handleEmailRepeat.bind(this);
     this.registerUser = this.registerUser.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-
   }
 
   handleEmailValidation = (event) => {
@@ -220,7 +219,7 @@ export default class Register extends Component {
                   </div>
 
                   <div id="email-repeat-form" className="form-group col-lg-12">
-                    <label>Repeat Email Address</label>
+                    <label>Confirm Email Address</label>
                     <input
                       type="email"
                       className="form-control"
@@ -247,7 +246,7 @@ export default class Register extends Component {
                     id="repeat-password-form"
                     className="form-group col-lg-12"
                   >
-                    <label>Repeat Password</label>
+                    <label>Confirm Password</label>
                     <input
                       type="password"
                       className="form-control"

@@ -17,7 +17,7 @@ passport.use(new LocalStrategy(
 
             // if no user is found, return the message
             if (!user)
-                return done(null, { message: "User not Found" }); // req.flash is the way to set flashdata using connect-flash
+                return done(null, { message: "Email not Found" }); // req.flash is the way to set flashdata using connect-flash
 
             // if the user is found but the password is wrong
             if (!user.validPassword(password))

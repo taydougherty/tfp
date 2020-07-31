@@ -7,7 +7,7 @@ import Navigation from "../../../components/admin/Navbar/Navbar"
 // New blog post will need the user object _id, will be passed in the newBlogPost request
 
 
-export default class Blog extends Component {
+export default class AdminBlog extends Component {
     constructor(props) {
         super(props);
         this.state = {

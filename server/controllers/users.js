@@ -38,7 +38,7 @@ exports.loginUser = (req, res, next) => {
             });
         }
 
-        console.log(userData, "this is the userData in users_api.js");
+        console.log(userData, "this is the userData");
         if (userData.message == "Invalid Password" || userData.message == "User not Found") {
             return res.json({
                 success: false,
