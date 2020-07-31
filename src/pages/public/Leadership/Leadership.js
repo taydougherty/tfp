@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import NavBar from "../../../Components/public/NavBar";
 import Footer from '../../../Components/admin/Footer/Footer'
+import './Leadership.scss'
 
 class Leadership extends Component {
 
@@ -36,7 +37,7 @@ class Leadership extends Component {
                                 </div>
                                 <div class="card-body d-flex flex-column">
                                   <h5>Notable Wins</h5>
-                                  <ul>
+                                  <ul class="winList">
                                     <li>Winner</li>
                                     <li>Winner</li>
                                     <li>Chicken Dinner</li>
