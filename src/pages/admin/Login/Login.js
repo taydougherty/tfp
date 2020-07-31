@@ -31,7 +31,7 @@ export default class Login extends Component {
 
   loginUser = (submitObject) => {
     axios
-      .post("/users/login", submitObject)
+      .post("/user/login", submitObject)
       .then(
         function (data) {
           console.log(data.data);

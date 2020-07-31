@@ -121,7 +121,7 @@ export default class Register extends Component {
 
   registerUser = (userData) => {
     axios
-      .post("/users/register", {
+      .post("/user/register", {
         email: userData.email,
         password: userData.password,
       })
