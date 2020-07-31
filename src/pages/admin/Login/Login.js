@@ -11,6 +11,9 @@ export default class Login extends Component {
       password: "",
       redirectToReferrer: false,
     };
+
+    this.handlePasswordChange = this.handlePasswordChange.bind(this);
+    this.loginUser = this.loginUser.bind(this);
   }
 
   handleEmailChange = (event) => {
