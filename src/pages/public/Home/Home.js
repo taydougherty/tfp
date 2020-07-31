@@ -1,5 +1,6 @@
 import image from "../../../assets/images/rockclimber.png";
-import NavBar from "../../../components/public/NavBar";
+import NavBar from "../../../Components/public/NavBar";
+import Footer from '../../../Components/admin/Footer/Footer'
 import "./Home.css";
 import React, { Component } from "react";
 
@@ -9,7 +10,7 @@ class Services extends Component {
   render() {
     return (
       <div>
-        <NavBar></NavBar>
+        <NavBar />
         <div className="Home">
           <div className="col-12 rock">
             <div className="card relative">
@@ -18,6 +19,7 @@ class Services extends Component {
             </div>
           </div>
         </div>
+        <Footer />
       </div>
     );
   }

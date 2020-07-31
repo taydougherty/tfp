@@ -6,11 +6,10 @@ import axios from "axios";
 import Login from "./pages/admin/Login/Login";
 import Register from "./pages/admin/Register/Register";
 import adminBlog from "./pages/admin/Blog/index";
-import Footer from "./components/admin/Footer/Footer";
 import Home from "./pages/public/Home/Home";
 import Services from "./pages/public/Services/Services";
 import SampleService from "./pages/public/Services/SampleService";
-// import Leadership from "";
+import Leadership from "./pages/public/Leadership/Leadership";
 // import Blog from "";
 import Contact from "./pages/public/Contact/ContactUs";
 
@@ -94,13 +93,12 @@ export default class App extends Component {
                 <Route exact path="/home" component={Home} />
                 <Route exact path="/services" component={Services} />
                 <Route exact path="/sampleservice" component={SampleService} />
-                {/* <Route exact path="/leadership" component={Leadership} /> */}
+                <Route exact path="/leadership" component={Leadership} />
                 {/* <Route exact path="/blog" component={Blog} /> */}
                 <Route exact path="/contact" component={Contact} />
               </Switch>
             </div>
           </div>
-          <Footer />
         </div>
       </Router>
     );
