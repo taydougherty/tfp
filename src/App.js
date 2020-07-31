@@ -11,7 +11,7 @@ import Home from "./pages/public/Home/Home";
 import Services from "./pages/public/Services/Services";
 import SampleService from "./pages/public/Services/SampleService";
 // import Leadership from "";
-// import Blog from "";
+import Blog from "./pages/public/Blog/Blog";
 import Contact from "./pages/public/Contact/ContactUs";
 
 export default class App extends Component {
@@ -95,7 +95,7 @@ export default class App extends Component {
                 <Route exact path="/services" component={Services} />
                 <Route exact path="/sampleservice" component={SampleService} />
                 {/* <Route exact path="/leadership" component={Leadership} /> */}
-                {/* <Route exact path="/blog" component={Blog} /> */}
+                <Route exact path="/blog" component={Blog} />
                 <Route exact path="/contact" component={Contact} />
               </Switch>
             </div>

@@ -1,58 +1,72 @@
-// import './Blog.css';
-// import React, { Component } from "react";
-// import NavBar from '../../components/NavBar'
-// import Footer from '../../components/footer/footer'
+import './Blog.css';
+import React, { Component } from "react";
+import NavBar from '../../../components/public/NavBar';
+import PostArray from '../../../components/public/blog/postArray'
+import Post from '../../../components/public/blog/post'
+import axios from 'axios';
+import moment from 'moment'
 
-// class Blog extends Component {
+class Blog extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            posts: [],
+            author: "5f1b2bb5c5120f4b9c7efb54"
+        }
+    }
 
-//     state = {
+    componentDidMount() {
+        this.getHistory()
+    }
+    getHistory() {
+        // this.setState({
+        //     posts: [],
+        //     author: "5f1b2bb5c5120f4b9c7efb54"
+        // })
+        // 
+        axios.get(`/blog/posts/author/${this.state.author}`)
+            .then(resp => {
+                resp.data.map(post => ({
+                    title: `${post.title}`,
+                    body: `${post.body}`,
+                    date: `${new Intl.DateTimeFormat('en-US').format(post.date)}`,
+                    author: `${post.author}`
+                }))
+            })
+            .then(resp => {
+                this.setState({
+                    posts: resp.data
+                })
+                console.log(this.state.posts)
+            })
 
-//     };
 
-//     render() {
-//         return (
-//             <div>
-//                 <NavBar />
-//                 <div style={{ height: 1000 + "px" }}>
-//                     <div className="row h-25 Blog">
-//                         <div className="col-12">
-//                             <div className="jumbotron bg-white">
-//                                 <h1>Our Blog</h1>
-//                                 <p style={{ fontSize: 25 }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-// tempor incididunt ut labore</p>
-//                             </div>
-//                         </div>
-//                     </div>
-//                     <div className="row h-75 cards">
-//                         <div className="col-4">
-//                             <div class="card " style={{ height: 400 + "px" }}>
-//                                 <div class="card-body d-flex flex-column">
-//                                     <h5 class="card-title">Client Blog</h5>
-//                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-//                                 </div>
-//                             </div>
-//                         </div>
-//                         <div className="col-4">
-//                             <div class="card " style={{ height: 400 + "px" }}>
-//                                 <div class="card-body d-flex flex-column">
-//                                     <h5 class="card-title">Client Blog</h5>
-//                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-//                                 </div>
-//                             </div>
-//                         </div>               <div className="col-4">
-//                             <div class="card " style={{ height: 400 + "px" }}>
-//                                 <div class="card-body d-flex flex-column">
-//                                     <h5 class="card-title">Client Blog</h5>
-//                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-//                                 </div>
-//                             </div>
-//                         </div>
-//                     </div>
-//                 </div>
-//                 <Footer />
-//             </div >
-//         )
-//     }
-// }
+            .catch(err => {
+                console.log(err)
+            })
+    }
+    render() {
+        return (
+            <div>
+                <NavBar />
+                <div style={{ height: 1000 + "px" }}>
+                    <div className="row h-25 Blog">
+                        <div className="col-12">
+                            <div className="jumbotron bg-white">
+                                <h1>Our Blog</h1>
+                                <p style={{ fontSize: 25 }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="row h-75 cards">
+                        <PostArray />
 
-// export default Blog;
+                    </div>
+                </div>
+            </div >
+        )
+    }
+}
+
+export default Blog;

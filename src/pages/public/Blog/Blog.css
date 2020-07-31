@@ -1,0 +1,16 @@
+.Blog {
+    margin-top: 50px;
+    margin-left: 4px;
+  }
+  
+  .cards {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  
+  p,
+  h1,
+  h5 {
+    color: black;
+  }
+  
