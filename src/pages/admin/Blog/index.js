@@ -19,7 +19,7 @@ export default class Blog extends Component {
                 />
                 <div className="container" >
                     {/* will need to pass props of user information to NewBlogPost */}
-                    < NewBlogPost />
+                    <NewBlogPost />
                     <br /><br /><br />
                     <PreviousBlogPost />
                 </div>
