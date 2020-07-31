@@ -6,16 +6,16 @@ function NavBar() {
     <div className="NavBar">
       <ul className="nav fixed-top navbar bg-white justify-content-end">
         <li className="nav-item">
-          <Link to={"/services"}> Services </Link>
+          <Link to={"/services"} className="nav-link"> Services </Link>
         </li>
         <li className="nav-item">
-          <Link to={"/leadership"}> Leadership </Link>
+          <Link to={"/leadership"} className="nav-link"> Leadership </Link>
         </li>
         <li className="nav-item">
-          <Link to={"/blog"}> Blog </Link>
+          <Link to={"/blog"} className="nav-link"> Blog </Link>
         </li>
         <li className="nav-item">
-          <Link to={"/contact"}> Contact Us </Link>
+          <Link to={"/contact"} className="nav-link"> Contact Us </Link>
         </li>
       </ul>
     </div>
