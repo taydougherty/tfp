@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import PrivateRoute from "./components/utils/PrivateRoute"
 import axios from "axios";
 import Login from "./pages/admin/Login/Login";
 import Register from "./pages/admin/Register/Register";
@@ -61,7 +62,7 @@ export default class App extends Component {
           <div className="auth-wrapper">
             <div className="auth-inner">
               <Switch>
-                {/* Admin Routing */}
+                {/* ADMIN Routing */}
                 <Route path="/admin/register" component={Register} />
                 {/* <Route exact path="/admin" component={Login} /> */}
                 <Route strict exact path="/admin"
@@ -76,7 +77,14 @@ export default class App extends Component {
                   )}
                 />
 
-                <Route strict path="/admin/blog"
+                <PrivateRoute exact path="/admin/blog"
+                  component={AdminBlog}
+                  authenticate={this.authenticate}
+                  deAuthenticate={this.deAuthenticate}
+                  authenticated={this.state.authenticated}
+                  logout={this.logout}
+                />
+                {/* <Route strict path="/admin/blog"
                   render={(props) => (
                     <AdminBlog
                       {...props}
@@ -86,9 +94,9 @@ export default class App extends Component {
                       logout={this.logout}
                     />
                   )}
-                />
+                /> */}
 
-                {/* Client Routing */}
+                {/* CLIENT Routing */}
                 <Route exact path="/" component={Home} />
                 <Route exact path="/home" component={Home} />
                 <Route exact path="/services" component={Services} />

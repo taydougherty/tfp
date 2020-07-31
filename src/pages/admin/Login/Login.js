@@ -37,6 +37,7 @@ export default class Login extends Component {
           console.log(data.data);
           if (data.data.success) {
             this.props.authenticate();
+            localStorage.setItem("authenticated", this.props.authenticated)
             this.setState({
               redirectToReferrer: true
             });

@@ -17,9 +17,9 @@ class NewBlogPost extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     };
 
-    componentDidMount() {
-        // this.setState({ author: this.props.user._id })
-    }
+    // componentDidMount() {
+    // this.setState({ author: this.props.user._id })
+    // }
 
     handleChange(event) {
         const value = event.target.value
