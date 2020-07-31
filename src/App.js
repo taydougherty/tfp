@@ -45,6 +45,7 @@ export default class App extends Component {
       .then(
         function (data) {
           this.deAuthenticate();
+          localStorage.removeItem("authenticated");
           window.location.reload();
         }.bind(this)
       )
@@ -63,9 +64,7 @@ export default class App extends Component {
                 {/* Admin Routing */}
                 <Route path="/admin/register" component={Register} />
                 {/* <Route exact path="/admin" component={Login} /> */}
-                <Route
-                  exact
-                  path="/admin"
+                <Route strict exact path="/admin"
                   render={(props) => (
                     <Login
                       {...props}
@@ -77,8 +76,7 @@ export default class App extends Component {
                   )}
                 />
 
-                <Route
-                  path="/admin/blog"
+                <Route strict path="/admin/blog"
                   render={(props) => (
                     <AdminBlog
                       {...props}

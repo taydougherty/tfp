@@ -41,17 +41,9 @@ export default class AdminBlog extends Component {
                 />
                 <div className="container" >
                     {/* will need to pass props of user information to NewBlogPost */}
-                    < NewBlogPost
-                        authenticated={this.props.authenticated}
-                        authenticate={this.props.authenticate}
-                        deAuthenticate={this.props.deAuthenticate}
-                        logout={this.props.logout} />
+                    < NewBlogPost />
                     <br /><br /><br />
-                    <PreviousBlogPost
-                        authenticated={this.props.authenticated}
-                        authenticate={this.props.authenticate}
-                        deAuthenticate={this.props.deAuthenticate}
-                        logout={this.props.logout} />
+                    <PreviousBlogPost />
                 </div>
             </div>
         )

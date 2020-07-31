@@ -10,8 +10,7 @@ export default class Login extends Component {
     this.state = {
       email: "",
       password: "",
-      redirectToReferrer: false,
-      user: {}
+      redirectToReferrer: false
     };
 
     this.handlePasswordChange = this.handlePasswordChange.bind(this);
@@ -39,8 +38,7 @@ export default class Login extends Component {
           if (data.data.success) {
             this.props.authenticate();
             this.setState({
-              redirectToReferrer: true,
-              user: data.data
+              redirectToReferrer: true
             });
           } else {
             alert(data.data.message);

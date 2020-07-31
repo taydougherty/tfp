@@ -10,7 +10,7 @@ class NewBlogPost extends Component {
         this.state = {
             title: '',
             body: '',
-            author: ''
+            author: '5f2353d76441301910bc9538'
         }
 
         this.handleChange = this.handleChange.bind(this);
@@ -78,7 +78,7 @@ class NewBlogPost extends Component {
 
                     {/* boostrap form Content */}
                     <div className="form-group">
-                        <label for="exampleFormControlTextarea1">Blog Content</label>
+                        <label htmlFor="exampleFormControlTextarea1">Blog Content</label>
                         <textarea name="body" value={this.state.body} onChange={this.handleChange} type="text" className="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Blog Content Here"></textarea>
                     </div>
 

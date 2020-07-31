@@ -1,7 +1,10 @@
-var passport = require("passport");
-var LocalStrategy = require("passport-local").Strategy;
+const passport = require("passport");
+const jwtSecret = require("./extra-config");
+const LocalStrategy = require("passport-local").Strategy;
+const JWTStrategy = require('passport-jwt').Strategy;
+const ExtractJWT = require('passport-jwt').ExtractJwt
 
-var User = require("../models/User.js");
+const User = require("../models/User.js");
 
 passport.use(new LocalStrategy(
     // Our user will sign in using an email, rather than a "username"
@@ -28,6 +31,36 @@ passport.use(new LocalStrategy(
         });
     }
 ));
+
+
+const opts = {
+    jwtFromRequest: ExtractJWT.fromAuthHeaderWithScheme('JWT'),
+    secretOrKey: jwtSecret.secret,
+};
+
+passport.use(
+    'jwt',
+    new JWTStrategy(opts, (jwt_payload, done) => {
+        try {
+            User.findOne({
+                where: {
+                    email: jwt_payload.id,
+                },
+            }).then(user => {
+                if (user) {
+                    console.log('user found in db in passport');
+                    // note the return removed with passport JWT - add this return for passport local
+                    done(null, user);
+                } else {
+                    console.log('user not found in db');
+                    done(null, false);
+                }
+            });
+        } catch (err) {
+            done(err);
+        }
+    }),
+);
 
 passport.serializeUser(function (user, done) {
     done(null, user.id);
