@@ -1,6 +1,7 @@
 import './Services.css';
 import React, { Component } from "react";
-import NavBar from '../components/NavBar'
+import NavBar from '../../components/NavBar'
+import Footer from '../../components/footer/footer'
 
 class Services extends Component {
 
@@ -11,7 +12,7 @@ class Services extends Component {
     render() {
         return (
             <div>
-                <NavBar></NavBar>
+                <NavBar />
                 <div style={{ height: 1000 + "px" }}>
                     <div className="row h-25 Services">
                         <div className="col-12">
@@ -44,6 +45,7 @@ tempor incididunt ut labore</p>
                         </div>
                     </div>
                 </div>
+                <Footer />
             </div >
         )
     }

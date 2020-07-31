@@ -1,6 +1,6 @@
-import image from '../rockclimber.png';
-import NavBar from '../components/NavBar';
-import Footer from '../components/footer/footer'
+import image from '../../rockclimber.png';
+import NavBar from '../../components/NavBar';
+import Footer from '../../components/footer/footer'
 import './Home.css';
 import React, { Component } from "react";
 

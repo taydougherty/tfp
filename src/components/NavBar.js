@@ -5,10 +5,10 @@ function NavBar() {
     <div className="NavBar">
       <ul className="nav fixed-top navbar bg-white justify-content-end">
         <li className="nav-item">
-          <a className="nav-link" href="services">Services</a>
+          <a className="nav-link" href="/services">Services</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="/leadsership">Leadership</a>
+          <a className="nav-link" href="/leadership">Leadership</a>
         </li>
         <li className="nav-item">
           <a className="nav-link" href="/blog">Blog</a>

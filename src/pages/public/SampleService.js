@@ -1,8 +1,9 @@
 
 import './SampleService.css';
 import React, { Component } from "react";
-import NavBar from '../components/NavBar'
-import image from '../sampleservice.png'
+import NavBar from '../../components/NavBar'
+import image from '../../sampleservice.png'
+import Footer from '../../components/footer/footer'
 
 class SampleService extends Component {
 
@@ -13,7 +14,7 @@ class SampleService extends Component {
     render() {
         return (
             <div>
-                <NavBar></NavBar>
+                <NavBar />
                 <div style={{ height: 1000 + "px" }}>
                     <div className="row h-25 SampleService text-center">
                         <div className="col-12">
@@ -50,6 +51,7 @@ class SampleService extends Component {
                         </div>
                     </div>
                 </div>
+                <Footer />
             </div >
         )
     }

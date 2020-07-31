@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Home from './pages/Home';
-import Services from './pages/Services';
-import SampleService from './pages/SampleService';
+import Home from './pages/public/Home';
+import Services from './pages/public/Services';
+import SampleService from './pages/public/SampleService';
+import Blog from './pages/public/Blog';
 import NavBar from './components/NavBar';
-import ContactUsPage from './pages/ContactUs'
+import ContactUsPage from './pages/public/ContactUs'
 import App from './App.js'
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -20,6 +21,7 @@ ReactDOM.render(
         <Route exact path="/home" component={Home} />
         <Route exact path="/services" component={Services} />
         <Route exact path="/sampleservice" component={SampleService} />
+        <Route exact path="/blog" component={Blog} />
         <Route exact path="/admin" component={App} />
         <Route exact path="/contactus" component={ContactUsPage} />
       </Switch>
