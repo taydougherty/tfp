@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-require('./newBlogPost.css')
+require('./newBlogPost.scss')
 
 class NewBlogPost extends Component {
 
@@ -9,14 +9,17 @@ class NewBlogPost extends Component {
         super(props)
         this.state = {
             title: '',
-            body: ''
+            body: '',
+            author: ''
         }
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     };
 
-    // componentDidMount() tp set state user object id
+    componentDidMount() {
+        // this.setState({ author: this.props.user._id })
+    }
 
     handleChange(event) {
         const value = event.target.value
@@ -46,7 +49,7 @@ class NewBlogPost extends Component {
         let blogPost = {
             title: this.state.title,
             body: this.state.body,
-            author: "5f1b2bb5c5120f4b9c7efb54"
+            author: this.state.author
         }
         this.newPost(blogPost)
         this.clearForm()

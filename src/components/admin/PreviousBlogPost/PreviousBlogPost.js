@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import moment from 'moment'
 
-require('./previousBlogPost.css')
+require('./previousBlogPost.scss')
 
 class PreviousBlogPost extends Component {
 
@@ -66,6 +66,7 @@ class PreviousBlogPost extends Component {
             <div>
                 <h2>Blog History</h2>
                 {/* box - centered */}
+
                 {/* PREVIOUS BLOG POST */}
                 <table className="table">
                     {/* boostrap TABLE HEADERS - Date, Title, Content */}

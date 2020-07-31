@@ -8,6 +8,28 @@ import Navigation from "../../../components/admin/Navbar/Navbar"
 
 
 export default class Blog extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            authenticated: false
+        };
+
+
+        this.authenticate = this.authenticate.bind(this);
+        this.deAuthenticate = this.deAuthenticate.bind(this);
+    }
+
+    authenticate() {
+        this.setState({
+            authenticated: true
+        })
+    }
+
+    deAuthenticate() {
+        this.setState({
+            authenticated: false
+        })
+    }
     render() {
         return (
             <div>
@@ -19,9 +41,17 @@ export default class Blog extends Component {
                 />
                 <div className="container" >
                     {/* will need to pass props of user information to NewBlogPost */}
-                    < NewBlogPost />
+                    < NewBlogPost
+                        authenticated={this.props.authenticated}
+                        authenticate={this.props.authenticate}
+                        deAuthenticate={this.props.deAuthenticate}
+                        logout={this.props.logout} />
                     <br /><br /><br />
-                    <PreviousBlogPost />
+                    <PreviousBlogPost
+                        authenticated={this.props.authenticated}
+                        authenticate={this.props.authenticate}
+                        deAuthenticate={this.props.deAuthenticate}
+                        logout={this.props.logout} />
                 </div>
             </div>
         )
