@@ -51,32 +51,32 @@ export default class Register extends Component {
 
   handleEmailRepeat = (event) => {
     const emailVal = event.target.value;
-    // const emailForm = event.target.emailRepeatForm;
-    // const emailFeedback = event.target.emailRepeatFeedback;
+    // const emailForm = this.refs.emailRepeatForm;
+    // const emailFeedback = this.refs.emailRepeatFeedback;
     // const emailRegEx = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 
     this.setState({
       emailRepeat: emailVal,
     });
 
-    // if (!emailRegEx.test(emailVal)) {
-    //   emailForm.classList.remove("has-success");
+    //   if (!emailRegEx.test(emailVal)) {
+    //     emailForm.classList.remove("has-success");
 
-    //   emailForm.classList.add("has-error");
-    //   emailFeedback.textContent = "Emails Don't Match";
-    // } else {
-    //   emailForm.classList.remove("has-error");
+    //     emailForm.classList.add("has-error");
+    //     emailFeedback.textContent = "Emails Don't Match";
+    //   } else {
+    //     emailForm.classList.remove("has-error");
 
-    //   emailForm.classList.add("has-success");
-    //   emailFeedback.textContent = "Emails Match!";
-    // }
+    //     emailForm.classList.add("has-success");
+    //     emailFeedback.textContent = "Emails Match!";
+    //   }
   };
 
   handlePasswordValidation = (event) => {
     // password is passed in
     const passwordVal = event.target.value;
-    // const passwordForm = event.target.passwordForm;
-    // const passwordFeedback = event.target.passwordFeedback;
+    // const passwordForm = this.refs.passwordForm;
+    // const passwordFeedback = this.refs.passwordFeedback;
 
     this.setState({
       password: passwordVal,
@@ -99,8 +99,8 @@ export default class Register extends Component {
   handlePasswordRepeat = (event) => {
     // const passwordVal = this.state.password;
     const passwordRepeat = event.target.value;
-    // const repeatPasswordForm = event.target.repeatPasswordForm;
-    // const repeatPasswordFeedback = event.target.repeatPasswordFeedback;
+    // const repeatPasswordForm = this.refs.repeatPasswordForm;
+    // const repeatPasswordFeedback = this.refs.repeatPasswordFeedback;
 
     this.setState({
       passwordRepeat: passwordRepeat,
@@ -163,7 +163,7 @@ export default class Register extends Component {
     }
 
     // If we have an email and password, run the signUpUser function
-    this.signUpUser(userData);
+    this.registerUser(userData);
 
     this.setState({
       value: "",
@@ -203,6 +203,7 @@ export default class Register extends Component {
                   <div id="email-form" className="form-group col-lg-12">
                     <label>Email Address</label>
                     <input
+                      name="email"
                       type="email"
                       className="form-control"
                       id="email-input"

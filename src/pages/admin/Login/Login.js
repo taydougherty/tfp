@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
 import axios from "axios";
 import Navigation from "../../../components/admin/Navbar/Navbar";
+// import "./Login.scss";
 
 export default class Login extends Component {
   constructor(props) {
