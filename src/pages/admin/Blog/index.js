@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-
 import NewBlogPost from "../../../components/admin/NewBlogPost/NewBlogPost"
 import PreviousBlogPost from "../../../components/admin/PreviousBlogPost/PreviousBlogPost"
 import Navigation from "../../../components/admin/Navbar/Navbar"

@@ -1,3 +1,5 @@
+$left: left;
+
 .mainWrapper {
   color: black;
   padding-top: 3em;
@@ -14,7 +16,7 @@ ul {
   text-align: right;
 }
 .copyright {
-  text-align: left;
+  text-align: $left;
   margin-top: 20px;
 }
 

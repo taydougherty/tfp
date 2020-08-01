@@ -12,7 +12,7 @@ function PrivateRoute({ component: Component, authenticate, deauthenticate, auth
                 ) : (
                         <Redirect
                             to={{
-                                pathname: "/",
+                                pathname: "/admin",
                                 state: { from: props.location }
                             }}
                         />
