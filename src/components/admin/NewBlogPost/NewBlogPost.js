@@ -31,7 +31,7 @@ class NewBlogPost extends Component {
 
     //  make into async function
     newPost(form) {
-
+        console.log("fuck", form)
         axios.post("/blog/newpost", form)
             .then(res => {
                 console.log(res)

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Link, Redirect } from "react-router-dom";
-import Navigation from "../../../Components/admin/Navbar/Navbar";
+import Navigation from "../../../components/admin/Navbar/Navbar";
 import "./Register.scss";
 
 export default class Register extends Component {
