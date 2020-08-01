@@ -8,6 +8,9 @@ import Navigation from "../../../components/admin/Navbar/Navbar"
 
 
 export default class Blog extends Component {
+    componentDidMount() {
+        console.log(this.props)
+    }
     render() {
         return (
             <div>

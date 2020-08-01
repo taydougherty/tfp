@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import axios from "axios";
 import Login from "./pages/admin/Login/Login";
 import Register from "./pages/admin/Register/Register";
-import adminBlog from "./pages/admin/Blog/index";
+import AdminBlog from "./pages/admin/Blog/index";
 import Footer from "./components/admin/Footer/Footer";
 import Home from "./pages/public/Home/Home";
 import Services from "./pages/public/Services/Services";
@@ -79,7 +79,7 @@ export default class App extends Component {
                 <Route
                   path="/admin/blog"
                   render={(props) => (
-                    <adminBlog
+                    <AdminBlog
                       {...props}
                       authenticate={this.authenticate}
                       deAuthenticate={this.deAuthenticate}
