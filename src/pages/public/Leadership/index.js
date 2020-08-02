@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import NavBar from "../../../components/public/NavBar";
 import Footer from '../../../components/admin/Footer/Footer'
-import './Leadership.scss'
+import './style.scss'
 
 class Leadership extends Component {
 

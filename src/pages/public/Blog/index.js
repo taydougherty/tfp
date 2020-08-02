@@ -1,4 +1,4 @@
-import './Blog.css';
+import './style.css';
 import React, { Component } from "react";
 import NavBar from '../../../components/public/NavBar';
 import PostArray from '../../../components/public/blog/postArray'
