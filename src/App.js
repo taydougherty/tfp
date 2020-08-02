@@ -2,10 +2,12 @@ import React, { Component } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import PrivateRoute from "./components/utils/PrivateRoute"
 import axios from "axios";
 import Login from "./pages/admin/Login/Login";
 import Register from "./pages/admin/Register/Register";
-import adminBlog from "./pages/admin/Blog/index";
+import AdminBlog from "./pages/admin/Blog/index";
+// import Footer from "./components/admin/Footer/Footer";
 import Home from "./pages/public/Home/Home";
 import Services from "./pages/public/Services/Services";
 import SampleService from "./pages/public/Services/SampleService";
@@ -44,6 +46,7 @@ export default class App extends Component {
       .then(
         function (data) {
           this.deAuthenticate();
+          localStorage.removeItem("authenticated");
           window.location.reload();
         }.bind(this)
       )
@@ -59,12 +62,9 @@ export default class App extends Component {
           <div className="auth-wrapper">
             <div className="auth-inner">
               <Switch>
-                {/* Admin Routing */}
+                {/* ADMIN Routing */}
                 <Route path="/admin/register" component={Register} />
-                {/* <Route exact path="/admin" component={Login} /> */}
-                <Route
-                  exact
-                  path="/admin"
+                <Route strict exact path="/admin"
                   render={(props) => (
                     <Login
                       {...props}
@@ -75,10 +75,17 @@ export default class App extends Component {
                     />
                   )}
                 />
-                <Route
-                  path="/admin/blog"
+
+                <PrivateRoute exact path="/admin/blog"
+                  component={AdminBlog}
+                  authenticate={this.authenticate}
+                  deAuthenticate={this.deAuthenticate}
+                  authenticated={this.state.authenticated}
+                  logout={this.logout}
+                />
+                {/* <Route strict path="/admin/blog"
                   render={(props) => (
-                    <adminBlog
+                    <AdminBlog
                       {...props}
                       authenticate={this.authenticate}
                       deAuthenticate={this.deAuthenticate}
@@ -86,9 +93,9 @@ export default class App extends Component {
                       logout={this.logout}
                     />
                   )}
-                />
+                /> */}
 
-                {/* Client Routing */}
+                {/* CLIENT Routing */}
                 <Route exact path="/" component={Home} />
                 <Route exact path="/home" component={Home} />
                 <Route exact path="/services" component={Services} />

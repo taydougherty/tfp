@@ -1,5 +1,7 @@
 const User = require('../models/User');
 const passport = require("passport");
+const jwt = require('jsonwebtoken');
+const jwtSecret = require('../config/extra-config')
 
 exports.signOutUser = function (req, res) {
     req.logout();
@@ -38,7 +40,7 @@ exports.loginUser = (req, res, next) => {
             });
         }
 
-        console.log(userData, "this is the userData in users_api.js");
+        console.log(userData, ": This is the userData");
         if (userData.message == "Invalid Password" || userData.message == "User not Found") {
             return res.json({
                 success: false,
@@ -46,11 +48,23 @@ exports.loginUser = (req, res, next) => {
                 user: userData
             })
         }
-        else return res.json({
-            success: true,
-            message: 'You have successfully logged in!',
-            user: userData
-        });
+        else {
+            req.logIn(userData, err => {
+                User.findOne({
+
+                    email: userData.email,
+
+                }).then(user => {
+                    const token = jwt.sign({ id: user.email }, jwtSecret.secret);
+                    res.status(200).send({
+                        success: true,
+                        token: token,
+                        message: 'You have successfully logged in!',
+                        user: userData
+                    });
+                });
+            });
+        }
     })(req, res, next);
 };
 

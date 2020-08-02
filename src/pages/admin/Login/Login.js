@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
 import axios from "axios";
-import Navigation from "../../../Components/admin/Navbar/Navbar";
+import Navigation from "../../../components/admin/Navbar/Navbar";
 // import "./Login.scss";
 
 export default class Login extends Component {
@@ -10,7 +10,7 @@ export default class Login extends Component {
     this.state = {
       email: "",
       password: "",
-      redirectToReferrer: false,
+      redirectToReferrer: false
     };
 
     this.handlePasswordChange = this.handlePasswordChange.bind(this);
@@ -37,8 +37,9 @@ export default class Login extends Component {
           console.log(data.data);
           if (data.data.success) {
             this.props.authenticate();
+            localStorage.setItem("authenticated", this.props.authenticated)
             this.setState({
-              redirectToReferrer: true,
+              redirectToReferrer: true
             });
           } else {
             alert(data.data.message);
@@ -84,46 +85,43 @@ export default class Login extends Component {
 
     return (
       <div>
-        <Navigation
-          authenticated={this.props.authenticated}
-          authenticate={this.props.authenticate}
-          deAuthenticate={this.props.deAuthenticate}
-          logout={this.props.logout}
-        />
-        <form onSubmit={this.handleSubmit.bind(this)}>
-          <h3>Sign In</h3>
+        <Navigation />
+        <div className="container">
+          <form onSubmit={this.handleSubmit.bind(this)}>
+            <h3>Sign In</h3>
 
-          <div className="form-group">
-            <label htmlFor="emailInput">Email address</label>
-            <input
-              type="email"
-              className="form-control"
-              placeholder="Enter email"
-              onChange={this.handleEmailChange}
-              value={this.state.email}
-            />
-          </div>
-
-          <div className="form-group">
-            <label>Password</label>
-            <input
-              type="password"
-              className="form-control is-invalid"
-              placeholder="Enter password"
-              onChange={this.handlePasswordChange}
-              value={this.state.password}
-            />
-            <div className="invalid-feedback">
-              Please enter a valid password.
+            <div className="form-group">
+              <label htmlFor="emailInput">Email address</label>
+              <input
+                type="email"
+                className="form-control"
+                placeholder="Enter email"
+                onChange={this.handleEmailChange}
+                value={this.state.email}
+              />
             </div>
-          </div>
-          <button type="submit" className="btn btn-primary btn-block">
-            Submit
+
+            <div className="form-group">
+              <label>Password</label>
+              <input
+                type="password"
+                className="form-control is-invalid"
+                placeholder="Enter password"
+                onChange={this.handlePasswordChange}
+                value={this.state.password}
+              />
+              <div className="invalid-feedback">
+                Please enter a valid password.
+            </div>
+            </div>
+            <button type="submit" className="btn btn-primary btn-block">
+              Submit
           </button>
-          <p className="register text-right">
-            <Link to={"/admin/register"}> Register </Link>
-          </p>
-        </form>
+            <p className="register text-right">
+              <Link to={"/admin/register"}> Register </Link>
+            </p>
+          </form>
+        </div>
       </div>
     );
   }
