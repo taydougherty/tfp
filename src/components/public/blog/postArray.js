@@ -7,24 +7,18 @@ import moment from 'moment'
 class Post extends Component {
 
     state = {
-
+        posts: this.props.posts
     };
 
     render() {
         const {
             postTitle,
-            postBody
+            postBody,
+            postDate,
         } = this.props;
         return (
             <div>
-                <div className="col-3">
-                    <div class="card " style={{ height: 400 + "px" }}>
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">{postTitle}</h5>
-                            <p class="card-text">{postBody}</p>
-                        </div>
-                    </div>
-                </div>
+                <Post />
             </div >
         )
     }
