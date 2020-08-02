@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import NewBlogPost from "../../../components/admin/NewBlogPost/NewBlogPost"
-import PreviousBlogPost from "../../../components/admin/PreviousBlogPost/PreviousBlogPost"
-import Navigation from "../../../components/admin/Navbar/Navbar"
+import React, { Component } from 'react';
+import NewBlogPost from "../../../components/admin/NewBlogPost/NewBlogPost";
+import PreviousBlogPost from "../../../components/admin/PreviousBlogPost/PreviousBlogPost";
+import Navigation from "../../../components/admin/Navbar/Navbar";
 // pass down user login information props to this component
 // New blog post will need the user object _id, will be passed in the newBlogPost request
 
