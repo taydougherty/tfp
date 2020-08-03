@@ -68,14 +68,14 @@ class PreviousBlogPost extends Component {
                 {/* box - centered */}
 
                 {/* PREVIOUS BLOG POST */}
-                <table className="table">
-                    {/* boostrap TABLE HEADERS - Date, Title, Content */}
+                <table className="table table-hover">
+                    {/* boostrap TABLE HEADERS - Date, Title, Content, DELETE*/}
                     <thead>
                         <tr>
-                            <th scope="col">Date</th>
-                            <th scope="col">Title</th>
-                            <th scope="col">Body</th>
-                            <th scope="col"></th>
+                            <th scope="col" className="title-col">DATE</th>
+                            <th scope="col" className="title-col">TITLE</th>
+                            <th scope="col">CONTENT</th>
+                            <th scope="col" className="delete-col"></th>
                         </tr>
                     </thead>
 
@@ -83,10 +83,10 @@ class PreviousBlogPost extends Component {
                         {/* For Loop Row Data*/}
                         {posts.map((post, i) =>
                             <tr key={i}>
-                                <td> {moment(this.state.posts[i].date).format("MMM Do YY")} </td>
+                                <td > {moment(this.state.posts[i].date).format("MMM Do YYYY")} </td>
                                 <td className="card-title" defaultValue={post.title}>{this.state.posts[i].title}</td>
                                 <td className="card-text" defaultValue={post.body}>{this.state.posts[i].body}</td>
-                                <td ><button className="btn btn-primary" value={this.state.posts[i]._id} type="submit" onClick={this.handleDelete}>DELETE</button></td>
+                                <td ><button className="btn btn-warning" value={this.state.posts[i]._id} type="submit" onClick={this.handleDelete}>DELETE</button></td>
                             </tr>
                         )}
 

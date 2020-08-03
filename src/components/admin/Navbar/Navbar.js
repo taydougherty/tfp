@@ -49,8 +49,8 @@ class Navigation extends Component {
     return (
       <div>
         <nav className="navbar navbar-expand-lg navbar-light bg-dark">
-          <img src={logo} alt="logo" style={{ width: "35px" }}></img>
-          <button className="btn-primary " type="submit" onClick={this.logout}>Log Out </button>
+          <img className="mr-auto" src={logo} alt="logo" style={{ width: "35px" }}></img>
+          <button className="btn btn-secondary btn-sm col-auto" type="submit" onClick={this.logout}>Log Out </button>
         </nav>
 
 
