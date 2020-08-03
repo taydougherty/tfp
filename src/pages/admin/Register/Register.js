@@ -261,7 +261,7 @@ export default class Register extends Component {
                   Register
                 </button>
                 <p className="register text-right">
-                  <Link to={"/admin/login"}> Login </Link>
+                  <Link to={"/admin"}> Login </Link>
                 </p>
               </form>
             </div>
