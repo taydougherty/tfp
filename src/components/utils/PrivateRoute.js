@@ -2,7 +2,6 @@ import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 
 function PrivateRoute({ component: Component, authenticate, deauthenticate, authenticated, logout, ...rest }) {
-    console.log(localStorage)
     return (
         <Route
             {...rest}

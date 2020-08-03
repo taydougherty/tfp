@@ -34,10 +34,11 @@ export default class Login extends Component {
       .post("/user/login", submitObject)
       .then(
         function (data) {
-          console.log(data.data);
+          // console.log(data.data);
           if (data.data.success) {
             this.props.authenticate();
             localStorage.setItem("authenticated", this.props.authenticated)
+            localStorage.setItem("user", data.data.user._id)
             this.setState({
               redirectToReferrer: true
             });

@@ -11,17 +11,17 @@ class PreviousBlogPost extends Component {
         super(props)
         this.state = {
             posts: [],
-            author: "5f1b2bb5c5120f4b9c7efb54"
+            author: ""
         }
     }
 
     componentDidMount() {
-        this.getHistory()
+        const userId = localStorage.getItem("user")
+        this.setState({ author: userId })
     }
 
     handleDelete(event) {
         let objId = event.target.value
-        console.log(objId)
         axios.delete(`/blog/deletepost/${objId}`)
             .then(resp => {
                 console.log(resp)
@@ -30,16 +30,7 @@ class PreviousBlogPost extends Component {
 
     // populate history table
     getHistory() {
-        // 
         axios.get(`/blog/posts/author/${this.state.author}`)
-            // .then(resp => {
-            //     resp.data.map(post => ({
-            //         title: `${post.title}`,
-            //         body: `${post.body}`,
-            //         date: `${new Intl.DateTimeFormat('en-US').format(post.date)}`,
-            //         author: `${post.author}`
-            //     }))
-            // })
             .then(resp => {
                 this.setState({
                     posts: resp.data
