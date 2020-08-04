@@ -1,5 +1,5 @@
 
-import NavBar from "../../../components/public/NavBar";
+import NavBar from "../../../components/public/NavBar/NavBar";
 import ContactUsForm from "../../../components/public/contactUs/contactUsForm";
 import Footer from "../../../components/public/footer/footer";
 import React, { Component } from "react";
@@ -16,4 +16,4 @@ class ContactUsPage extends Component {
   }
 }
 
-export default ContactUsPage;
+export default ContactUsPage

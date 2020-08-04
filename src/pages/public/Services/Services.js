@@ -1,6 +1,6 @@
 import "./Services.css";
 import React, { Component } from "react";
-import NavBar from "../../../components/public/NavBar";
+import NavBar from "../../../components/public/NavBar/NavBar";
 
 class Services extends Component {
   state = {};

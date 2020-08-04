@@ -1,0 +1,25 @@
+.overlay {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.wrapper {
+    min-height: 100%;
+    position:relative;
+}
+
+.homeContent {
+    margin-left:8%;
+    margin-right: 8%;
+}
+
+.footer {
+   position:absolute;
+   height: 100px;
+   left: 0px;
+   bottom:0px;
+   width: 100%;
+}
+

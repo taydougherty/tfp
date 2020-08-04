@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import NavBar from "../../../components/public/NavBar";
+import NavBar from "../../../components/public/NavBar/NavBar";
 import Footer from '../../../components/admin/Footer/Footer'
 import './Leadership.scss'
 
