@@ -7,7 +7,7 @@ const authCheck = require('../config/middleware/authCheck')
 // CLIENT/MANAGER side blog posts
 router.get('/posts', postController.findPost)
 router.get('/posts/author/:id', postController.findAuthorPosts)
-
+router.get('/posts/:id', postController.findPostId)
 
 // MANAGER side blog posts
 // add authCheck middleware once user Front end is complete

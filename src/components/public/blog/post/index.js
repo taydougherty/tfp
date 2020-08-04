@@ -2,11 +2,8 @@ import React from "react";
 // import "./style.css"
 import { Link, Route } from "react-router-dom";
 import image from "../../../../assets/images/sampleservice.png";
-import BlogPost from "../../../../pages/public/Blog/BlogPost";
 
 function Post(props) {
-    console.log(props)
-    var title = props.title
     return (
 
         <div className="col-4">
@@ -19,11 +16,7 @@ function Post(props) {
                         <p className="card-text crop-text-2">
                             {props.body}
                         </p>
-                        {/* 
-                        <Link to={{
-                            pathname: 'blog/page/:postTitle',
-                        }} params={{ postId: props.title }} className="stretched-link"></Link> */}
-                        <Route path={'blog/page/:"+{ title }"'} className="stretched-link" component={BlogPost}></Route>
+                        <Link to={props.link} className="stretched-link" ></Link>
                     </div>
                 </div>
             </div>

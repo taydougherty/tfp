@@ -16,6 +16,12 @@ exports.findAuthorPosts = (req, res) => {
     })
 }
 
+exports.findPostId = (req, res) => {
+    Post.findOne({ "author.user.title": req.param.id }).then(dbPost => {
+        res.json(dbPost)
+    })
+}
+
 // New post from Admin Portal, auth required
 exports.createPost = (req, res) => {
     let newPost = new Post(req.body);

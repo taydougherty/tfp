@@ -22,7 +22,6 @@ class Blog extends Component {
     getHistory() {
 
         axios.get(`/blog/posts/author/${this.state.author}`)
-
             .then(resp => {
                 this.setState({
                     posts: resp.data
@@ -57,6 +56,7 @@ class Blog extends Component {
                                 key={post._id}
                                 title={post.title}
                                 body={post.body}
+                                link={"/blog/page/:" + post.title}
                             />)
                         )}
                     </div>
