@@ -13,6 +13,10 @@ export default class Register extends Component {
       emailRepeat: "",
       password: "",
       passwordRepeat: "",
+      errors: {
+        email: "",
+        password: "",
+      },
     };
 
     this.handlePasswordValidation = this.handlePasswordValidation.bind(this);
@@ -193,7 +197,65 @@ export default class Register extends Component {
           deAuthenticate={this.props.deAuthenticate}
           logout={this.props.logout}
         />
-        <div id="registration-container" className="container-fluid">
+        <div className="wrapper">
+          <div className="form-wrapper">
+            <h2>Register</h2>
+            <form onSubmit={this.handleSubmit.bind(this)} noValidate>
+              <div className="email">
+                <label htmlFor="email">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  value={this.state.email}
+                  onChange={this.handleChange}
+                  noValidate
+                />
+              </div>
+              <div className="email">
+                <label htmlFor="email">Confirm Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  id="repeat-email-input"
+                  value={this.state.emailRepeat}
+                  onChange={this.handleEmailRepeat}
+                  noValidate
+                />
+              </div>
+              <div className="password">
+                <label htmlFor="password">Password</label>
+                <input
+                  type="password"
+                  name="password"
+                  value={this.state.password}
+                  onChange={this.handleChange}
+                  noValidate
+                />
+              </div>
+              <div className="password">
+                <label htmlFor="password">Confirm Password</label>
+                <input
+                  type="password"
+                  name="password"
+                  id="repeat-password-input"
+                  value={this.state.passwordRepeat}
+                  onChange={this.handlePasswordRepeat}
+                  noValidate
+                />
+              </div>
+              <div className="info">
+                <small>Password must be eight characters in length.</small>
+              </div>
+              <div className="submit">
+                <button>Register</button>
+              </div>
+              <p>
+                <Link to={"/admin"}> Login </Link>
+              </p>
+            </form>
+          </div>
+        </div>
+        {/* <div id="registration-container" className="container-fluid">
           <section className="container">
             <div className="container-page">
               <form onSubmit={this.handleSubmit.bind(this)}>
@@ -208,7 +270,8 @@ export default class Register extends Component {
                       className="form-control"
                       id="email-input"
                       value={this.state.email}
-                      onChange={this.handleEmailValidation}
+                      onChange={this.handleChange}
+                      noValidate
                     />
 
                     <p id="email-feedback"></p>
@@ -237,9 +300,15 @@ export default class Register extends Component {
                       className="form-control"
                       id="password-input"
                       value={this.state.password}
-                      onChange={this.handlePasswordValidation}
+                      onChange={this.handleChange}
+                      noValidate
                     />
                     <small id="password-feedback"></small>
+                    <div className="info">
+                      <small>
+                        Password must be eight characters in length.
+                      </small>
+                    </div>
                   </div>
 
                   <div
@@ -266,7 +335,7 @@ export default class Register extends Component {
               </form>
             </div>
           </section>
-        </div>
+        </div> */}
       </div>
     );
   }
