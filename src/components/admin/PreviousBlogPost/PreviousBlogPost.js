@@ -36,8 +36,6 @@ class PreviousBlogPost extends Component {
                     posts: resp.data
                 })
             })
-
-
             .catch(err => {
                 console.log(err)
             })

@@ -13,10 +13,16 @@ class NewBlogPost extends Component {
             body: '',
             author: '',
             // array of images sourced from the assets blog images folder
-            images: [rockClimber, shielaSportClimb],
+            images: [{
+                title: "rock climber",
+                image: rockClimber
+            },
+            {
+                title: "Shiela Leading",
+                image: shielaSportClimb
+            }],
             // selected blog image from UI to be references in DB & pulled into front end based on the routing
-            blogImage: ""
-
+            blogImage: shielaSportClimb
         }
 
         this.handleChange = this.handleChange.bind(this);
@@ -53,34 +59,41 @@ class NewBlogPost extends Component {
     handleSubmit(event) {
         event.preventDefault();
         // include image into this state
-        this.selectImage()
+        // this.selectImage()
         let blogPost = {
             title: this.state.title,
             body: this.state.body,
             author: this.state.author,
             blogImage: this.state.blogImage
         }
-        console.log(this.state.blogImage)
-        console.log(blogPost)
-        // this.newPost(blogPost)
+        this.newPost(blogPost)
         this.clearForm()
     };
 
-    selectImage(event) {
-        // selects image from the drpdown list to setState of blogImage
+    setImage(event) {
+        // selects image from the drpdown list to setState of blogImage 
+        console.log(event.target.value)
+        let blogimageimage = this.state.images.filter(image => {
+            if (image.title === "rock climber") {
+                return image.image
+            }
+        })
+        console.log(blogimageimage)
     }
 
     // clear form method
     clearForm = () => {
         this.setState({
             title: '',
-            body: ''
+            body: '',
+            blogImage: ''
         })
     };
 
     // componentDidUpdate(prevState) {
     //     if (prevState.posts !== this.state.posts) {
     //         this.getHistory()
+    //         this.selectImage()
     //     }
     // }
 
@@ -95,7 +108,7 @@ class NewBlogPost extends Component {
                     {/* boostrap form Title */}
                     <div className="form-group">
                         <label htmlFor="exampleFormControlTextarea1" >Blog Title</label>
-                        <input name="title" value={this.state.title} onChange={this.handleChange} type="text" className="form-control" placeholder="Blog Title Here" />
+                        <input name="title" value={this.state.name} onChange={this.handleChange} type="text" className="form-control" placeholder="Blog Title Here" />
                     </div>
 
                     {/* boostrap form Content */}
@@ -106,22 +119,21 @@ class NewBlogPost extends Component {
                     <label htmlFor="exampleFormControlTextarea1">Blog Image</label>
                     <div className="row">
 
-                        <div className="col-3">
-                            <div className="dropdown">
-                                <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown button</button>
-                                <div className="dropdown-menu" aria-labelledby="dropdownMenuButton" onChange={this.selectImage}>
-                                    {images.map((i) =>
-                                        <a key={i} value={i} className="dropdown-item" href={i}> {i}</a>
-                                    )}
-                                </div>
-                            </div>
+                        <div className="col-4">
+                            <select className="dropdown" onChange={this.setImage} >
+                                {/* <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown button</button> */}
+                                {/* <div className="dropdown-menu" aria-labelledby="dropdownMenuButton" > */}
+                                <option>Pick a Blog Image</option>
+                                {images.map((picture, i) =>
+                                    <option key={i} value={picture.title} className="dropdown-item"> {picture.title}</option>
+                                )}
+                                {/* </div> */}
+                            </select>
                         </div>
 
-                        <div className="col-9">
+                        <div className="col-8">
                             {/* preview image based on droplist */}
-                            <img src={this.state.blogImage} className="card-img-top" alt="blog image"></img>
-
-
+                            <img src={this.state.blogImage} className="card-img-top" alt="blog"></img>
                         </div>
                     </div>
                     <br />
