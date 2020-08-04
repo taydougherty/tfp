@@ -65,7 +65,7 @@ class PreviousBlogPost extends Component {
                         <tr>
                             <th scope="col" className="title-col">DATE</th>
                             <th scope="col" className="title-col">TITLE</th>
-                            <th scope="col">CONTENT</th>
+                            <th scope="col" className="body-col">CONTENT</th>
                             <th scope="col" className="delete-col"></th>
                         </tr>
                     </thead>
