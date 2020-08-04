@@ -13,6 +13,8 @@ import Services from "./pages/public/Services";
 import SampleService from "./pages/public/Services/SpecificServices";
 import Leadership from "./pages/public/Leadership";
 import Blog from "./pages/public/Blog";
+// import Posts from "./pages/public/Blog/Posts";
+import BlogPost from "./pages/public/Blog/BlogPost";
 import Contact from "./pages/public/Contact/ContactUs";
 
 export default class App extends Component {
@@ -102,6 +104,9 @@ export default class App extends Component {
                 <Route exact path="/sampleservice" component={SampleService} />
                 <Route exact path="/leadership" component={Leadership} />
                 <Route exact path="/blog" component={Blog} />
+                {/* <Route exact path="/blog/posts" component={Posts} /> */}
+                <Route path="/blog/page/:postTitle" component={BlogPost} />
+
                 <Route exact path="/contact" component={Contact} />
               </Switch>
             </div>

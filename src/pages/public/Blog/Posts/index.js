@@ -1,11 +1,11 @@
 import './style.scss';
 import React, { Component } from "react";
-import NavBar from '../../../components/public/NavBar';
+import NavBar from '../../../../components/public/NavBar';
 // import PostArray from '../../../components/public/blog/postArray'
-import Post from '../../../components/public/blog/post'
+import Post from '../../../../components/public/blog/post'
 import axios from 'axios';
 import moment from 'moment'
-import image from "../../../assets/images/sampleservice.png";
+import image from "../../../../assets/images/sampleservice.png";
 
 class Blog extends Component {
     constructor(props) {
@@ -15,30 +15,8 @@ class Blog extends Component {
             author: "5f1b2bb5c5120f4b9c7efb54"
         }
     }
-
-    componentDidMount() {
-        this.getHistory()
-    }
-    getHistory() {
-
-        axios.get(`/blog/posts/author/${this.state.author}`)
-
-            .then(resp => {
-                this.setState({
-                    posts: resp.data
-                })
-                console.log(this.state.posts)
-            })
-
-
-            .catch(err => {
-                console.log(err)
-            })
-    }
-
     render() {
         const { posts } = this.state
-
         return (
             <div>
                 <NavBar />
