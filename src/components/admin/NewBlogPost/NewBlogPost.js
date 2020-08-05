@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import rockClimber from "../../../assets/blogImages/rockclimber.png";
-import shielaSportClimb from "../../../assets/blogImages/sheila_Sport_Climb.JPG"
+import shielaSportClimb from "../../../assets/blogImages/sheila_Sport_Climb.png"
+import blackTriStars from "../../../assets/blogImages/blackTriStars.png"
+import Kyshatriya from "../../../assets/blogImages/Kyshatriya.png"
 require('./newBlogPost.scss')
 
 class NewBlogPost extends Component {
@@ -13,20 +15,31 @@ class NewBlogPost extends Component {
             body: '',
             author: '',
             // array of images sourced from the assets blog images folder
-            images: [{
-                title: "rock climber",
-                image: rockClimber
-            },
-            {
-                title: "Shiela Leading",
-                image: shielaSportClimb
-            }],
+            images: [
+                {
+                    title: "rock climber",
+                    image: rockClimber
+                },
+                {
+                    title: "Shiela Leading",
+                    image: shielaSportClimb
+                },
+                {
+                    title: "Black Tri Stars",
+                    image: blackTriStars
+                },
+                {
+                    title: "Kyshatriya",
+                    image: Kyshatriya
+                }
+            ],
             // selected blog image from UI to be references in DB & pulled into front end based on the routing
-            blogImage: shielaSportClimb
+            blogImage: rockClimber
         }
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.setImage = this.setImage.bind(this)
     };
 
     componentDidMount() {
@@ -63,22 +76,23 @@ class NewBlogPost extends Component {
         let blogPost = {
             title: this.state.title,
             body: this.state.body,
-            author: this.state.author,
-            blogImage: this.state.blogImage
+            author: this.state.author
         }
+        console.log(blogPost)
         this.newPost(blogPost)
         this.clearForm()
     };
 
     setImage(event) {
         // selects image from the drpdown list to setState of blogImage 
-        console.log(event.target.value)
-        let blogimageimage = this.state.images.filter(image => {
-            if (image.title === "rock climber") {
+        let selectedImage = this.state.images.filter(image => {
+            if (image.title === event.target.value) {
                 return image.image
             }
         })
-        console.log(blogimageimage)
+
+        console.log(selectedImage[0].image)
+        this.setState({ blogImage: selectedImage })
     }
 
     // clear form method
@@ -86,7 +100,7 @@ class NewBlogPost extends Component {
         this.setState({
             title: '',
             body: '',
-            blogImage: ''
+            blogImage: null
         })
     };
 
@@ -133,7 +147,7 @@ class NewBlogPost extends Component {
 
                         <div className="col-8">
                             {/* preview image based on droplist */}
-                            <img src={this.state.blogImage} className="card-img-top" alt="blog"></img>
+                            <img src={this.state.blogImage[0].image} className="card-img-top" alt="blog"></img>
                         </div>
                     </div>
                     <br />
