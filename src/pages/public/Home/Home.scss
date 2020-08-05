@@ -7,19 +7,24 @@
 
 .wrapper {
     min-height: 100%;
+    // position:relative;
+    height: 100%;
+    // margin: 0 auto;
+    // overflow: auto;
+    // margin-bottom: -100px;
+}
+
+.Home{
+    padding: 20px;
     position:relative;
 }
 
 .homeContent {
     margin-left:8%;
     margin-right: 8%;
+    // margin-bottom: 100px;
+    // display: block;
+    // position:relative;
 }
 
-.footer {
-   position:absolute;
-   height: 100px;
-   left: 0px;
-   bottom:0px;
-   width: 100%;
-}
 

@@ -21,7 +21,7 @@ class Services extends Component {
             </div>
           </div>
         </div>
-        <Footer className="footer"/>
+        <Footer/>
       </div>
     );
   }

@@ -1,11 +1,10 @@
 import React from "react";
-// import './footer.scss'
+import './footer.scss'
 
 const footer = () => {
 
     return (
         <div className="mainWrapper">
-            <hr />
           <div className="container">
             <div className="row">
               {/* Copyright */}
