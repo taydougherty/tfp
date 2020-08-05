@@ -34,7 +34,7 @@ class NewBlogPost extends Component {
                 }
             ],
             // selected blog image from UI to be references in DB & pulled into front end based on the routing
-            blogImage: rockClimber
+            blogImage: null
         }
 
         this.handleChange = this.handleChange.bind(this);
@@ -112,7 +112,16 @@ class NewBlogPost extends Component {
     // }
 
     render() {
-        const { images } = this.state
+        const { images, blogImage } = this.state
+
+        let previewPic;
+
+        if (blogImage) {
+            previewPic = <img src={this.state.blogImage[0].image} className="card-img-top" alt="blog"></img>
+        } else {
+            previewPic = <img src={rockClimber} className="card-img-top" alt="blog"></img>
+        }
+
         return (
             <div>
                 {/* NEW BLOG POST */}
@@ -147,7 +156,7 @@ class NewBlogPost extends Component {
 
                         <div className="col-8">
                             {/* preview image based on droplist */}
-                            <img src={this.state.blogImage[0].image} className="card-img-top" alt="blog"></img>
+                            {previewPic}
                         </div>
                     </div>
                     <br />
