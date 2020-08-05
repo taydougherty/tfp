@@ -4,6 +4,19 @@ import { Link, Redirect } from "react-router-dom";
 import Navigation from "../../../components/admin/Navbar/Navbar";
 import "./Register.scss";
 
+const validEmailRegex = RegExp(
+  /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
+);
+
+// const validateForm = (errors) => {
+//   let valid = true;
+//   Object.values(errors).forEach(
+//     // if we have an error string set valid to false
+//     (val) => val.length > 0 && (valid = false)
+//   );
+//   return valid;
+// };
+
 export default class Register extends Component {
   constructor(props) {
     super(props);
@@ -26,6 +39,26 @@ export default class Register extends Component {
     this.registerUser = this.registerUser.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+
+  handleChange = (event) => {
+    event.preventDefault();
+    const { name, value } = event.target;
+    let errors = this.state.errors;
+
+    switch (name) {
+      case "email":
+        errors.email = validEmailRegex.test(value) ? "" : "Email is not valid!";
+        break;
+      case "password":
+        errors.password =
+          value.length < 8 ? "Password must be 8 characters long!" : "";
+        break;
+      default:
+        break;
+    }
+
+    this.setState({ errors, [name]: value });
+  };
 
   handleEmailValidation = (event) => {
     const emailVal = event.target.value;
