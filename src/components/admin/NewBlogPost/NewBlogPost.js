@@ -33,7 +33,6 @@ class NewBlogPost extends Component {
                     image: Kyshatriya
                 }
             ],
-            // selected blog image from UI to be references in DB & pulled into front end based on the routing
             blogImage: null
         }
 
@@ -104,13 +103,6 @@ class NewBlogPost extends Component {
         })
     };
 
-    // componentDidUpdate(prevState) {
-    //     if (prevState.posts !== this.state.posts) {
-    //         this.getHistory()
-    //         this.selectImage()
-    //     }
-    // }
-
     render() {
         const { images, blogImage } = this.state
 
@@ -139,28 +131,25 @@ class NewBlogPost extends Component {
                         <label htmlFor="exampleFormControlTextarea1">Blog Content</label>
                         <textarea name="body" value={this.state.body} onChange={this.handleChange} type="text" className="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Blog Content Here"></textarea>
                     </div>
+
                     <label htmlFor="exampleFormControlTextarea1">Blog Image</label>
                     <div className="row">
 
                         <div className="col-4">
                             <select className="dropdown" onChange={this.setImage} >
-                                {/* <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown button</button> */}
-                                {/* <div className="dropdown-menu" aria-labelledby="dropdownMenuButton" > */}
                                 <option>Pick a Blog Image</option>
                                 {images.map((picture, i) =>
                                     <option key={i} value={picture.title} className="dropdown-item"> {picture.title}</option>
                                 )}
-                                {/* </div> */}
                             </select>
                         </div>
 
                         <div className="col-8">
-                            {/* preview image based on droplist */}
                             {previewPic}
                         </div>
+
                     </div>
                     <br />
-                    {/* boostrap form Send It! button */}
                     <button className="btn btn-primary" type="submit">Submit Post</button>
 
                 </form>
