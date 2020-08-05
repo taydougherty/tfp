@@ -10,7 +10,7 @@ export default class Login extends Component {
     this.state = {
       email: "",
       password: "",
-      redirectToReferrer: false
+      redirectToReferrer: false,
     };
 
     this.handlePasswordChange = this.handlePasswordChange.bind(this);
@@ -37,10 +37,10 @@ export default class Login extends Component {
           // console.log(data.data);
           if (data.data.success) {
             this.props.authenticate();
-            localStorage.setItem("authenticated", this.props.authenticated)
-            localStorage.setItem("user", data.data.user._id)
+            localStorage.setItem("authenticated", this.props.authenticated);
+            localStorage.setItem("user", data.data.user._id);
             this.setState({
-              redirectToReferrer: true
+              redirectToReferrer: true,
             });
           } else {
             alert(data.data.message);
@@ -87,7 +87,40 @@ export default class Login extends Component {
     return (
       <div>
         <Navigation />
-        <div className="container">
+        <div className="wrapper">
+          <div className="form-wrapper">
+            <h2>Login</h2>
+            <form onSubmit={this.handleSubmit.bind(this)} noValidate>
+              <div className="email">
+                <label htmlFor="email">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  value={this.state.email}
+                  onChange={this.handleEmailChange}
+                  noValidate
+                />
+              </div>
+              <div className="password">
+                <label htmlFor="password">Password</label>
+                <input
+                  type="password"
+                  name="password"
+                  value={this.state.password}
+                  onChange={this.handlePasswordChange}
+                  noValidate
+                />
+              </div>
+              <div className="submit">
+                <button>Submit</button>
+              </div>
+              <p className="register text-right">
+                <Link to={"/admin/register"}> Register </Link>
+              </p>
+            </form>
+          </div>
+        </div>
+        {/* <div className="container">
           <form onSubmit={this.handleSubmit.bind(this)}>
             <h3>Sign In</h3>
 
@@ -113,16 +146,16 @@ export default class Login extends Component {
               />
               <div className="invalid-feedback">
                 Please enter a valid password.
-            </div>
+              </div>
             </div>
             <button type="submit" className="btn btn-primary btn-block">
               Submit
-          </button>
+            </button>
             <p className="register text-right">
               <Link to={"/admin/register"}> Register </Link>
             </p>
           </form>
-        </div>
+        </div> */}
       </div>
     );
   }
