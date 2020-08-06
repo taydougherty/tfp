@@ -1,6 +1,7 @@
 import "./SampleService.css";
 import React, { Component } from "react";
 import NavBar from "../../../components/public/NavBar/NavBar";
+import Footer from "../../../components/public/footer/footer"
 import image from "../../../assets/images/sampleservice.png";
 
 class SampleService extends Component {
@@ -11,11 +12,11 @@ class SampleService extends Component {
       <div>
         <NavBar></NavBar>
         <div style={{ height: 1000 + "px" }}>
-          <div className="row h-25 SampleService text-center">
+          <div className="row h-20 SampleService text-center">
             <div className="col-12">
               <div className="jumbotron bg-white">
                 <h1>Sample Service</h1>
-                <p style={{ fontSize: 35 }}>
+                <p style={{ fontSize: 25 }}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore
                 </p>
@@ -52,6 +53,7 @@ class SampleService extends Component {
             </div>
           </div>
         </div>
+        <Footer/>
       </div>
     );
   }

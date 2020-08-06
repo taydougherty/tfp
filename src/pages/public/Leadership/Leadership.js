@@ -13,7 +13,7 @@ class Leadership extends Component {
         return (
             <div>
                 <NavBar />
-                <div>
+                <div className="container leadershipContent">
                     <div className="row">
                         <div className="col-12">
                             <div className="jumbotron bg-white">
@@ -21,17 +21,17 @@ class Leadership extends Component {
                             </div>
                         </div>
                     </div>
-                    <div className="row h-75 cards">
-                        <div className="col-6">
-                            <div class="card border-light">
+                    <div className="row d-flex justify-content-center h-75 cards">
+                        <div className="col-6 cardContainer">
+                            <div class="card border-light imageCard">
                                 <div class="card-body d-flex flex-column">
-                                    <img src="https://picsum.photos/seed/picsum/200/300" alt="placeholder"></img>
+                                    <img src="https://picsum.photos/seed/picsum/200/300" alt="placeholder" className="photo"></img>
                                 </div>
                             </div>
                         </div>
-                        <div className="col-6">
+                        <div className="col-6 cardContainer">
                             <div class="card border-light">
-                                <div class="card-body d-flex flex-column">
+                                <div class="card-body d-flex flex-column profileCard">
                                     <h5 class="card-title">Sheila Mojtehedi, CEO</h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                 </div>
