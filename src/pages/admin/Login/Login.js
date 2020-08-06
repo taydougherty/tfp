@@ -4,6 +4,16 @@ import axios from "axios";
 import Navigation from "../../../components/admin/Navbar/Navbar";
 import "./Login.scss";
 
+const validEmailRegex = RegExp(
+  /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
+);
+
+const countErrors = (errors) => {
+  let count = 0;
+  Object.values(errors).forEach((val) => val.length > 0 && (count = count + 1));
+  return count;
+};
+
 export default class Login extends Component {
   constructor(props) {
     super(props);
@@ -11,23 +21,48 @@ export default class Login extends Component {
       email: "",
       password: "",
       redirectToReferrer: false,
+      errorCount: null,
+      errors: {
+        email: "",
+        password: "",
+      },
     };
 
-    this.handlePasswordChange = this.handlePasswordChange.bind(this);
+    this.handleChange = this.handleChange.bind(this);
     this.loginUser = this.loginUser.bind(this);
   }
 
-  handleEmailChange = (event) => {
-    this.setState({
-      email: event.target.value,
-    });
+  handleChange = (event) => {
+    event.preventDefault();
+    const { name, value } = event.target;
+    let errors = this.state.errors;
+
+    switch (name) {
+      case "email":
+        errors.email = validEmailRegex.test(value) ? "" : "Email is not valid!";
+        break;
+      case "password":
+        errors.password =
+          value.length < 8 ? "Password must be 8 characters long!" : "";
+        break;
+      default:
+        break;
+    }
+
+    this.setState({ errors, [name]: value });
   };
 
-  handlePasswordChange = (event) => {
-    this.setState({
-      password: event.target.value,
-    });
-  };
+  // handleEmailChange = (event) => {
+  //   this.setState({
+  //     email: event.target.value,
+  //   });
+  // };
+
+  // handlePasswordChange = (event) => {
+  //   this.setState({
+  //     password: event.target.value,
+  //   });
+  // };
 
   loginUser = (submitObject) => {
     axios
@@ -72,6 +107,8 @@ export default class Login extends Component {
     }
     // If we have an email and password we run the loginUser function and clear the form
     this.loginUser(objSubmit);
+
+    this.setState({ errorCount: countErrors(this.state.errors) });
   };
 
   render() {
@@ -83,6 +120,8 @@ export default class Login extends Component {
     if (redirectToReferrer) {
       return <Redirect to={from} />;
     }
+
+    const { errors } = this.state;
 
     return (
       <div>
@@ -97,9 +136,12 @@ export default class Login extends Component {
                   type="email"
                   name="email"
                   value={this.state.email}
-                  onChange={this.handleEmailChange}
+                  onChange={this.handleChange}
                   noValidate
                 />
+                {errors.email.length > 0 && (
+                  <span className="error">{errors.email}</span>
+                )}
               </div>
               <div className="password">
                 <label htmlFor="password">Password</label>
@@ -107,9 +149,12 @@ export default class Login extends Component {
                   type="password"
                   name="password"
                   value={this.state.password}
-                  onChange={this.handlePasswordChange}
+                  onChange={this.handleChange}
                   noValidate
                 />
+                {errors.password.length > 0 && (
+                  <span className="error">{errors.password}</span>
+                )}
               </div>
               <div className="submit">
                 <button>Submit</button>
@@ -120,42 +165,6 @@ export default class Login extends Component {
             </form>
           </div>
         </div>
-        {/* <div className="container">
-          <form onSubmit={this.handleSubmit.bind(this)}>
-            <h3>Sign In</h3>
-
-            <div className="form-group">
-              <label htmlFor="emailInput">Email address</label>
-              <input
-                type="email"
-                className="form-control"
-                placeholder="Enter email"
-                onChange={this.handleEmailChange}
-                value={this.state.email}
-              />
-            </div>
-
-            <div className="form-group">
-              <label>Password</label>
-              <input
-                type="password"
-                className="form-control is-invalid"
-                placeholder="Enter password"
-                onChange={this.handlePasswordChange}
-                value={this.state.password}
-              />
-              <div className="invalid-feedback">
-                Please enter a valid password.
-              </div>
-            </div>
-            <button type="submit" className="btn btn-primary btn-block">
-              Submit
-            </button>
-            <p className="register text-right">
-              <Link to={"/admin/register"}> Register </Link>
-            </p>
-          </form>
-        </div> */}
       </div>
     );
   }
