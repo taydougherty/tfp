@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import NavBar from "../../../components/public/NavBar/NavBar";
-import Footer from '../../../components/admin/Footer/Footer'
-import './Leadership.scss'
+import Footer from '../../../components/public/footer/footer'
+// import './Leadership.scss'
 
 class Leadership extends Component {
 
@@ -47,7 +47,7 @@ class Leadership extends Component {
                         </div>
                     </div>
                 </div>
-                <Footer />
+                {/* <Footer /> */}
             </div >
         )
     }

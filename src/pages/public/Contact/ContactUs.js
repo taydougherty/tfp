@@ -1,7 +1,6 @@
 
 import NavBar from "../../../components/public/NavBar/NavBar";
 import ContactUsForm from "../../../components/public/contactUs/contactUsForm";
-import Footer from "../../../components/public/footer/footer";
 import React, { Component } from "react";
 
 class ContactUsPage extends Component {
@@ -10,7 +9,6 @@ class ContactUsPage extends Component {
       <div>
         <NavBar />
         <ContactUsForm />
-        <Footer />
       </div>
     );
   }

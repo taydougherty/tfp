@@ -1,4 +1,4 @@
-import "./Services.css";
+import "./style.css";
 import React, { Component } from "react";
 import NavBar from "../../../components/public/NavBar/NavBar";
 import Footer from "../../../components/public/footer/footer"
@@ -72,7 +72,7 @@ class Services extends Component {
             </div>
           </div>
         </div>
-        <Footer/>
+        {/* <Footer/> */}
       </div>
     );
   }

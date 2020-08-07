@@ -9,7 +9,7 @@ class Services extends Component {
 
   render() {
     return (
-      <div className="wrapper">
+      <div className="wrapper homeWrapper">
         <NavBar />
         <div className="homeContent">
           <div className="Home">

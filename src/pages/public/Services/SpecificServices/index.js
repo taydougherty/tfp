@@ -1,8 +1,8 @@
-import "./SampleService.css";
+import "./style.css";
 import React, { Component } from "react";
-import NavBar from "../../../components/public/NavBar/NavBar";
-import Footer from "../../../components/public/footer/footer"
-import image from "../../../assets/images/sampleservice.png";
+import NavBar from "../../../../components/public/NavBar/NavBar";
+import Footer from "../../../../components/public/footer/footer"
+import image from "../../../../assets/images/sampleservice.png";
 
 class SampleService extends Component {
   state = {};

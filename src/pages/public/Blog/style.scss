@@ -1,0 +1,33 @@
+.Blog {
+  margin-top: 50px;
+  margin-left: 4px;
+}
+
+.cards {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+p,
+h1,
+h5 {
+  color: black;
+}
+.crop-text-1 {
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+.crop-text-2 {
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.title {
+  margin-top: 50px;
+}
