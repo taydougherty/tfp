@@ -46,7 +46,7 @@ class BlogPost extends Component {
                                     className="card-img-top " style={{ height: 300 + "px" }} href="/home"></img>
                                 <div className="card-body">
                                     <h5 className="card-title text-center ">{post.title}</h5>
-                                    <p className="card-text crop-text-2">
+                                    <p className="card-text post-body">
                                         {post.body}
                                     </p>
                                 </div>
