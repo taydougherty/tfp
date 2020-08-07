@@ -162,15 +162,15 @@ export default class Register extends Component {
       })
       .then(
         function (data) {
-          console.log("data stuff", data.data);
-          if (data.duplicateUser) {
+          // console.log("data stuff", data.data);
+          if (data.data.duplicateUser) {
             // Replace with Modal
             alert(
               "Sorry, that email address is already registered with an account. Please login or use a new email address."
             );
           } else if (data.data.success) {
             console.log("yay!");
-            this.props.authenticate();
+            // this.props.authenticate();
             this.setState({
               redirectToReferrer: true,
             });
@@ -196,20 +196,27 @@ export default class Register extends Component {
     if (!userData.email || !userData.password) {
       return alert("Please don't leave fields blank");
     }
-
+    if (userData.email !== this.state.emailRepeat) {
+      return alert("Email Confirmation Does Not Match")
+    }
     // If we have an email and password, run the signUpUser function
-    this.registerUser(userData);
+    if (userData.password !== this.state.passwordRepeat) {
+      return alert("Password Confirmation Does Not Match")
+    }
+    else {
+      this.registerUser(userData);
 
-    this.setState({ errorCount: countErrors(this.state.errors) });
+      this.setState({ errorCount: countErrors(this.state.errors) });
 
-    this.setState({
-      value: "",
-      email: "",
-      emailRepeat: "",
-      password: "",
-      passwordRepeat: "",
-      redirectToReferrer: false,
-    });
+      this.setState({
+        value: "",
+        email: "",
+        emailRepeat: "",
+        password: "",
+        passwordRepeat: "",
+        redirectToReferrer: false,
+      });
+    }
   };
 
   render() {
