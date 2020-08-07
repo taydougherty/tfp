@@ -11,7 +11,7 @@ exports.findPost = (req, res) => {
 
 // Find all posts by Author.user.id
 exports.findAuthorPosts = (req, res) => {
-    Post.find({ "author.user": req.param.id }).then(dbPost => {
+    Post.find({ "author": req.params.id }).then(dbPost => {
         res.json(dbPost)
     })
 }
