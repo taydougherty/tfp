@@ -10,16 +10,17 @@ class NewBlogPost extends Component {
         this.state = {
             title: '',
             body: '',
-            author: '5f2353d76441301910bc9538'
+            author: ''
         }
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     };
 
-    // componentDidMount() {
-    // this.setState({ author: this.props.user._id })
-    // }
+    componentDidMount() {
+        const userId = localStorage.getItem("user")
+        this.setState({ author: userId })
+    }
 
     handleChange(event) {
         const value = event.target.value
@@ -34,7 +35,6 @@ class NewBlogPost extends Component {
 
     //  make into async function
     newPost(form) {
-
         axios.post("/blog/newpost", form)
             .then(res => {
                 console.log(res)

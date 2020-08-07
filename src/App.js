@@ -49,6 +49,7 @@ export default class App extends Component {
         function (data) {
           this.deAuthenticate();
           localStorage.removeItem("authenticated");
+          localStorage.removeItem("user")
           window.location.reload();
         }.bind(this)
       )
