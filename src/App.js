@@ -8,11 +8,12 @@ import Login from "./pages/admin/Login/Login";
 import Register from "./pages/admin/Register/Register";
 import AdminBlog from "./pages/admin/Blog/index";
 import Footer from "./components/admin/Footer/Footer";
-import Home from "./pages/public/Home/Home";
-import Services from "./pages/public/Services/Services";
-import SampleService from "./pages/public/Services/SampleService";
-import Leadership from "./pages/public/Leadership/Leadership";
-// import Blog from "";
+import Home from "./pages/public/Home";
+import Services from "./pages/public/Services";
+import SampleService from "./pages/public/Services/SpecificServices";
+import Leadership from "./pages/public/Leadership";
+import Blog from "./pages/public/Blog";
+import BlogPost from "./pages/public/Blog/BlogPost";
 import Contact from "./pages/public/Contact/ContactUs";
 
 export default class App extends Component {
@@ -107,7 +108,10 @@ export default class App extends Component {
                 <Route exact path="/services" component={Services} />
                 <Route exact path="/sampleservice" component={SampleService} />
                 <Route exact path="/leadership" component={Leadership} />
-                {/* <Route exact path="/blog" component={Blog} /> */}
+                <Route exact path="/blog" component={Blog} />
+                {/* <Route exact path="/blog/posts" component={Posts} /> */}
+                <Route path="/blog/page/:_id" component={BlogPost} />
+
                 <Route exact path="/contact" component={Contact} />
               </Switch>
             </div>

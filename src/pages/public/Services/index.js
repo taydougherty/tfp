@@ -1,4 +1,4 @@
-import "./Services.css";
+import "./style.css";
 import React, { Component } from "react";
 import NavBar from "../../../components/public/NavBar";
 

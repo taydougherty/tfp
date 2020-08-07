@@ -1,6 +1,6 @@
 import image from "../../../assets/images/rockclimber.png";
 import NavBar from "../../../components/public/NavBar";
-import "./Home.css";
+import "./style.css";
 import React, { Component } from "react";
 
 class Services extends Component {

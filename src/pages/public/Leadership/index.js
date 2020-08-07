@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import NavBar from "../../../components/public/NavBar";
-import "./Leadership.scss";
+import './style.scss'
 
 class Leadership extends Component {
   state = {};
