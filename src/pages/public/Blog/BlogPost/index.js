@@ -1,18 +1,16 @@
 import './style.scss';
 import React, { Component } from "react";
-import { useParams } from "react-router-dom";
 import NavBar from '../../../../components/public/NavBar';
-// import PostArray from '../../../components/public/blog/postArray'
-// import Post from '../../../components/public/blog/post'
 import axios from 'axios';
-import moment from 'moment'
 import image from "../../../../assets/images/sampleservice.png";
 
 class BlogPost extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            post: []
+            post: "",
+            author: "5f1b2bb5c5120f4b9c7efb54",
+
         }
     }
 
@@ -21,18 +19,14 @@ class BlogPost extends Component {
     }
 
     getHistory() {
-
-        axios.get(`/blog/posts/${this.props.match.params}`)
+        axios.get(`/blog/posts/${this.props.match.params._id}`)
 
             .then(resp => {
                 console.log("resp=", resp)
                 this.setState({
                     post: resp.data
                 })
-                console.log(this.state.posts)
             })
-
-
             .catch(err => {
                 console.log(err)
             })
@@ -40,7 +34,6 @@ class BlogPost extends Component {
 
     render() {
         const { post } = this.state
-        console.log("params", this.props.match.params)
         return (
             <div>
                 <NavBar />

@@ -105,7 +105,7 @@ export default class App extends Component {
                 <Route exact path="/leadership" component={Leadership} />
                 <Route exact path="/blog" component={Blog} />
                 {/* <Route exact path="/blog/posts" component={Posts} /> */}
-                <Route path="/blog/page/:postTitle" component={BlogPost} />
+                <Route path="/blog/page/:_id" component={BlogPost} />
 
                 <Route exact path="/contact" component={Contact} />
               </Switch>

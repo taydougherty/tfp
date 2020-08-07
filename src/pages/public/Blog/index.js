@@ -1,11 +1,8 @@
 import './style.scss';
 import React, { Component } from "react";
 import NavBar from '../../../components/public/NavBar';
-// import PostArray from '../../../components/public/blog/postArray'
 import Post from '../../../components/public/blog/post'
 import axios from 'axios';
-import moment from 'moment'
-import image from "../../../assets/images/sampleservice.png";
 
 class Blog extends Component {
     constructor(props) {
@@ -28,8 +25,6 @@ class Blog extends Component {
                 })
                 console.log(this.state.posts)
             })
-
-
             .catch(err => {
                 console.log(err)
             })
@@ -56,7 +51,7 @@ class Blog extends Component {
                                 key={post._id}
                                 title={post.title}
                                 body={post.body}
-                                link={"/blog/page/:" + post.title}
+                                link={"/blog/page/" + post._id}
                             />)
                         )}
                     </div>
