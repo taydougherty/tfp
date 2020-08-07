@@ -2,18 +2,17 @@ import React, { Component } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import PrivateRoute from "./components/utils/PrivateRoute"
+import PrivateRoute from "./components/utils/PrivateRoute";
 import axios from "axios";
 import Login from "./pages/admin/Login/Login";
 import Register from "./pages/admin/Register/Register";
 import AdminBlog from "./pages/admin/Blog/index";
-// import Footer from "./components/admin/Footer/Footer";
+import Footer from "./components/admin/Footer/Footer";
 import Home from "./pages/public/Home";
 import Services from "./pages/public/Services";
 import SampleService from "./pages/public/Services/SpecificServices";
 import Leadership from "./pages/public/Leadership";
 import Blog from "./pages/public/Blog";
-// import Posts from "./pages/public/Blog/Posts";
 import BlogPost from "./pages/public/Blog/BlogPost";
 import Contact from "./pages/public/Contact/ContactUs";
 
@@ -49,7 +48,7 @@ export default class App extends Component {
         function (data) {
           this.deAuthenticate();
           localStorage.removeItem("authenticated");
-          localStorage.removeItem("user")
+          localStorage.removeItem("user");
           window.location.reload();
         }.bind(this)
       )
@@ -67,7 +66,10 @@ export default class App extends Component {
               <Switch>
                 {/* ADMIN Routing */}
                 <Route path="/admin/register" component={Register} />
-                <Route strict exact path="/admin"
+                <Route
+                  strict
+                  exact
+                  path="/admin"
                   render={(props) => (
                     <Login
                       {...props}
@@ -79,7 +81,9 @@ export default class App extends Component {
                   )}
                 />
 
-                <PrivateRoute exact path="/admin/blog"
+                <PrivateRoute
+                  exact
+                  path="/admin/blog"
                   component={AdminBlog}
                   authenticate={this.authenticate}
                   deAuthenticate={this.deAuthenticate}
@@ -112,6 +116,7 @@ export default class App extends Component {
               </Switch>
             </div>
           </div>
+          <Footer />
         </div>
       </Router>
     );

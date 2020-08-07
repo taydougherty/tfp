@@ -8,9 +8,7 @@ class BlogPost extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            post: "",
-            author: "5f1b2bb5c5120f4b9c7efb54",
-
+            post: ""
         }
     }
 
@@ -43,7 +41,7 @@ class BlogPost extends Component {
                         <div className="card " >
                             <div className="card-body d-flex flex-column">
                                 <img src={image}
-                                    className="card-img-top " style={{ height: 300 + "px" }} href="/home"></img>
+                                    className="card-img-top " style={{ height: 300 + "px" }} href="/home" alt="..."></img>
                                 <div className="card-body">
                                     <h5 className="card-title text-center ">{post.title}</h5>
                                     <p className="card-text post-body">

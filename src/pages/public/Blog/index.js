@@ -31,7 +31,6 @@ class Blog extends Component {
     }
 
     render() {
-        const { posts } = this.state
 
         return (
             <div>
