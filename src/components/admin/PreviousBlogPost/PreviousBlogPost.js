@@ -17,6 +17,7 @@ class PreviousBlogPost extends Component {
 
     componentDidMount() {
         const userId = localStorage.getItem("user")
+        console.log(userId)
         this.setState({ author: userId })
     }
 
@@ -30,7 +31,7 @@ class PreviousBlogPost extends Component {
 
     // populate history table
     getHistory() {
-        axios.get(`/blog/posts/author/${this.state.author}`)
+        axios.get(`/blog/author/${this.state.author}`)
             .then(resp => {
                 this.setState({
                     posts: resp.data

@@ -4,6 +4,16 @@ import { Link, Redirect } from "react-router-dom";
 import Navigation from "../../../components/admin/Navbar/Navbar";
 import "./Register.scss";
 
+const validEmailRegex = RegExp(
+  /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
+);
+
+const countErrors = (errors) => {
+  let count = 0;
+  Object.values(errors).forEach((val) => val.length > 0 && (count = count + 1));
+  return count;
+};
+
 export default class Register extends Component {
   constructor(props) {
     super(props);
@@ -13,6 +23,11 @@ export default class Register extends Component {
       emailRepeat: "",
       password: "",
       passwordRepeat: "",
+      errorCount: null,
+      errors: {
+        email: "",
+        password: "",
+      },
     };
 
     this.handlePasswordValidation = this.handlePasswordValidation.bind(this);
@@ -22,6 +37,26 @@ export default class Register extends Component {
     this.registerUser = this.registerUser.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+
+  handleChange = (event) => {
+    event.preventDefault();
+    const { name, value } = event.target;
+    let errors = this.state.errors;
+
+    switch (name) {
+      case "email":
+        errors.email = validEmailRegex.test(value) ? "" : "Email is not valid!";
+        break;
+      case "password":
+        errors.password =
+          value.length < 8 ? "Password must be 8 characters long!" : "";
+        break;
+      default:
+        break;
+    }
+
+    this.setState({ errors, [name]: value });
+  };
 
   handleEmailValidation = (event) => {
     const emailVal = event.target.value;
@@ -127,15 +162,15 @@ export default class Register extends Component {
       })
       .then(
         function (data) {
-          console.log("data stuff", data.data);
-          if (data.duplicateUser) {
+          // console.log("data stuff", data.data);
+          if (data.data.duplicateUser) {
             // Replace with Modal
             alert(
               "Sorry, that email address is already registered with an account. Please login or use a new email address."
             );
           } else if (data.data.success) {
             console.log("yay!");
-            this.props.authenticate();
+            // this.props.authenticate();
             this.setState({
               redirectToReferrer: true,
             });
@@ -161,18 +196,27 @@ export default class Register extends Component {
     if (!userData.email || !userData.password) {
       return alert("Please don't leave fields blank");
     }
-
+    if (userData.email !== this.state.emailRepeat) {
+      return alert("Email Confirmation Does Not Match")
+    }
     // If we have an email and password, run the signUpUser function
-    this.registerUser(userData);
+    if (userData.password !== this.state.passwordRepeat) {
+      return alert("Password Confirmation Does Not Match")
+    }
+    else {
+      this.registerUser(userData);
 
-    this.setState({
-      value: "",
-      email: "",
-      emailRepeat: "",
-      password: "",
-      passwordRepeat: "",
-      redirectToReferrer: false,
-    });
+      this.setState({ errorCount: countErrors(this.state.errors) });
+
+      this.setState({
+        value: "",
+        email: "",
+        emailRepeat: "",
+        password: "",
+        passwordRepeat: "",
+        redirectToReferrer: false,
+      });
+    }
   };
 
   render() {
@@ -185,6 +229,8 @@ export default class Register extends Component {
       return <Redirect to={from} />;
     }
 
+    const { errors } = this.state;
+
     return (
       <div>
         <Navigation
@@ -193,79 +239,69 @@ export default class Register extends Component {
           deAuthenticate={this.props.deAuthenticate}
           logout={this.props.logout}
         />
-        <div id="registration-container" className="container-fluid">
-          <section className="container">
-            <div className="container-page">
-              <form onSubmit={this.handleSubmit.bind(this)}>
-                <div className="col-md-6">
-                  <h3 className="dark-grey">Registration</h3>
-
-                  <div id="email-form" className="form-group col-lg-12">
-                    <label>Email Address</label>
-                    <input
-                      name="email"
-                      type="email"
-                      className="form-control"
-                      id="email-input"
-                      value={this.state.email}
-                      onChange={this.handleEmailValidation}
-                    />
-
-                    <p id="email-feedback"></p>
-                    <small
-                      id="email-additional-feedback"
-                      className="form-text text-muted"
-                    ></small>
-                  </div>
-
-                  <div id="email-repeat-form" className="form-group col-lg-12">
-                    <label>Confirm Email Address</label>
-                    <input
-                      type="email"
-                      className="form-control"
-                      id="repeat-email-input"
-                      value={this.state.emailRepeat}
-                      onChange={this.handleEmailRepeat}
-                    />
-                    <small id="email-repeat-feedback"></small>
-                  </div>
-
-                  <div id="password-form" className="form-group col-lg-12">
-                    <label>Password</label>
-                    <input
-                      type="password"
-                      className="form-control"
-                      id="password-input"
-                      value={this.state.password}
-                      onChange={this.handlePasswordValidation}
-                    />
-                    <small id="password-feedback"></small>
-                  </div>
-
-                  <div
-                    id="repeat-password-form"
-                    className="form-group col-lg-12"
-                  >
-                    <label>Confirm Password</label>
-                    <input
-                      type="password"
-                      className="form-control"
-                      id="repeat-password-input"
-                      value={this.state.passwordRepeat}
-                      onChange={this.handlePasswordRepeat}
-                    />
-                    <small id="repeat-password-feedback"></small>
-                  </div>
-                </div>
-                <button type="submit" className="btn btn-primary register">
-                  Register
-                </button>
-                <p className="register text-right">
-                  <Link to={"/admin/login"}> Login </Link>
-                </p>
-              </form>
-            </div>
-          </section>
+        <div className="wrapper">
+          <div className="form-wrapper">
+            <h2>Register</h2>
+            <form onSubmit={this.handleSubmit.bind(this)} noValidate>
+              <div className="email">
+                <label htmlFor="email">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  value={this.state.email}
+                  onChange={this.handleChange}
+                  noValidate
+                />
+                {errors.email.length > 0 && (
+                  <span className="error">{errors.email}</span>
+                )}
+              </div>
+              <div className="email">
+                <label htmlFor="email">Confirm Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  id="repeat-email-input"
+                  value={this.state.emailRepeat}
+                  onChange={this.handleEmailRepeat}
+                  noValidate
+                />
+              </div>
+              <div className="password">
+                <label htmlFor="password">Password</label>
+                <input
+                  type="password"
+                  name="password"
+                  value={this.state.password}
+                  onChange={this.handleChange}
+                  noValidate
+                />
+                {errors.password.length > 0 && (
+                  <span className="error">{errors.password}</span>
+                )}
+              </div>
+              <div className="password">
+                <label htmlFor="password">Confirm Password</label>
+                <input
+                  type="password"
+                  name="password"
+                  id="repeat-password-input"
+                  value={this.state.passwordRepeat}
+                  onChange={this.handlePasswordRepeat}
+                  noValidate
+                />
+              </div>
+              <div className="info">
+                <small>Password must be eight characters in length.</small>
+              </div>
+              <div className="submit">
+                <button>Submit</button>
+              </div>
+              <p>
+                <Link to={"/admin"}> Login </Link>
+              </p>
+            </form>
+          </div>
         </div>
       </div>
     );
