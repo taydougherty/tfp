@@ -9,7 +9,7 @@ class Blog extends Component {
         super(props)
         this.state = {
             posts: [],
-            author: "5f1b2bb5c5120f4b9c7efb54"
+            author: "5f2353d76441301910bc9538"
         }
     }
 

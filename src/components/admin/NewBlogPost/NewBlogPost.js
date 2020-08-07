@@ -75,6 +75,7 @@ class NewBlogPost extends Component {
         let blogPost = {
             title: this.state.title,
             body: this.state.body,
+            image: this.state.blogImage[0].title,
             author: this.state.author
         }
         console.log(blogPost)
