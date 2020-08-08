@@ -1,6 +1,6 @@
 import './style.scss';
 import React, { Component } from "react";
-import NavBar from '../../../components/public/NavBar';
+import NavBar from '../../../components/public/NavBar/NavBar';
 import Post from '../../../components/public/blog/post'
 import axios from 'axios';
 

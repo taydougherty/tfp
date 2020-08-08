@@ -239,10 +239,10 @@ export default class Register extends Component {
           deAuthenticate={this.props.deAuthenticate}
           logout={this.props.logout}
         />
-        <div className="wrapper">
+        <div className="wrapper registerWrapper">
           <div className="form-wrapper">
             <h2>Register</h2>
-            <form onSubmit={this.handleSubmit.bind(this)} noValidate>
+            <form className="registerForm" onSubmit={this.handleSubmit.bind(this)} noValidate>
               <div className="email">
                 <label htmlFor="email">Email</label>
                 <input

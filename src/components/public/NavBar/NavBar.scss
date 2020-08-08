@@ -1,0 +1,28 @@
+.nav-item {
+    margin-right: 1%;
+    margin-left: 1%;
+}
+
+
+.logo {
+    width: 10%;
+    float: left;
+    display:inline-block;
+}
+
+.link {
+    display: contents;
+}
+
+.navBar {
+ padding: 0px !important;
+ width:100%;
+}
+
+
+
+@media (min-width:885px){
+    button{
+        justify-content: end;;
+    }
+}

@@ -2,10 +2,21 @@ h1 {
   text-align: center;
 }
 
+.contactTitle{
+  color:black;
+}
+
 #contact-form {
   padding: 50px
 }
 
 .form-group {
   margin-bottom: 15px;
+}
+
+.placeholder{
+  height: 80%;
+  width: 100%;
+  padding-top: 10%;
+  padding-right: 10%;
 }

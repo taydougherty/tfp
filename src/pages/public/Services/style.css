@@ -13,3 +13,8 @@ h1,
 h5 {
   color: black;
 }
+
+.jumbotron{
+  padding: 0px !important;
+  text-align: center;
+}

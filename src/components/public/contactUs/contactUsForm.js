@@ -61,7 +61,7 @@ class contactUsForm extends Component {
 
   render() {
     return (
-      <div className="mainWrapper">
+      <div className="mainContainer">
         <div>
 
           <div className="row">
@@ -69,7 +69,7 @@ class contactUsForm extends Component {
             <div className="col container">
 
               <form id="contact-form" onSubmit={this.handleSubmit.bind(this)} method="POST">
-                <h3>Send Us A Note</h3>
+                <h3 className="contactTitle">Send Us A Note</h3>
                 <div className="form-group">
                   <label htmlFor="name">Name</label>
                   <input type="text" className="form-control" value={this.state.name} onChange={this.onNameChange.bind(this)} />
@@ -91,7 +91,7 @@ class contactUsForm extends Component {
             </div>
             {/* image column */}
             <div className="col blah">
-
+              <img className="placeholder" alt="placeholder" src={require('../../../assets/images/femalePlaceholder.jpg')} />
             </div>
           </div>
 
