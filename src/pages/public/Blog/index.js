@@ -16,9 +16,23 @@ class Blog extends Component {
     componentDidMount() {
         this.getHistory()
     }
+    // getHistory() {
+
+    //     axios.get(`/blog/posts/author/${this.state.author}`)
+    //         .then(resp => {
+    //             this.setState({
+    //                 posts: resp.data
+    //             })
+    //             console.log(this.state.posts)
+    //         })
+    //         .catch(err => {
+    //             console.log(err)
+    //         })
+    // }
+
     getHistory() {
 
-        axios.get(`/blog/posts/author/${this.state.author}`)
+        axios.get(`/blog/posts`)
             .then(resp => {
                 this.setState({
                     posts: resp.data
@@ -50,6 +64,7 @@ class Blog extends Component {
                                 key={post._id}
                                 title={post.title}
                                 body={post.body}
+                                image={post.image}
                                 link={"/blog/page/" + post._id}
                             />)
                         )}
