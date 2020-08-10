@@ -1,0 +1,30 @@
+.overlay {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.homeWrapper {
+    min-height: 100%;
+    // position:relative;
+    height: 100%;
+    // margin: 0 auto;
+    // overflow: auto;
+    // margin-bottom: -100px;
+}
+
+.Home{
+    padding: 20px;
+    position:relative;
+}
+
+.homeContent {
+    margin-left:8%;
+    margin-right: 8%;
+    // margin-bottom: 100px;
+    // display: block;
+    // position:relative;
+}
+
+

@@ -1,6 +1,7 @@
 import "./style.css";
 import React, { Component } from "react";
-import NavBar from "../../../components/public/NavBar";
+import NavBar from "../../../components/public/NavBar/NavBar";
+import Footer from "../../../components/public/footer/footer"
 
 class Services extends Component {
   state = {};
@@ -9,7 +10,7 @@ class Services extends Component {
     return (
       <div>
         <NavBar></NavBar>
-        <div style={{ height: 1000 + "px" }}>
+        <div style={{ height: 650 + "px" }}>
           <div className="row h-25 Services">
             <div className="col-12">
               <div className="jumbotron bg-white">
@@ -71,6 +72,7 @@ class Services extends Component {
             </div>
           </div>
         </div>
+        {/* <Footer/> */}
       </div>
     );
   }

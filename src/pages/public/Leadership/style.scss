@@ -1,3 +1,50 @@
 .winList {
   color: black;
 }
+
+.photo{
+  width: 450px;
+  height: 350px;
+}
+@media screen and (max-width: 1200px) {
+
+  .imageCard{
+    margin-bottom: 15px;
+  }
+  
+  .profileCard{
+    width: 490px;
+  }
+
+  .cardContainer{
+    margin-left: 0;
+    width: 100% !important;
+    max-width: 100% !important
+  }
+
+  .card{
+    width:100% !important;
+  }
+
+  .card-body{
+    padding-left:auto;
+    padding-right: auto;
+  }
+
+  .cards{
+    padding-left: auto;
+    padding-right: auto;
+    display: block;
+  }
+
+}
+
+@media screen and (max-width: 767px) {
+
+  .photo{
+    width: auto;
+    height: auto;
+  }
+
+  
+}
