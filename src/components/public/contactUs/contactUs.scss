@@ -2,12 +2,21 @@ h1 {
   text-align: center;
 }
 
+.contactUsFormContainer{
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
 .contactTitle{
   color:black;
 }
 
+.contactCard{
+  width: 100% !important;
+}
+
 #contact-form {
-  padding: 50px
+  padding: 30px
 }
 
 .form-group {
@@ -17,6 +26,16 @@ h1 {
 .placeholder{
   height: 80%;
   width: 100%;
-  padding-top: 10%;
-  padding-right: 10%;
+
+}
+
+@media screen and (max-width: 950px) {
+
+  .contactCards{
+    display: block;
+  }
+
+  .imgCard{
+    margin-top: 5%;
+  }
 }
