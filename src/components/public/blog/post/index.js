@@ -1,6 +1,7 @@
 import React from "react";
 // import "./style.css"
 import { Link } from "react-router-dom";
+import moment from 'moment'
 // import image from "../../../../assets/images/sampleservice.png";
 import rockClimber from "../../../../assets/blogImages/rockclimber.png"
 import shielaSportClimb from "../../../../assets/blogImages/sheila_Sport_Climb.png"
@@ -44,6 +45,9 @@ function Post(props) {
                         className="card-img-top " style={{ height: 300 + "px" }} href="/home" alt="..."></img>
                     <div className="card-body">
                         <h5 className="card-title text-center ">{props.title}</h5>
+                        <p className="card-text post-body font-weight-lighter">
+                            {moment(props.date).format("MMM Do YYYY")}
+                        </p>
                         <p className="card-text crop-text-2">
                             {props.body}
                         </p>

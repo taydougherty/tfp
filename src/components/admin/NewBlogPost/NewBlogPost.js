@@ -151,7 +151,7 @@ class NewBlogPost extends Component {
 
                     </div>
                     <br />
-                    <button className="btn btn-primary" type="submit">Submit Post</button>
+                    <button className="btn btn-primary button-post" type="submit">Submit Post</button>
 
                 </form>
             </div >

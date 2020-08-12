@@ -8,8 +8,8 @@ class Blog extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            posts: [],
-            author: "5f2353d76441301910bc9538"
+            posts: []
+            // author: "5f2353d76441301910bc9538"
         }
     }
 
@@ -64,6 +64,7 @@ class Blog extends Component {
                                 key={post._id}
                                 title={post.title}
                                 body={post.body}
+                                date={post.date}
                                 image={post.image}
                                 link={"/blog/page/" + post._id}
                             />)

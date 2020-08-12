@@ -2,6 +2,7 @@ import './style.scss';
 import React, { Component } from "react";
 import NavBar from '../../../../components/public/NavBar';
 import axios from 'axios';
+import moment from 'moment'
 // import image from "../../../../assets/images/sampleservice.png";
 import rockClimber from "../../../../assets/blogImages/rockclimber.png"
 import shielaSportClimb from "../../../../assets/blogImages/sheila_Sport_Climb.png"
@@ -53,19 +54,6 @@ class BlogPost extends Component {
             })
     }
 
-    // getHistory() {
-    //     axios.get(`/blog/posts`)
-
-    //         .then(resp => {
-    //             // console.log("resp=", resp)
-    //             this.setState({
-    //                 post: resp.data
-    //             })
-    //         })
-    //         .catch(err => {
-    //             console.log(err)
-    //         })
-    // }
     render() {
         const { post } = this.state
         console.log(post.image)
@@ -88,6 +76,9 @@ class BlogPost extends Component {
                                     className="card-img-top " style={{ height: 300 + "px" }} href="/home" alt="..."></img>
                                 <div className="card-body">
                                     <h5 className="card-title text-center ">{post.title}</h5>
+                                    <p className="card-text post-body font-weight-lighter">
+                                        {moment(post.date).format("MMM Do YYYY")}
+                                    </p>
                                     <p className="card-text post-body">
                                         {post.body}
                                     </p>
