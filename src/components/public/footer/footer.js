@@ -6,18 +6,19 @@ const footer = () => {
     return (
         <div className="mainWrapper">
           <div className="container">
-            <div className="row">
+            <div className="row footerContents">
               {/* Copyright */}
               <div className="col copyright">
-                <p>&copy; Sheila Mojtehedi {new Date().getFullYear()}</p>
+                <p className="copyrightFollowUs">&copy; Sheila Mojtehedi {new Date().getFullYear()}</p>
               </div>
               {/* navlinks column */}
               <div className="col socialMedia">
                 <div>
-                  <p>Follow Us:
+                  <p className="copyrightFollowUs">
+                      Follow Us:
                       <a href="#twitterLink" className="fa fa-twitter"> </a>
-                <a href="#instagram" className="fa fa-instagram"> </a>
-                <a href="#facebook" className="fa fa-facebook"> </a>
+                      <a href="#instagram" className="fa fa-instagram"> </a>
+                      <a href="#facebook" className="fa fa-facebook"> </a>
               </p>
             </div>
           </div>
