@@ -20,9 +20,14 @@
 }
 
 
-
 @media (min-width:885px){
     button{
         justify-content: end;;
+    }
+}
+
+@media screen and (max-width: 414px) {
+    .customNavBar {
+        width: 100%;
     }
 }

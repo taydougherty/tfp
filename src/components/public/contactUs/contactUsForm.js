@@ -63,45 +63,48 @@ class contactUsForm extends Component {
     return (
       <div className="contactUsFormContainer">
 
-          <div className="row justify-content-center contactCards">
-            {/* note card column*/}
-            <div className="col container">
-              <div className="card border-light contactCard">
-                <div className="card-body d-flex flex-column">
-                  <form id="contact-form" onSubmit={this.handleSubmit.bind(this)} method="POST">
-                    <h3 className="contactTitle">Send Us A Note</h3>
-                    <div className="form-group">
-                      <label htmlFor="name">Name</label>
-                      <input type="text" className="form-control" value={this.state.name} onChange={this.onNameChange.bind(this)} />
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="subject">Subject</label>
-                      <input type="text" className="form-control" value={this.state.subject} onChange={this.onSubjectChange.bind(this)} />
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="email">Email address</label>
-                      <input type="email" className="form-control" aria-describedby="emailHelp" value={this.state.email} onChange={this.onEmailChange.bind(this)} />
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="message">Message</label>
-                      <textarea className="form-control" rows="5" value={this.state.message} onChange={this.onMessageChange.bind(this)}></textarea>
-                    </div>
-                    <button type="submit" className="btn btn-primary">Submit</button>
-                  </form>
-                </div>
-              </div>
+        <div className="row justify-content-center contactCards">
 
-            </div>
-            {/* image column */}
-            <div className="col">
-              <div className="card border-light imgCard contactCard">
-                <div className="card-body d-flex flex-column">
-                    <img className="placeholder" alt="placeholder" src={require('../../../assets/images/femalePlaceholder.jpg')} />
-                </div>
+          {/* image column */}
+          <div className="col">
+            <div className="card border-light imgCard contactCard">
+              <div className="card-body d-flex flex-column">
+                <img className="placeholder" alt="placeholder" src={require('../../../assets/images/femalePlaceholder.jpg')} />
               </div>
- 
             </div>
+
           </div>
+
+          {/* note card column*/}
+          <div className="col container">
+            <div className="card border-light contactCard">
+              <div className="card-body d-flex flex-column">
+                <form id="contact-form" onSubmit={this.handleSubmit.bind(this)} method="POST">
+                  <h3 className="contactTitle">Send Us A Note</h3>
+                  <div className="form-group">
+                    <label htmlFor="name">Name</label>
+                    <input type="text" className="form-control" value={this.state.name} onChange={this.onNameChange.bind(this)} />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="subject">Subject</label>
+                    <input type="text" className="form-control" value={this.state.subject} onChange={this.onSubjectChange.bind(this)} />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="email">Email address</label>
+                    <input type="email" className="form-control" aria-describedby="emailHelp" value={this.state.email} onChange={this.onEmailChange.bind(this)} />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="message">Message</label>
+                    <textarea className="form-control" rows="5" value={this.state.message} onChange={this.onMessageChange.bind(this)}></textarea>
+                  </div>
+                  <button type="submit" className="btn btn-primary">Submit</button>
+                </form>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
 
       </div>
     )

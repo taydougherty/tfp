@@ -1,3 +1,4 @@
+
 .winList {
   color: black;
 }
@@ -6,6 +7,11 @@
   width: 450px;
   height: 350px;
 }
+
+.leadershipHeader {
+  padding: 3%;
+}
+
 @media screen and (max-width: 1200px) {
 
   .imageCard{
@@ -46,5 +52,30 @@
     height: auto;
   }
 
+  .leadershipCardImage{
+    width: 100%;
+  }
+
+  .leadershipCardInfo {
+    width: 100%
+  }
   
 }
+
+@media screen and (max-width: 414px){
+    .leadershipCardBody {
+      width: 150%;
+      margin-left: -8%;
+    }
+
+    .leadershipCardInfo {
+      width: 380px;
+      margin-left: -8%
+    }
+
+
+
+    .cards{
+      justify-content: left !important;
+    }
+} 

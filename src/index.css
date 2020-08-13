@@ -17,6 +17,7 @@ body {
   /* height: 100%; */
   position:relative;
   min-height: 88vh;
+  width: 100%;
 }
 
 code {
