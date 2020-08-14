@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-
+import rockClimber from "../../../assets/blogImages/rockclimber.png";
+import shielaSportClimb from "../../../assets/blogImages/sheila_Sport_Climb.png"
+import blackTriStars from "../../../assets/blogImages/blackTriStars.png"
+import Kyshatriya from "../../../assets/blogImages/Kyshatriya.png"
 require('./newBlogPost.scss')
 
 class NewBlogPost extends Component {
@@ -10,11 +13,32 @@ class NewBlogPost extends Component {
         this.state = {
             title: '',
             body: '',
-            author: ''
+            author: '',
+            // array of images sourced from the assets blog images folder
+            images: [
+                {
+                    title: "rock climber",
+                    image: rockClimber
+                },
+                {
+                    title: "Shiela Leading",
+                    image: shielaSportClimb
+                },
+                {
+                    title: "Black Tri Stars",
+                    image: blackTriStars
+                },
+                {
+                    title: "Kyshatriya",
+                    image: Kyshatriya
+                }
+            ],
+            blogImage: null
         }
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.setImage = this.setImage.bind(this)
     };
 
     componentDidMount() {
@@ -46,24 +70,51 @@ class NewBlogPost extends Component {
 
     handleSubmit(event) {
         event.preventDefault();
+        // include image into this state
+        // this.selectImage()
         let blogPost = {
             title: this.state.title,
             body: this.state.body,
+            image: this.state.blogImage[0].title,
             author: this.state.author
         }
+        console.log(blogPost)
         this.newPost(blogPost)
         this.clearForm()
     };
+
+    setImage(event) {
+        // selects image from the drpdown list to setState of blogImage 
+        let selectedImage = this.state.images.filter(image => {
+            if (image.title === event.target.value) {
+                return image.image
+            }
+        })
+
+        console.log(selectedImage[0].image)
+        this.setState({ blogImage: selectedImage })
+    }
 
     // clear form method
     clearForm = () => {
         this.setState({
             title: '',
-            body: ''
+            body: '',
+            blogImage: null
         })
     };
 
     render() {
+        const { images, blogImage } = this.state
+
+        let previewPic;
+
+        if (blogImage) {
+            previewPic = <img src={this.state.blogImage[0].image} className="card-img-top" alt="blog"></img>
+        } else {
+            previewPic = <img src={rockClimber} className="card-img-top" alt="blog"></img>
+        }
+
         return (
             <div>
                 {/* NEW BLOG POST */}
@@ -73,7 +124,7 @@ class NewBlogPost extends Component {
                     {/* boostrap form Title */}
                     <div className="form-group">
                         <label htmlFor="exampleFormControlTextarea1" >Blog Title</label>
-                        <input name="title" value={this.state.title} onChange={this.handleChange} type="text" className="form-control" placeholder="Blog Title Here" />
+                        <input name="title" value={this.state.name} onChange={this.handleChange} type="text" className="form-control" placeholder="Blog Title Here" />
                     </div>
 
                     {/* boostrap form Content */}
@@ -82,7 +133,24 @@ class NewBlogPost extends Component {
                         <textarea name="body" value={this.state.body} onChange={this.handleChange} type="text" className="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Blog Content Here"></textarea>
                     </div>
 
-                    {/* boostrap form Send It! button */}
+                    <label htmlFor="exampleFormControlTextarea1">Blog Image</label>
+                    <div className="row">
+
+                        <div className="col-4">
+                            <select className="dropdown" onChange={this.setImage} >
+                                <option>Pick a Blog Image</option>
+                                {images.map((picture, i) =>
+                                    <option key={i} value={picture.title} className="dropdown-item"> {picture.title}</option>
+                                )}
+                            </select>
+                        </div>
+
+                        <div className="col-8">
+                            {previewPic}
+                        </div>
+
+                    </div>
+                    <br />
                     <button className="btn btn-primary" type="submit">Submit Post</button>
 
                 </form>
