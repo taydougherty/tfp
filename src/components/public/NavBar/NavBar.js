@@ -5,7 +5,7 @@ import './NavBar.scss'
 function NavBar() {
   return (
 
-    <nav className="navbar navbar-expand-lg navbar-light bg-white">
+    <nav className="navbar navbar-expand-lg navbar-light bg-white customNavBar">
       <Link to={"/"} className="link"><img className="logo" alt="logo" src={require('../../../assets/images/logo.jpeg')} /></Link>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
