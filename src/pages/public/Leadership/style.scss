@@ -1,6 +1,22 @@
+.leadershipHeader {
+  padding: 3%;
+}
+
+.jumbo-text{
+  color: white;
+  text-align: center;
+}
+
+.jumbotron {
+  margin: auto;
+  width: 97%;
+  height: 250px;
+  background-color: black;
+}
 
 .winList {
   color: black;
+  text-align: center;
 }
 
 .photo{
@@ -8,9 +24,10 @@
   height: 350px;
 }
 
-.leadershipHeader {
-  padding: 3%;
+.notable-wins{
+  text-align: center;
 }
+
 
 @media screen and (max-width: 1200px) {
 
