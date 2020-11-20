@@ -11,7 +11,7 @@ import Footer from "./components/admin/Footer/Footer";
 import Home from "./pages/public/Home";
 import Services from "./pages/public/Services";
 import SampleService from "./pages/public/Services/SpecificServices";
-import Leadership from "./pages/public/Leadership/Leadership";
+import Leadership from "./pages/public/Leadership/";
 import Blog from "./pages/public/Blog";
 import BlogPost from "./pages/public/Blog/BlogPost";
 import Contact from "./pages/public/Contact/ContactUs";

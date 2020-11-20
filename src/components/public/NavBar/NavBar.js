@@ -4,7 +4,7 @@ import "./NavBar.scss";
 
 function NavBar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-white">
+    <nav className="navbar navbar-expand-lg navbar-light bg-white customNavBar">
       <Link to={"/"} className="link">
         <img
           className="logo"

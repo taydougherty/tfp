@@ -295,7 +295,7 @@ export default class Register extends Component {
                 <small>Password must be eight characters in length.</small>
               </div>
               <div className="submit">
-                <button>Submit</button>
+                <button className="registerSubmitBtn">Submit</button>
               </div>
               <p>
                 <Link to={"/admin"}> Login </Link>

@@ -1,7 +1,6 @@
 import "./style.css";
 import React, { Component } from "react";
 import NavBar from "../../../components/public/NavBar/NavBar";
-import Footer from "../../../components/public/footer/footer"
 
 class Services extends Component {
   state = {};
@@ -13,7 +12,7 @@ class Services extends Component {
         <div style={{ height: 650 + "px" }}>
           <div className="row h-25 Services">
             <div className="col-12">
-              <div className="jumbotron bg-white">
+              <div className="jumbotron bg-white servicesJumbotron">
                 <h1>Our Services</h1>
                 <p style={{ fontSize: 25 }}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
@@ -22,9 +21,9 @@ class Services extends Component {
               </div>
             </div>
           </div>
-          <div className="row h-75 cards">
-            <div className="col-6">
-              <div className="card border-light" style={{ height: 400 + "px" }}>
+          <div className="row h-75 servicesCards">
+            <div className="col">
+              <div className="card border-light servicesCard">
                 <div className="card-body d-flex flex-column">
                   <h5 className="card-title">Client Services</h5>
                   <p className="card-text">
@@ -46,8 +45,8 @@ class Services extends Component {
                 </div>
               </div>
             </div>
-            <div className="col-6">
-              <div className="card border-light" style={{ height: 400 + "px" }}>
+            <div className="col">
+              <div className="card border-light servicesCard">
                 <div className="card-body d-flex flex-column">
                   <h5 className="card-title">Attorney Partnerships</h5>
                   <p className="card-text">
@@ -72,7 +71,6 @@ class Services extends Component {
             </div>
           </div>
         </div>
-        {/* <Footer/> */}
       </div>
     );
   }
