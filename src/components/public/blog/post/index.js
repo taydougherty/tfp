@@ -44,8 +44,8 @@ function Post(props) {
                         className="card-img-top " style={{ height: 300 + "px" }} href="/home" alt="..."></img>
                     <div className="card-body">
                         <h5 className="card-title text-center ">{props.title}</h5>
-                        <p className="card-text crop-text-2">
-                            {props.body}
+                        <p className="card-text crop-text-2 mx-auto">
+                            {props.date}
                         </p>
                         <Link to={props.link} className="stretched-link" alt="..."></Link>
                     </div>

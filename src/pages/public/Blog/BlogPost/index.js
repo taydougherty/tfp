@@ -53,19 +53,6 @@ class BlogPost extends Component {
             })
     }
 
-    // getHistory() {
-    //     axios.get(`/blog/posts`)
-
-    //         .then(resp => {
-    //             // console.log("resp=", resp)
-    //             this.setState({
-    //                 post: resp.data
-    //             })
-    //         })
-    //         .catch(err => {
-    //             console.log(err)
-    //         })
-    // }
     render() {
         const { post } = this.state
         console.log(post.image)
