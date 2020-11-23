@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import NavBar from "../../../components/public/NavBar/NavBar";
 import './style.scss'
+import Sheila from "../../../assets/images/SheilaMojtehedi.png"
 
 class Leadership extends Component {
 
@@ -13,19 +14,13 @@ class Leadership extends Component {
             <div className="leadershipPage">
                 <NavBar />
 
-                <div className="jumbotron">
-                    <div className="container ">
-                        <h6 className="lead jumbo-text">FOUNDER</h6>
-                        <h1 className="display-4 jumbo-text">Sheila Mojtehedi</h1>
-                    </div>
-                </div>
-
                 <div className="container leadershipContent">
                     <div className="row d-flex justify-content-center cards">
+
                         <div className="col-6 cardContainer">
-                            <div class="card border-white imageCard leadershipCard">
+                            <div class="card border-white imageCard leadershipCard mx-auto">
                                 <div class="card-body d-flex flex-column leadershipCardBody leadershipCardImage">
-                                    <img src="" alt="Sheila Mojtehedi" ></img>
+                                    <img src={Sheila} alt="Sheila Mojtehedi" className="photo img-thumbnail"></img>
                                 </div>
                             </div>
                         </div>
@@ -35,7 +30,6 @@ class Leadership extends Component {
                                 <div className="row card-body d-flex flex-column profileCard leadershipCardBody leadershipCardInfo">
                                     <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                                 </div>
-
                             </div>
                         </div>
 
