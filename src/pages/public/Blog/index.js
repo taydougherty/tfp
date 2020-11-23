@@ -37,14 +37,6 @@ class Blog extends Component {
             <div>
                 <NavBar />
                 <div style={{ height: 1000 + "px" }}>
-                    {/* <div className="row h-25 Blog">
-                        <div className="col-12">
-                            <div className="jumbotron bg-white">
-                                <h1>Our Blog</h1>
-                                <p style={{ fontSize: 25 }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-                            </div>
-                        </div>
-                    </div> */}
                     <div className="row h-75 cards">
                         {this.state.posts.map((post =>
                             <Post

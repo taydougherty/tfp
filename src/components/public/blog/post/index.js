@@ -1,31 +1,16 @@
 import React from "react";
 // import "./style.css"
+import moment from 'moment';
 import { Link } from "react-router-dom";
-// import image from "../../../../assets/images/sampleservice.png";
-import rockClimber from "../../../../assets/blogImages/rockclimber.png"
-import shielaSportClimb from "../../../../assets/blogImages/sheila_Sport_Climb.png"
-import blackTriStars from "../../../../assets/blogImages/blackTriStars.png"
-import Kyshatriya from "../../../../assets/blogImages/Kyshatriya.png"
+import CardActionArea from '@material-ui/core/CardActionArea';
+import { blogImages } from "../../../../assets/blogImages/blogImages"
 
-// let images = [rockClimber, shielaSportClimb, blackTriStars, Kyshatriya]
-let images = [
-    {
-        title: "rock climber",
-        image: rockClimber
-    },
-    {
-        title: "Shiela Leading",
-        image: shielaSportClimb
-    },
-    {
-        title: "Black Tri Stars",
-        image: blackTriStars
-    },
-    {
-        title: "Kyshatriya",
-        image: Kyshatriya
-    }
-]
+// import image from "../../../../assets/images/sampleservice.png";
+
+
+
+
+let images = blogImages()
 
 function Post(props) {
     let blogImage = '';
@@ -37,21 +22,26 @@ function Post(props) {
 
     return (
 
-        <div className="col-4">
-            <div className="card " style={{ height: 600 + "px" }}>
-                <div className="card-body d-flex flex-column">
-                    <img src={blogImage}
-                        className="card-img-top " style={{ height: 300 + "px" }} href="/home" alt="..."></img>
-                    <div className="card-body">
-                        <h5 className="card-title text-center ">{props.title}</h5>
-                        <p className="card-text crop-text-2 mx-auto">
-                            {props.date}
-                        </p>
-                        <Link to={props.link} className="stretched-link" alt="..."></Link>
+        <div className="col-4 mb-5">
+
+            <CardActionArea>
+                <div className="card " style={{ height: 450 + "px" }}>
+                    <div className="card-body d-flex flex-column">
+                        <img src={blogImage}
+                            className="card-img-top " style={{ height: 300 + "px" }} href="/home" alt="..."></img>
+                        <div className="card-body">
+                            <h5 className="card-title text-center ">{props.title}</h5>
+                            <p className="card-text crop-text-2 text-center">
+                                {moment(props.date).format('MMM DD, YYYY')}
+                            </p>
+                            <Link to={props.link} className="stretched-link" alt="..."></Link>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </CardActionArea>
+
         </div>
+
     );
 }
 
