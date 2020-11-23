@@ -1,4 +1,4 @@
-import homeImage from "../../../assets/images/homePageClimber";
+import homeImage from "../../../assets/images/newImage.jpg";
 import NavBar from "../../../components/public/NavBar/NavBar";
 import Footer from "../../../components/admin/Footer/Footer";
 import "./Home.scss";
@@ -16,10 +16,13 @@ class Services extends Component {
             <div className="col-12 rock">
               <div className="card relative">
                 <img src={homeImage} className="card-img-top" alt="..."></img>
-                <h1 className="overlay">
+                <h1 className="overlayHeader">
                   Solutions to problems are not always obvious
                 </h1>
-                <h5 className="overlay">Sub tagline here</h5>
+                <h5 className="overlayTagline">Sub tagline here</h5>
+                <a type="button" className="learnMore" href="services">
+                  LEARN MORE
+                </a>
               </div>
             </div>
           </div>

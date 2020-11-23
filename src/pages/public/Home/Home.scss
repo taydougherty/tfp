@@ -1,30 +1,75 @@
-.overlay {
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.overlayHeader {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 80px;
+  text-shadow: 1px 1px black;
+  font-weight: 400;
+}
+
+.overlayTagline {
+  position: absolute;
+  top: 60%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 40px;
+  text-shadow: 1px 1px black;
+  opacity: 0.85;
+  font-weight: 600;
+}
+
+.learnMore {
+  position: absolute;
+  top: 72%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: white;
+  opacity: 0.85;
+  color: black;
+  font-size: 20px;
+  letter-spacing: 3px;
+  font-weight: 400;
+  padding: 20px 24px;
+  height: 75px;
+  width: 275px;
+  cursor: pointer;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.learnMore:hover {
+  background-color: #008b8b;
+  color: white;
+  text-decoration: none;
 }
 
 .homeWrapper {
-    min-height: 100%;
-    // position:relative;
-    height: 100%;
-    // margin: 0 auto;
-    // overflow: auto;
-    // margin-bottom: -100px;
+  //   min-height: 100%;
+  // position:relative;
+  height: 100%;
+  // margin: 0 auto;
+  // overflow: auto;
+  // margin-bottom: -100px;
 }
 
-.Home{
-    padding: 20px;
-    position:relative;
+.Home {
+  padding: 20px;
+  position: relative;
+  text-align: center;
 }
 
 .homeContent {
-    margin-left:8%;
-    margin-right: 8%;
-    // margin-bottom: 100px;
-    // display: block;
-    // position:relative;
+  margin-left: 50px;
+  margin-right: 50px;
+  // margin-bottom: 100px;
+  // display: block;
+  // position:relative;
 }
 
-
+.card {
+  border: none;
+}
