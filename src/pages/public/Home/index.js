@@ -17,9 +17,9 @@ class Services extends Component {
               <div className="card relative">
                 <img src={homeImage} className="card-img-top" alt="..."></img>
                 <h1 className="overlayHeader">
-                  Solutions to problems are not always obvious
+                  Solutions to problems are not always obvious.
                 </h1>
-                <h5 className="overlayTagline">Sub tagline here</h5>
+                <h5 className="overlayTagline">Sub Tagline.</h5>
                 <a type="button" className="learnMore" href="services">
                   LEARN MORE
                 </a>
