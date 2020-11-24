@@ -1,6 +1,6 @@
 import "./style.scss";
 import React, { Component } from "react";
-import NavBar from '../../../../components/public/NavBar';
+import NavBar from "../../../../components/public/NavBar/NavBar";
 import axios from 'axios';
 import moment from 'moment';
 import { blogImages } from '../../../../assets/blogImages/blogImages';
@@ -66,11 +66,7 @@ class BlogPost extends Component {
                     </div>
                 </div>
             </div>
-            </div >
-          </div >
-        </div >
-      </div >
-    );
+        );
     }
 }
 

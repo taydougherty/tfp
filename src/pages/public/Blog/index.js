@@ -36,8 +36,8 @@ class Blog extends Component {
         return (
             <div>
                 <NavBar />
-                <div style={{ height: 1000 + "px" }}>
-                    <div className="row h-75 cards">
+                <div style={{ height: 750 + "px" }} className="posts">
+                    <div className="h-75 cards">
                         {this.state.posts.map((post =>
                             <Post
                                 key={post._id}

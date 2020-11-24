@@ -15,14 +15,12 @@ function Post(props) {
     }
 
     return (
-
-        <div className="col-4 mb-5">
-
+        <div className="mx-auto mb-5">
             <CardActionArea>
-                <div className="card " style={{ height: 450 + "px" }}>
+                <div className="card" style={{ height: 450 + "px" }}>
                     <div className="card-body d-flex flex-column">
                         <img src={blogImage}
-                            className="card-img-top " style={{ height: 300 + "px" }} href="/home" alt="..."></img>
+                            className="card-img-top mx-auto" style={{ width: 50 + "%", height: 300 + "px" }} href="/home" alt="..."></img>
                         <div className="card-body">
                             <h5 className="card-title text-center ">{props.title}</h5>
                             <p className="card-text crop-text-2 text-center">
@@ -33,9 +31,7 @@ function Post(props) {
                     </div>
                 </div>
             </CardActionArea>
-
         </div>
-
     );
 }
 
