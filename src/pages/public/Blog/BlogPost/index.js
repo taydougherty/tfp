@@ -54,7 +54,7 @@ class BlogPost extends Component {
                         <div className="card" >
                             <div className="card-body d-flex flex-column">
                                 <img src={blogImage}
-                                    className="card-img-top " style={{ height: 300 + "px" }} href="/home" alt="..."></img>
+                                    className="card-img-top mx-auto" style={{ width: 75 + "%" }} href="/home" alt="..."></img>
                                 <div className="card-body">
                                     <h5 className="card-title text-center ">{post.title}</h5>
                                     <h6 className="card-title text-center ">{moment(post.date).format('MMM DD YYYY')}</h6>

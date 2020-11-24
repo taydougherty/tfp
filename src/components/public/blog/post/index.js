@@ -1,14 +1,8 @@
 import React from "react";
-// import "./style.css"
 import moment from 'moment';
 import { Link } from "react-router-dom";
 import CardActionArea from '@material-ui/core/CardActionArea';
 import { blogImages } from "../../../../assets/blogImages/blogImages"
-
-// import image from "../../../../assets/images/sampleservice.png";
-
-
-
 
 let images = blogImages()
 

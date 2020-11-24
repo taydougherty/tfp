@@ -1,27 +1,60 @@
-
-import rockClimber from "./rockclimber.png"
-import shielaSportClimb from "./sheila_Sport_Climb.png"
-import blackTriStars from "./blackTriStars.png"
-import Kyshatriya from "./Kyshatriya.png"
+import blindJustice from "./blindJustice.jpg";
+import collabWorking from "./collabWorking.jpg";
+import copyrightClaim from "./copyrightClaim.jpg";
+import gavel from "./gavel.jpg";
+import library from "./library.jpg";
+import library2 from "./library2.jpg";
+import moutains from "./mountains.jpg";
+import moutains2 from "./mountains2.jpg";
+import mountainsField from "./mountainsField.jpg";
+import mountainsNightSky from "./mountainsNightSky.jpg";
+import termsOfService from "./termsOfService.jpg";
 
 export function blogImages() {
     const images = [
         {
-            title: "rock climber",
-            image: rockClimber
+            title: "Blind Justice",
+            image: blindJustice
         },
         {
-            title: "Shiela Leading",
-            image: shielaSportClimb
+            title: "Collaborative Working",
+            image: collabWorking
         },
         {
-            title: "Black Tri Stars",
-            image: blackTriStars
+            title: "Copyright Claim",
+            image: copyrightClaim
         },
         {
-            title: "Kyshatriya",
-            image: Kyshatriya
-        }
+            title: "Terms of Service",
+            image: termsOfService
+        },
+        {
+            title: "Gavel",
+            image: gavel
+        },
+        {
+            title: "Library",
+            image: library
+        },
+        {
+            title: "Library 2",
+            image: library2
+        },
+        {
+            title: "Mountains",
+            image: moutains
+        }, {
+            title: "Mountains 2",
+            image: moutains2
+        },
+        {
+            title: "Mountains Field",
+            image: mountainsField
+        },
+        {
+            title: "Mountains Night Sky",
+            image: mountainsNightSky
+        },
     ]
 
     return images
