@@ -1,16 +1,16 @@
-import './style.scss';
+import "./style.scss";
 import React, { Component } from "react";
-import NavBar from '../../../components/public/NavBar/NavBar';
-import Post from '../../../components/public/blog/post'
-import axios from 'axios';
+import NavBar from "../../../components/public/NavBar/NavBar";
+import Post from "../../../components/public/blog/post";
+import axios from "axios";
 
 class Blog extends Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
             posts: [],
-            author: "5f2353d76441301910bc9538"
-        }
+            author: "5f2353d76441301910bc9538",
+        };
     }
 
     componentDidMount() {

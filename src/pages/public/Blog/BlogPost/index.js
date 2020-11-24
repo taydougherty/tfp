@@ -1,38 +1,37 @@
-import './style.scss';
+import "./style.scss";
 import React, { Component } from "react";
 import NavBar from '../../../../components/public/NavBar';
 import axios from 'axios';
 import moment from 'moment';
 import { blogImages } from '../../../../assets/blogImages/blogImages';
-// import image from "../../../../assets/images/sampleservice.png";
-
 
 let images = blogImages()
 
 class BlogPost extends Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
-            post: ""
-        }
+            post: "",
+        };
     }
 
     componentDidMount() {
-        this.getHistory()
+        this.getHistory();
     }
 
     getHistory() {
-        axios.get(`/blog/posts/${this.props.match.params._id}`)
+        axios
+            .get(`/blog/posts/${this.props.match.params._id}`)
 
-            .then(resp => {
-                console.log("resp=", resp)
+            .then((resp) => {
+                console.log("resp=", resp);
                 this.setState({
-                    post: resp.data
-                })
+                    post: resp.data,
+                });
             })
-            .catch(err => {
-                console.log(err)
-            })
+            .catch((err) => {
+                console.log(err);
+            });
     }
 
     render() {
@@ -66,8 +65,12 @@ class BlogPost extends Component {
                         </div>
                     </div>
                 </div>
+            </div>
             </div >
-        )
+          </div >
+        </div >
+      </div >
+    );
     }
 }
 
