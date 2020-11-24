@@ -21,9 +21,6 @@ body {
 }
 
 code {
-<<<<<<< HEAD
-  font-family: "Montserrat" sans-serif;
-=======
   /* font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace; */
     font-family: "Montserrat" sans-serif;
@@ -123,5 +120,4 @@ img {
 
 .button:active {
   background-color: #43464d;
->>>>>>> master
 }

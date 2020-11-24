@@ -1,9 +1,5 @@
 import homeImage from "../../../assets/images/newImage.jpg";
 import NavBar from "../../../components/public/NavBar/NavBar";
-<<<<<<< HEAD
-=======
-import Footer from "../../../components/admin/Footer/Footer";
->>>>>>> master
 import "./Home.scss";
 import React, { Component } from "react";
 
@@ -30,10 +26,6 @@ class Services extends Component {
             </div>
           </div>
         </div>
-<<<<<<< HEAD
-=======
-        <Footer />
->>>>>>> master
       </div>
     );
   }
