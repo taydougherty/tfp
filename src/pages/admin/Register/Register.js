@@ -60,98 +60,40 @@ export default class Register extends Component {
 
   handleEmailValidation = (event) => {
     const emailVal = event.target.value;
-    // const emailForm = event.target.emailForm;
-    // const emailFeedback = event.target.emailFeedback;
-    // const emailAdditionalFeedback = event.target.emailAdditionalFeedback;
-    // const emailRegEx = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 
     this.setState({
       email: emailVal,
     });
 
-    // if (!emailRegEx.test(emailVal)) {
-    //   emailForm.classList.remove("has-success");
-
-    //   emailForm.classList.add("has-error");
-    //   emailFeedback.textContent = "Invalid Email";
-    //   emailAdditionalFeedback.textContent = "Ex: someone@example.com";
-    // } else {
-    //   emailForm.classList.remove("has-error");
-
-    //   emailForm.classList.add("has-success");
-    //   emailFeedback.textContent = "Valid Email!";
-    //   emailAdditionalFeedback.textContent = "";
-    // }
   };
 
   handleEmailRepeat = (event) => {
     const emailVal = event.target.value;
-    // const emailForm = this.refs.emailRepeatForm;
-    // const emailFeedback = this.refs.emailRepeatFeedback;
-    // const emailRegEx = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 
     this.setState({
       emailRepeat: emailVal,
     });
 
-    //   if (!emailRegEx.test(emailVal)) {
-    //     emailForm.classList.remove("has-success");
-
-    //     emailForm.classList.add("has-error");
-    //     emailFeedback.textContent = "Emails Don't Match";
-    //   } else {
-    //     emailForm.classList.remove("has-error");
-
-    //     emailForm.classList.add("has-success");
-    //     emailFeedback.textContent = "Emails Match!";
-    //   }
   };
 
   handlePasswordValidation = (event) => {
     // password is passed in
     const passwordVal = event.target.value;
-    // const passwordForm = this.refs.passwordForm;
-    // const passwordFeedback = this.refs.passwordFeedback;
 
     this.setState({
       password: passwordVal,
     });
 
-    // const passwordRegEx = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,}$/;
-    // if (!passwordRegEx.test(passwordVal)) {
-    //   passwordForm.classList.remove("has-success");
-    //   passwordForm.classList.add("has-error");
-    //   passwordFeedback.textContent =
-    //     "Password must contain at least 1 lowercase letter, 1 uppercase letter, 1 number, 1 special character and must be at least 8 characters long.";
-    // } else {
-    //   passwordForm.classList.remove("has-error");
-
-    //   passwordForm.classList.add("has-success");
-    //   passwordFeedback.textContent = "Password set correctly!";
-    // }
   };
 
   handlePasswordRepeat = (event) => {
-    // const passwordVal = this.state.password;
+
     const passwordRepeat = event.target.value;
-    // const repeatPasswordForm = this.refs.repeatPasswordForm;
-    // const repeatPasswordFeedback = this.refs.repeatPasswordFeedback;
 
     this.setState({
       passwordRepeat: passwordRepeat,
     });
 
-    // if (passwordVal !== passwordRepeat) {
-    //   repeatPasswordForm.classList.remove("has-success");
-
-    //   repeatPasswordForm.classList.add("has-error");
-    //   repeatPasswordFeedback.textContent = "Passwords Don't Match";
-    // } else {
-    //   repeatPasswordForm.classList.remove("has-error");
-
-    //   repeatPasswordForm.classList.add("has-success");
-    //   repeatPasswordFeedback.textContent = "Passwords Match!";
-    // }
   };
 
   registerUser = (userData) => {
@@ -162,15 +104,13 @@ export default class Register extends Component {
       })
       .then(
         function (data) {
-          // console.log("data stuff", data.data);
+
           if (data.data.duplicateUser) {
-            // Replace with Modal
+
             alert(
               "Sorry, that email address is already registered with an account. Please login or use a new email address."
             );
           } else if (data.data.success) {
-            console.log("yay!");
-            // this.props.authenticate();
             this.setState({
               redirectToReferrer: true,
             });
@@ -295,7 +235,7 @@ export default class Register extends Component {
                 <small>Password must be eight characters in length.</small>
               </div>
               <div className="submit">
-                <button className="registerSubmitBtn">Submit</button>
+                <button className="registerSubmitBtn">SUBMIT</button>
               </div>
               <p>
                 <Link to={"/admin"}> Login </Link>
