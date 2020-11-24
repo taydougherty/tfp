@@ -1,6 +1,5 @@
 import homeImage from "../../../assets/images/newImage.jpg";
 import NavBar from "../../../components/public/NavBar/NavBar";
-import Footer from "../../../components/admin/Footer/Footer";
 import "./Home.scss";
 import React, { Component } from "react";
 
@@ -27,7 +26,6 @@ class Services extends Component {
             </div>
           </div>
         </div>
-        <Footer />
       </div>
     );
   }
