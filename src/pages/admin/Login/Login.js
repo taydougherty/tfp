@@ -129,7 +129,11 @@ export default class Login extends Component {
         <div className="wrapper loginWrapper">
           <div className="form-wrapper">
             <h2>Login</h2>
-            <form className="loginForm" onSubmit={this.handleSubmit.bind(this)} noValidate>
+            <form
+              className="loginForm"
+              onSubmit={this.handleSubmit.bind(this)}
+              noValidate
+            >
               <div className="email">
                 <label htmlFor="email">Email</label>
                 <input
