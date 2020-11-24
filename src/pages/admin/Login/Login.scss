@@ -22,7 +22,6 @@ SILVER PINK: #C9ADA7
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #4a4e69;
 }
 
 .form-wrapper {
@@ -83,16 +82,17 @@ input::placeholder {
 .loginSubmitBtn {
   min-width: 100%;
   cursor: pointer;
+  letter-spacing: 2px;;
   margin-right: 0.25em;
   margin-top: 0.5em;
   padding: 0.938em;
   border: none;
   border-radius: 4px;
-  background-color: #22223b;
+  background-color:black;
   color: #fefefe;
 }
 .loginSubmitBtn:hover {
-  background-color: #4a4e69;
+  background-color: #008b8b;
   color: #fefefe;
 }
 

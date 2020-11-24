@@ -1,8 +1,18 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import rockClimber from "../../../assets/images/rockclimber.png";
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import CardActions from '@material-ui/core/CardActions';
+import TextField from '@material-ui/core/TextField';
+import TextareaAutosize from '@material-ui/core/TextareaAutosize';
+import Select from '@material-ui/core/Select';
+import MenuItem from '@material-ui/core/MenuItem';
+import InputLabel from '@material-ui/core/InputLabel';
+import FormHelperText from '@material-ui/core/FormHelperText';
 
 import { blogImages } from "../../../assets/blogImages/blogImages"
+
+
 
 require('./newBlogPost.scss')
 
@@ -72,7 +82,6 @@ class NewBlogPost extends Component {
             }
         })
 
-        console.log(selectedImage[0].image)
         this.setState({ blogImage: selectedImage })
     }
 
@@ -92,47 +101,67 @@ class NewBlogPost extends Component {
         if (blogImage) {
             previewPic = <img src={this.state.blogImage[0].image} className="card-img-top" alt="blog"></img>
         } else {
-            previewPic = <img src={rockClimber} className="card-img-top" alt="blog"></img>
+            previewPic = <img src={this.state.images[0].image} className="card-img-top" alt="blog"></img>
         }
 
         return (
-            <div>
-                <h2>New Blog Post</h2>
+            <Card className="mt-10">
+                <CardContent>
+                    <h2>New Blog Post</h2>
 
-                <form onSubmit={this.handleSubmit}>
+                    <form onSubmit={this.handleSubmit}>
 
-                    <div className="form-group">
-                        <label htmlFor="exampleFormControlTextarea1" >Blog Title</label>
-                        <input name="title" value={this.state.name} onChange={this.handleChange} type="text" className="form-control" placeholder="Blog Title Here" />
-                    </div>
-
-                    <div className="form-group">
-                        <label htmlFor="exampleFormControlTextarea1">Blog Content</label>
-                        <textarea name="body" value={this.state.body} onChange={this.handleChange} type="text" className="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Blog Content Here"></textarea>
-                    </div>
-
-                    <label htmlFor="exampleFormControlTextarea1">Blog Image</label>
-                    <div className="row">
-
-                        <div className="col-4">
-                            <select className="dropdown" onChange={this.setImage} >
-                                <option>Pick a Blog Image</option>
-                                {images.map((picture, i) =>
-                                    <option key={i} value={picture.title} className="dropdown-item"> {picture.title}</option>
-                                )}
-                            </select>
+                        <div className="form-group mb-10">
+                            {/* <label htmlFor="exampleFormControlTextarea1" >Blog Title</label> */}
+                            <TextField id="outlined-basic" label="Blog Title" name="title" value={this.state.name} onChange={this.handleChange} type="text" className="form-control" placeholder="Blog Title Here" />
                         </div>
 
-                        <div className="col-8">
-                            {previewPic}
+                        <div className="form-group">
+                            {/* <InputLabel htmlFor="exampleFormControlTextarea1">Blog Content</InputLabel> */}
+                            <TextareaAutosize rowsMax={7} aria-label="maximum height"
+                                placeholder="Blog Content"
+                                name="body"
+                                value={this.state.body}
+                                onChange={this.handleChange} type="text" className="form-control" id="exampleFormControlTextarea1" />
+
                         </div>
 
-                    </div>
-                    <br />
-                    <button className="btn btn-primary" type="submit">Submit Post</button>
+                        <div className="row">
 
-                </form>
-            </div >
+                            <div className="col-4">
+                                <InputLabel id="demo-simple-select-helper-label">Blog Image</InputLabel>
+                                <Select
+                                    className="dropdown"
+                                    onChange={this.setImage}
+                                    labelId="demo-simple-select-helper-label"
+                                    id="demo-simple-select-helper"
+                                >
+                                    <MenuItem >
+                                        <em>None</em>
+                                    </MenuItem>
+                                    {images.map((picture, i) =>
+                                        <MenuItem key={i} value={picture.title} className="dropdown-item">
+                                            {picture.title}
+                                        </MenuItem>
+                                    )}
+                                </Select>
+                                <FormHelperText>Pick an image for your blog post.</FormHelperText>
+                            </div>
+
+                            <div className="col-8">
+                                {previewPic}
+                            </div>
+
+                        </div>
+                        <br />
+                        <CardActions>
+                            <button className="blogSubmit" type="submit">SUBMIT</button>
+                        </CardActions>
+                    </form>
+
+                </CardContent>
+
+            </Card >
 
         )
     }
