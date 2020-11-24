@@ -21,7 +21,6 @@ const StyledButton = withStyles({
 })(Button);
 
 class Navigation extends Component {
-
   constructor(props) {
     super(props);
 

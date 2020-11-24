@@ -52,18 +52,6 @@ export default class Login extends Component {
     this.setState({ errors, [name]: value });
   };
 
-  // handleEmailChange = (event) => {
-  //   this.setState({
-  //     email: event.target.value,
-  //   });
-  // };
-
-  // handlePasswordChange = (event) => {
-  //   this.setState({
-  //     password: event.target.value,
-  //   });
-  // };
-
   loginUser = (submitObject) => {
     axios
       .post("/user/login", submitObject)
