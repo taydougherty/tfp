@@ -7,7 +7,7 @@ import axios from "axios";
 import Login from "./pages/admin/Login/Login";
 import Register from "./pages/admin/Register/Register";
 import AdminBlog from "./pages/admin/Blog/index";
-import Footer from "./components/admin/Footer/Footer";
+import Footer from "./components/public/footer/footer";
 import Home from "./pages/public/Home";
 import Services from "./pages/public/Services";
 import SampleService from "./pages/public/Services/SpecificServices";
