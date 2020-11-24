@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import rockClimber from "../../../assets/blogImages/rockclimber.png";
-import shielaSportClimb from "../../../assets/blogImages/sheila_Sport_Climb.png"
-import blackTriStars from "../../../assets/blogImages/blackTriStars.png"
-import Kyshatriya from "../../../assets/blogImages/Kyshatriya.png"
+import rockClimber from "../../../assets/images/rockclimber.png";
+
+import { blogImages } from "../../../assets/blogImages/blogImages"
+
 require('./newBlogPost.scss')
 
 class NewBlogPost extends Component {
@@ -14,25 +14,7 @@ class NewBlogPost extends Component {
             title: '',
             body: '',
             author: '',
-            // array of images sourced from the assets blog images folder
-            images: [
-                {
-                    title: "rock climber",
-                    image: rockClimber
-                },
-                {
-                    title: "Shiela Leading",
-                    image: shielaSportClimb
-                },
-                {
-                    title: "Black Tri Stars",
-                    image: blackTriStars
-                },
-                {
-                    title: "Kyshatriya",
-                    image: Kyshatriya
-                }
-            ],
+            images: blogImages(),
             blogImage: null
         }
 
@@ -58,8 +40,8 @@ class NewBlogPost extends Component {
 
 
     //  make into async function
-    newPost(form) {
-        axios.post("/blog/newpost", form)
+    async newPost(form) {
+        await axios.post("/blog/newpost", form)
             .then(res => {
                 console.log(res)
             }
@@ -70,8 +52,7 @@ class NewBlogPost extends Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        // include image into this state
-        // this.selectImage()
+
         let blogPost = {
             title: this.state.title,
             body: this.state.body,
@@ -84,7 +65,7 @@ class NewBlogPost extends Component {
     };
 
     setImage(event) {
-        // selects image from the drpdown list to setState of blogImage 
+
         let selectedImage = this.state.images.filter(image => {
             if (image.title === event.target.value) {
                 return image.image
@@ -95,7 +76,6 @@ class NewBlogPost extends Component {
         this.setState({ blogImage: selectedImage })
     }
 
-    // clear form method
     clearForm = () => {
         this.setState({
             title: '',
@@ -117,17 +97,15 @@ class NewBlogPost extends Component {
 
         return (
             <div>
-                {/* NEW BLOG POST */}
                 <h2>New Blog Post</h2>
-                {/* box - centered */}
+
                 <form onSubmit={this.handleSubmit}>
-                    {/* boostrap form Title */}
+
                     <div className="form-group">
                         <label htmlFor="exampleFormControlTextarea1" >Blog Title</label>
                         <input name="title" value={this.state.name} onChange={this.handleChange} type="text" className="form-control" placeholder="Blog Title Here" />
                     </div>
 
-                    {/* boostrap form Content */}
                     <div className="form-group">
                         <label htmlFor="exampleFormControlTextarea1">Blog Content</label>
                         <textarea name="body" value={this.state.body} onChange={this.handleChange} type="text" className="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Blog Content Here"></textarea>
