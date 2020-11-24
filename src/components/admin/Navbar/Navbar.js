@@ -1,10 +1,8 @@
 import React, { Component } from "react";
-import axios from 'axios';
-import logo from "../../../assets/images/logo.svg";
+import axios from "axios";
 import "./Navbar.scss";
 
 class Navigation extends Component {
-
   constructor(props) {
     super(props);
 
@@ -49,13 +47,17 @@ class Navigation extends Component {
   render() {
     return (
       <div>
-        <nav className="navbar navbar-expand-lg navbar-light bg-dark">
-          <img className="mr-auto" src={logo} alt="logo" style={{ width: "35px" }}></img>
-          <button className="btn btn-secondary btn-sm col-auto" type="submit" onClick={this.logout}>Log Out </button>
+        <nav className="navbar navbar-expand-lg">
+          <div className="nameLogo">Sheila Mojtehedi</div>
+          <button
+            className="btn btn-secondary btn-sm col-auto"
+            type="submit"
+            onClick={this.logout}
+          >
+            Log Out{" "}
+          </button>
         </nav>
-
-
-      </div >
+      </div>
     );
   }
 }
