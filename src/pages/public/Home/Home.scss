@@ -48,12 +48,7 @@
 }
 
 .homeWrapper {
-  //   min-height: 100%;
-  // position:relative;
   height: 100%;
-  // margin: 0 auto;
-  // overflow: auto;
-  // margin-bottom: -100px;
 }
 
 .Home {
@@ -65,11 +60,29 @@
 .homeContent {
   margin-left: 50px;
   margin-right: 50px;
-  // margin-bottom: 100px;
-  // display: block;
-  // position:relative;
 }
 
 .card {
   border: none;
+}
+
+@media screen and (max-width: 532px) {
+  .homeContent {
+    height: 100%;
+    width: 80%;
+  }
+
+  .overlayHeader {
+    font-size: small;
+  }
+
+  .overlayTagline {
+    font-size: x-small;
+  }
+
+  .learnMore {
+    height: 50px;
+    width: 50px;
+    font-size: 5px;
+  }
 }
