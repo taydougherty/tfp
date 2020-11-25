@@ -26,7 +26,7 @@ class Services extends Component {
                 <a
                   type="button"
                   className="btn btn-dark mt-auto"
-                  href="sampleservice"
+                  href="client"
                 >
                   Learn More
                   </a>
@@ -45,7 +45,7 @@ class Services extends Component {
                 <a
                   type="button"
                   className="btn btn-dark mt-auto"
-                  href="sampleservice"
+                  href="attorney"
                 >
                   {" "}
                     Learn More

@@ -10,7 +10,8 @@ import AdminBlog from "./pages/admin/Blog/index";
 import Footer from "./components/public/footer/footer";
 import Home from "./pages/public/Home";
 import Services from "./pages/public/Services";
-import SampleService from "./pages/public/Services/SpecificServices";
+import Clients from "./pages/public/Services/Clients";
+import Attorneys from "./pages/public/Services/Attorneys";
 import Leadership from "./pages/public/Leadership/";
 import Blog from "./pages/public/Blog";
 import BlogPost from "./pages/public/Blog/BlogPost";
@@ -106,7 +107,8 @@ export default class App extends Component {
                 <Route exact path="/" component={Home} />
                 <Route exact path="/home" component={Home} />
                 <Route exact path="/services" component={Services} />
-                <Route exact path="/sampleservice" component={SampleService} />
+                <Route exact path="/client" component={Clients} />
+                <Route exact path="/attorney" component={Attorneys} />
                 <Route exact path="/leadership" component={Leadership} />
                 <Route exact path="/blog" component={Blog} />
                 {/* <Route exact path="/blog/posts" component={Posts} /> */}
