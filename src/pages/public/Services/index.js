@@ -1,6 +1,9 @@
-import "./style.css";
+import "./style.scss";
 import React, { Component } from "react";
 import NavBar from "../../../components/public/NavBar/NavBar";
+import HeaderLine from "../../../components/public/headerLine/index";
+import Scale from "../../../assets/images/scaleOfJustice.png";
+import Gavel from "../../../assets/images/gavelOfJustice.png";
 
 class Services extends Component {
   state = {};
@@ -8,69 +11,50 @@ class Services extends Component {
   render() {
     return (
       <div>
-        <NavBar></NavBar>
-        <div style={{ height: 650 + "px" }}>
-          <div className="row h-25 Services">
-            <div className="col-12">
-              <div className="jumbotron bg-white servicesJumbotron">
-                <h1>Our Services</h1>
-                <p style={{ fontSize: 25 }}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore
-                </p>
+        <NavBar />
+        <HeaderLine />
+        <div className="row h-75 servicesCards">
+          <div className="col-2"></div>
+          <div className="col-3">
+            <div className="card border-light servicesCard text-center">
+              <div className="card-body d-flex flex-column">
+                <img src={Scale} className="rounded mx-auto"></img>
+                <h5 className="card-title">Clients</h5>
+                <p className="card-text">
+                  This is some text inside of a div block.
+                  </p>
+                <a
+                  type="button"
+                  className="btn btn-dark mt-auto"
+                  href="sampleservice"
+                >
+                  Learn More
+                  </a>
               </div>
             </div>
           </div>
-          <div className="row h-75 servicesCards">
-            <div className="col">
-              <div className="card border-light servicesCard">
-                <div className="card-body d-flex flex-column">
-                  <h5 className="card-title">Client Services</h5>
-                  <p className="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+          <div className="col-2"></div>
+          <div className="col-3">
+            <div className="card border-light servicesCard text-center">
+              <div className="card-body d-flex flex-column">
+                <img src={Gavel} className="rounded mx-auto"></img>
+                <h5 className="card-title">Attorneys</h5>
+                <p className="card-text">
+                  This is some text inside of a div block.
                   </p>
-                  <a
-                    type="button"
-                    className="btn btn-outline-info mt-auto"
-                    href="sampleservice"
-                    style={{
-                      height: 75 + "px",
-                      width: 150 + "px",
-                      lineHeight: 62.5 + "px",
-                    }}
-                  >
+                <a
+                  type="button"
+                  className="btn btn-dark mt-auto"
+                  href="sampleservice"
+                >
+                  {" "}
                     Learn More
                   </a>
-                </div>
-              </div>
-            </div>
-            <div className="col">
-              <div className="card border-light servicesCard">
-                <div className="card-body d-flex flex-column">
-                  <h5 className="card-title">Attorney Partnerships</h5>
-                  <p className="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                  <a
-                    type="button"
-                    className="btn btn-outline-info mt-auto"
-                    href="sampleservice"
-                    style={{
-                      height: 75 + "px",
-                      width: 150 + "px",
-                      lineHeight: 62.5 + "px",
-                    }}
-                  >
-                    {" "}
-                    Learn More
-                  </a>
-                </div>
               </div>
             </div>
           </div>
         </div>
+
       </div>
     );
   }
