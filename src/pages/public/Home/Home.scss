@@ -4,7 +4,7 @@
   left: 40%;
   transform: translate(-50%, -50%);
   color: white;
-  font-size: 80px;
+  font-size: 70px;
   text-shadow: 1px 1px 6px black;
   font-weight: 400;
 }
@@ -15,10 +15,11 @@
   left: 40%;
   transform: translate(-50%, -50%);
   color: white;
-  font-size: 36px;
+  font-size: 34px;
   text-shadow: 1px 1px 6px black;
   opacity: 0.8;
   font-weight: 600;
+  margin-top: 10px;
 }
 
 .learnMore {
@@ -37,6 +38,7 @@
   height: 70px;
   width: 250px;
   text-decoration: none;
+  margin-top: 15px;
 }
 
 .learnMore:hover {
