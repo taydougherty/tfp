@@ -68,7 +68,11 @@ class NewBlogPost extends Component {
       image: this.state.blogImage[0].title,
       author: this.state.author,
     };
-  }
+
+    this.newPost(blogPost)
+    this.clearForm()
+  };
+
   setImage(event) {
 
     let selectedImage = this.state.images.filter(image => {
@@ -76,7 +80,6 @@ class NewBlogPost extends Component {
         return image.image
       }
     });
-
     this.setState({ blogImage: selectedImage });
   };
 
@@ -84,7 +87,7 @@ class NewBlogPost extends Component {
     this.setState({
       title: '',
       body: '',
-      blogImage: null
+      blogImage: this.state.images[0].image
     })
   };
 
