@@ -5,7 +5,6 @@ import {
   CardContent,
   CardActions,
   TextField,
-  TextareaAutosize,
   FormControl,
   Select,
   MenuItem,
@@ -126,15 +125,15 @@ class NewBlogPost extends Component {
             <br />
 
             <div className="form-group">
-              <TextareaAutosize
+              <textarea
                 id="exampleFormControlTextarea1"
                 name="body"
-                className="form-control"
+                className="form-control blog-content"
                 placeholder="Blog Content"
-                rowsMax={7}
+                rows="10"
                 aria-label="maximum height"
                 value={this.state.body}
-                onChange={this.handleChange} type="text" />
+                onChange={this.handleChange} type="text"></textarea>
             </div>
 
             <div className="row">
