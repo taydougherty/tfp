@@ -87,7 +87,7 @@ class NewBlogPost extends Component {
     this.setState({
       title: '',
       body: '',
-      blogImage: this.state.images[0].image
+      blogImage: null
     })
   };
 
