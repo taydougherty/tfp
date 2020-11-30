@@ -84,8 +84,10 @@ class NewBlogPost extends Component {
   };
 
   clearForm = () => {
+
+    this.title.value = '';
+
     this.setState({
-      title: '',
       body: '',
       blogImage: null
     })
@@ -118,33 +120,42 @@ class NewBlogPost extends Component {
                 onChange={this.handleChange}
                 type="text"
                 className="form-control"
-                placeholder="Blog Title Here" />
+                inputRef={el => this.title = el} />
             </div>
-
+            <br />
             <div className="form-group">
               <TextareaAutosize
+                id="exampleFormControlTextarea1"
+                name="body"
+                className="form-control"
+                placeholder="Blog Content"
                 rowsMax={7}
                 aria-label="maximum height"
-                placeholder="Blog Content"
-                name="body"
                 value={this.state.body}
-                onChange={this.handleChange} type="text"
-                className="form-control"
-                id="exampleFormControlTextarea1" />
+                onChange={this.handleChange} type="text" />
             </div>
 
             <div className="row">
 
               <div className="col-4">
-                <InputLabel id="demo-simple-select-helper-label">Blog Image</InputLabel>
+                <InputLabel id="demo-simple-select-helper-label"
+                  style={{ disableAnimation: false }}
+                  disableAnimation={false}
+                >
+                  Blog Image
+                  </InputLabel>
+
                 <Select
                   className="dropdown"
                   onChange={this.setImage}
                   labelId="demo-simple-select-helper-label"
-                  id="demo-simple-select-helper">
-                  <MenuItem >
-                    <em>None</em>
+                  id="demo-simple-select-helper"
+                >
+
+                  <MenuItem selected disabled value="">
+                    <em>Please select an image</em>
                   </MenuItem>
+
                   {images.map((picture, i) =>
                     <MenuItem
                       key={i}
@@ -163,8 +174,8 @@ class NewBlogPost extends Component {
 
             </div>
             <br />
-            <CardActions>
-              <button className="blogSubmit" type="submit">SUBMIT</button>
+            <CardActions className="d-flex flex-row-reverse">
+              <button className="blogSubmit " type="submit">SUBMIT</button>
             </CardActions>
           </form>
 
