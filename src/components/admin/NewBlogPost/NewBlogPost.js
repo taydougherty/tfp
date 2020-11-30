@@ -6,6 +6,7 @@ import {
   CardActions,
   TextField,
   TextareaAutosize,
+  FormControl,
   Select,
   MenuItem,
   InputLabel,
@@ -123,6 +124,7 @@ class NewBlogPost extends Component {
                 inputRef={el => this.title = el} />
             </div>
             <br />
+
             <div className="form-group">
               <TextareaAutosize
                 id="exampleFormControlTextarea1"
@@ -136,36 +138,36 @@ class NewBlogPost extends Component {
             </div>
 
             <div className="row">
-
               <div className="col-4">
-                <InputLabel id="demo-simple-select-helper-label"
-                  style={{ disableAnimation: false }}
-                  disableAnimation={false}
-                >
-                  Blog Image
+                <FormControl>
+                  <InputLabel id="demo-simple-select-helper-label"
+                    style={{ disableAnimation: false }}
+                    disableAnimation={false}
+                  >
+                    Blog Image
                   </InputLabel>
 
-                <Select
-                  className="dropdown"
-                  onChange={this.setImage}
-                  labelId="demo-simple-select-helper-label"
-                  id="demo-simple-select-helper"
-                >
+                  <Select
+                    className="dropdown"
+                    onChange={this.setImage}
+                    labelId="demo-simple-select-helper-label"
+                    id="demo-simple-select-helper">
 
-                  <MenuItem selected disabled value="">
-                    <em>Please select an image</em>
-                  </MenuItem>
+                    <MenuItem disabled value="Please select an image">
+                      <em>Please select an image</em>
+                    </MenuItem>
 
-                  {images.map((picture, i) =>
-                    <MenuItem
-                      key={i}
-                      value={picture.title}
-                      className="dropdown-item">
-                      {picture.title}
-                    </MenuItem>)}
-                </Select>
+                    {images.map((picture, i) =>
+                      <MenuItem
+                        key={i}
+                        value={picture.title}
+                        className="dropdown-item">
+                        {picture.title}
+                      </MenuItem>)}
+                  </Select>
 
-                <FormHelperText>Pick an image for your blog post.</FormHelperText>
+                  <FormHelperText>Pick an image for your blog post.</FormHelperText>
+                </FormControl>
               </div>
 
               <div className="col-8">
