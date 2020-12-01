@@ -72,6 +72,7 @@ class PreviousBlogPost extends Component {
                             date={post.date}
                             title={post.title}
                             body={post.body}
+                            image={post.image}
                             id={post._id} />
                     )}
 

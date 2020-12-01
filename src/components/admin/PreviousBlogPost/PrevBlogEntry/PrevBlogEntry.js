@@ -25,7 +25,7 @@ function PrevBlogEntry(props) {
                 <td className="card-title" defaultValue={props.title}>{props.title}</td>
                 <td className="card-text" defaultValue={props.body}><div onClick={onToggle} className={isActive ? null : "line-clamp"}> {props.body}</div></td>
                 <td className="card-text" defaultValue="N/A">{props.image}</td>
-                <td ><button className="blogDelete" value={props._id} type="submit" onClick={handleDelete}>DELETE</button></td>
+                <td ><button className="blogDelete" value={props.id} type="submit" onClick={handleDelete}>DELETE</button></td>
             </tr>
         </tbody>
     )
