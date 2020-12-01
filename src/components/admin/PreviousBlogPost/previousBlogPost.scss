@@ -11,6 +11,14 @@ table {
     width: 15%
 }
 
+.line-clamp{
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+}
+
+
 .delete-col{
     width: 10%
 }

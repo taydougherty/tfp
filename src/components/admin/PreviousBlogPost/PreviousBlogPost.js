@@ -28,7 +28,6 @@ class PreviousBlogPost extends Component {
             })
     }
 
-    // populate history table
     getHistory() {
         axios.get(`/blog/author/${this.state.author}`)
             .then(resp => {
@@ -61,7 +60,7 @@ class PreviousBlogPost extends Component {
                             <th scope="col" className="title-col">DATE</th>
                             <th scope="col" className="title-col">TITLE</th>
                             <th scope="col" className="body-col">CONTENT</th>
-                            <th scope="col" className="title-col">IMAGE Reference</th>
+                            <th scope="col" className="title-col">IMAGE</th>
                             <th scope="col" className="delete-col"></th>
                         </tr>
                     </thead>
@@ -72,7 +71,7 @@ class PreviousBlogPost extends Component {
                             <tr key={i}>
                                 <td > {moment(this.state.posts[i].date).format("MMM Do YYYY")} </td>
                                 <td className="card-title" defaultValue={post.title}>{this.state.posts[i].title}</td>
-                                <td className="card-text" defaultValue={post.body}>{this.state.posts[i].body}</td>
+                                <td className="card-text" defaultValue={post.body}><div className="line-clamp"> {this.state.posts[i].body}</div></td>
                                 <td className="card-text" defaultValue="N/A">{this.state.posts[i].image}</td>
                                 <td ><button className="blogDelete" value={this.state.posts[i]._id} type="submit" onClick={this.handleDelete}>DELETE</button></td>
                             </tr>)}
