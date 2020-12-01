@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import moment from 'moment'
+import PrevBlogEntry from './PrevBlogEntry/PrevBlogEntry'
+
 
 require('./previousBlogPost.scss')
 
@@ -65,18 +66,15 @@ class PreviousBlogPost extends Component {
                         </tr>
                     </thead>
 
-                    <tbody>
+                    {posts.map((post, i) =>
+                        <PrevBlogEntry
+                            key={i}
+                            date={post.date}
+                            title={post.title}
+                            body={post.body}
+                            id={post._id} />
+                    )}
 
-                        {posts.map((post, i) =>
-                            <tr key={i}>
-                                <td > {moment(this.state.posts[i].date).format("MMM Do YYYY")} </td>
-                                <td className="card-title" defaultValue={post.title}>{this.state.posts[i].title}</td>
-                                <td className="card-text" defaultValue={post.body}><div className="line-clamp"> {this.state.posts[i].body}</div></td>
-                                <td className="card-text" defaultValue="N/A">{this.state.posts[i].image}</td>
-                                <td ><button className="blogDelete" value={this.state.posts[i]._id} type="submit" onClick={this.handleDelete}>DELETE</button></td>
-                            </tr>)}
-
-                    </tbody>
                 </table>
             </div>
         )
