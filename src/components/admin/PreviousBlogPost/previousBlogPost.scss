@@ -2,7 +2,6 @@ h2{
     color: black
 }
 
-
 table {
     width: 100%;
     table-layout: fixed;
@@ -12,10 +11,45 @@ table {
     width: 15%
 }
 
+.line-clamp{
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+}
+
+.line-clamp:hover{
+    cursor: pointer;
+}
+
+.full-text:hover{
+    cursor: pointer;
+}
+
 .delete-col{
     width: 10%
 }
 
 .body-col{
     white-space: pre-wrap
+}
+
+.blogDelete {
+    font-size: 1em;
+    width: 80px;
+    cursor: pointer;
+    margin-right: 0.25em;
+    margin-top: 0.5em;
+    padding: 0.75em;
+    border: none;
+    border-radius: 4px;
+    background-color:  #008b8b;
+    color: #fefefe;
+    letter-spacing: 1px;
+    
+}
+  
+.blogDelete:hover {
+background-color: black;
+color: #fefefe;
 }
