@@ -73,12 +73,37 @@
 
   .overlayTagline {
     font-size: 20px;
+    padding-bottom: 10px;
   }
 
   .learnMore {
     height: 40px;
     width: 140px;
-    font-size: 10px;
-    padding: 15px 24px;
+    font-size: 12px;
+    padding-top: 12px;
+    padding-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .homeContent {
+    width: 100%;
+  }
+
+  .overlayHeader {
+    font-size: 18px;
+  }
+
+  .overlayTagline {
+    font-size: 15px;
+    padding-bottom: 8px;
+  }
+
+  .learnMore {
+    height: 15px;
+    width: 116px;
+    font-size: 8px;
+    padding-top: 10px;
+    padding-bottom: 18px;
   }
 }
