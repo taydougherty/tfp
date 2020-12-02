@@ -18,6 +18,14 @@ table {
     overflow: hidden;
 }
 
+.line-clamp:hover{
+    cursor: pointer;
+}
+
+.full-text:hover{
+    cursor: pointer;
+}
+
 .delete-col{
     width: 10%
 }
