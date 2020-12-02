@@ -66,23 +66,19 @@
   border: none;
 }
 
-@media screen and (max-width: 532px) {
-  .homeContent {
-    height: 100%;
-    width: 80%;
-  }
-
+@media screen and (max-width: 800px) {
   .overlayHeader {
-    font-size: small;
+    font-size: 30px;
   }
 
   .overlayTagline {
-    font-size: x-small;
+    font-size: 20px;
   }
 
   .learnMore {
-    height: 50px;
-    width: 50px;
-    font-size: 5px;
+    height: 40px;
+    width: 140px;
+    font-size: 10px;
+    padding: 15px 24px;
   }
 }
