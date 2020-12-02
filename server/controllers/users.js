@@ -40,7 +40,6 @@ exports.loginUser = (req, res, next) => {
             });
         }
 
-        console.log(userData, ": This is the userData");
         if (userData.message == "Invalid Password" || userData.message == "User not Found") {
             return res.json({
                 success: false,

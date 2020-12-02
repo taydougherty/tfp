@@ -1,10 +1,26 @@
 import React, { Component } from "react";
 import axios from 'axios';
-import logo from "../../../assets/images/logo.svg";
+import Button from '@material-ui/core/Button';
+import { withStyles } from '@material-ui/core/styles';
 import "./Navbar.scss";
 
-class Navigation extends Component {
 
+const StyledButton = withStyles({
+  root: {
+    background: '#008b8b',
+    borderRadius: 3,
+    border: 0,
+    color: 'white',
+    height: 48,
+    padding: '0 30px',
+    letterSpacing: '2px'
+  },
+  label: {
+    textTransform: 'capitalize',
+  },
+})(Button);
+
+class Navigation extends Component {
   constructor(props) {
     super(props);
 
@@ -17,6 +33,8 @@ class Navigation extends Component {
     this.deAuthenticate = this.deAuthenticate.bind(this);
   }
 
+
+
   authenticate() {
     this.setState({
       authenticated: true,
@@ -28,7 +46,6 @@ class Navigation extends Component {
       authenticated: false,
     });
   }
-  // Log Out Method
 
   logout() {
     axios
@@ -47,17 +64,19 @@ class Navigation extends Component {
   }
 
   render() {
+
     return (
       <div>
-        <nav className="navbar navbar-expand-lg navbar-light bg-dark">
-          <img className="mr-auto" src={logo} alt="logo" style={{ width: "35px" }}></img>
-          <button className="btn btn-secondary btn-sm col-auto" type="submit" onClick={this.logout}>Log Out </button>
-        </nav>
-
-
+        <nav className="navbar navbar-expand-lg navbar-nav ">
+          <div className="nameLogo float-left">Sheila Mojtehedi</div>
+          <div className="ml-auto">
+            <StyledButton className="logout-btn " type="submit" onClick={this.logout}>LOG OUT</StyledButton>
+          </div>
+        </nav >
       </div >
     );
   }
+
 }
 
 export default Navigation;

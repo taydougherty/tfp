@@ -52,18 +52,6 @@ export default class Login extends Component {
     this.setState({ errors, [name]: value });
   };
 
-  // handleEmailChange = (event) => {
-  //   this.setState({
-  //     email: event.target.value,
-  //   });
-  // };
-
-  // handlePasswordChange = (event) => {
-  //   this.setState({
-  //     password: event.target.value,
-  //   });
-  // };
-
   loginUser = (submitObject) => {
     axios
       .post("/user/login", submitObject)
@@ -128,7 +116,7 @@ export default class Login extends Component {
         <Navigation />
         <div className="wrapper loginWrapper">
           <div className="form-wrapper">
-            <h2>Login</h2>
+            <h2>LOGIN</h2>
             <form className="loginForm" onSubmit={this.handleSubmit.bind(this)} noValidate>
               <div className="email">
                 <label htmlFor="email">Email</label>
@@ -157,7 +145,7 @@ export default class Login extends Component {
                 )}
               </div>
               <div className="submit">
-                <button className="loginSubmitBtn">Submit</button>
+                <button className="loginSubmitBtn">SUBMIT</button>
               </div>
               <p className="register text-right">
                 <Link to={"/admin/register"}> Register </Link>
