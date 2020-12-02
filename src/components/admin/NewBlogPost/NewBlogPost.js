@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import CardActions from '@material-ui/core/CardActions';
-import TextField from '@material-ui/core/TextField';
-import TextareaAutosize from '@material-ui/core/TextareaAutosize';
-import Select from '@material-ui/core/Select';
-import MenuItem from '@material-ui/core/MenuItem';
-import InputLabel from '@material-ui/core/InputLabel';
-import FormHelperText from '@material-ui/core/FormHelperText';
+import {
+  Card,
+  CardContent,
+  CardActions,
+  TextField,
+  FormControl,
+  Select,
+  MenuItem,
+  InputLabel,
+  FormHelperText
+} from '@material-ui/core';
+
+
 import { blogImages } from "../../../assets/blogImages/blogImages";
 
 require('./newBlogPost.scss')
@@ -64,7 +68,11 @@ class NewBlogPost extends Component {
       image: this.state.blogImage[0].title,
       author: this.state.author,
     };
-  }
+
+    this.newPost(blogPost)
+    this.clearForm()
+  };
+
   setImage(event) {
 
     let selectedImage = this.state.images.filter(image => {
@@ -72,13 +80,14 @@ class NewBlogPost extends Component {
         return image.image
       }
     });
-
     this.setState({ blogImage: selectedImage });
   };
 
   clearForm = () => {
+
+    this.title.value = '';
+
     this.setState({
-      title: '',
       body: '',
       blogImage: null
     })
@@ -103,40 +112,61 @@ class NewBlogPost extends Component {
           <form onSubmit={this.handleSubmit}>
 
             <div className="form-group mb-10">
-              {/* <label htmlFor="exampleFormControlTextarea1" >Blog Title</label> */}
-              <TextField id="outlined-basic" label="Blog Title" name="title" value={this.state.name} onChange={this.handleChange} type="text" className="form-control" placeholder="Blog Title Here" />
+              <TextField
+                id="outlined-basic"
+                label="Blog Title"
+                name="title"
+                value={this.state.name}
+                onChange={this.handleChange}
+                type="text"
+                className="form-control"
+                inputRef={el => this.title = el} />
             </div>
+            <br />
 
             <div className="form-group">
-              {/* <InputLabel htmlFor="exampleFormControlTextarea1">Blog Content</InputLabel> */}
-              <TextareaAutosize rowsMax={7} aria-label="maximum height"
-                placeholder="Blog Content"
+              <textarea
+                id="exampleFormControlTextarea1"
                 name="body"
+                className="form-control blog-content"
+                placeholder="Blog Content"
+                rows="10"
+                aria-label="maximum height"
                 value={this.state.body}
-                onChange={this.handleChange} type="text" className="form-control" id="exampleFormControlTextarea1" />
-
+                onChange={this.handleChange} type="text"></textarea>
             </div>
 
             <div className="row">
-
               <div className="col-4">
-                <InputLabel id="demo-simple-select-helper-label">Blog Image</InputLabel>
-                <Select
-                  className="dropdown"
-                  onChange={this.setImage}
-                  labelId="demo-simple-select-helper-label"
-                  id="demo-simple-select-helper"
-                >
-                  <MenuItem >
-                    <em>None</em>
-                  </MenuItem>
-                  {images.map((picture, i) =>
-                    <MenuItem key={i} value={picture.title} className="dropdown-item">
-                      {picture.title}
+                <FormControl>
+                  <InputLabel id="demo-simple-select-helper-label"
+                    style={{ disableAnimation: false }}
+                    disableAnimation={false}
+                  >
+                    Blog Image
+                  </InputLabel>
+
+                  <Select
+                    className="dropdown"
+                    onChange={this.setImage}
+                    labelId="demo-simple-select-helper-label"
+                    id="demo-simple-select-helper">
+
+                    <MenuItem disabled value="Please select an image">
+                      <em>Please select an image</em>
                     </MenuItem>
-                  )}
-                </Select>
-                <FormHelperText>Pick an image for your blog post.</FormHelperText>
+
+                    {images.map((picture, i) =>
+                      <MenuItem
+                        key={i}
+                        value={picture.title}
+                        className="dropdown-item">
+                        {picture.title}
+                      </MenuItem>)}
+                  </Select>
+
+                  <FormHelperText>Pick an image for your blog post.</FormHelperText>
+                </FormControl>
               </div>
 
               <div className="col-8">
@@ -145,8 +175,8 @@ class NewBlogPost extends Component {
 
             </div>
             <br />
-            <CardActions>
-              <button className="blogSubmit" type="submit">SUBMIT</button>
+            <CardActions className="d-flex flex-row-reverse">
+              <button className="blogSubmit " type="submit">SUBMIT</button>
             </CardActions>
           </form>
 
