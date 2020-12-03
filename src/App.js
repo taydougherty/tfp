@@ -91,17 +91,6 @@ export default class App extends Component {
                   authenticated={this.state.authenticated}
                   logout={this.logout}
                 />
-                {/* <Route strict path="/admin/blog"
-                  render={(props) => (
-                    <AdminBlog
-                      {...props}
-                      authenticate={this.authenticate}
-                      deAuthenticate={this.deAuthenticate}
-                      authenticated={this.state.authenticated}
-                      logout={this.logout}
-                    />
-                  )}
-                /> */}
 
                 {/* CLIENT Routing */}
                 <Route exact path="/" component={Home} />
