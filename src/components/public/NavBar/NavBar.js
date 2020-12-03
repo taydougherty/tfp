@@ -5,24 +5,22 @@ import './NavBar.scss'
 function NavBar() {
   
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-white customNavBar">
+    <nav className="navbar navbar-expand-lg navbar-light bg-white">
+      {/* Logo */}
+      <a class="logo_button">
+        <NavLink to={"/home"} className="NavLink">
+          <div id="brand_icon">Sheila Mojtehedi</div>
+        </NavLink>
+      </a> 
 
-      <div class="collapse navbar-collapse" id="navbar_wrap">
+      {/* Hamburger menu button */}
+      <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span className="navbar-toggler-icon"></span>
+      </button>
 
-        <a class="logo_button">
-          <NavLink to={"/home"} className="NavLink">
-            <div id="brand_icon">Sheila Mojtehedi</div>
-          </NavLink>
-        </a>
-
-        {/* Hamburger menu button */}
-        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span className="navbar-toggler-icon"></span>
-        </button>
-
-        {/* Links */}
-        <div className="navbar-collapse" id="navbarCollapse">
-          <ul className="nav fixed-top navbar bg-white justify-content-center">
+      {/* Links */}
+        <div className="collapse navbar-collapse" id="navbarCollapse">
+          <ul className="nav navbar bg-white justify-content-center">
             <li className="nav-item">
               <NavLink to={"/home"} activeStyle={{ fontWeight: "bold", color: "black", opacity: "1"}}> Home </NavLink>
             </li>
@@ -44,8 +42,6 @@ function NavBar() {
           {/* Contact button */}
           <a id="contact_button" href="mailto:sheila@mojtehedi.com">Contact</a>
         </div>
-        
-      </div>
     </nav>
   );
 }
