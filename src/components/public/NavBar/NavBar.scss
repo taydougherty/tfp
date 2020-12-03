@@ -65,6 +65,10 @@ a:hover {
   width: 100%;
 }
 
+#hamburger_contact_button {
+  display: none;
+}
+
 #contact_button {
   padding: 12px 25px;
   background-color: black;
@@ -83,14 +87,17 @@ a:hover {
   opacity: 0.7;
 }
 
-@media (min-width: 885px) {
-  button {
-    justify-content: end;
-  }
-}
+@media screen and (max-width: 1000px) {
 
-@media screen and (max-width: 414px) {
-  .customNavBar {
-    width: 100%;
+  #hamburger_contact_button {
+    display: block;
+  }
+
+  #contact_button {
+    display: none;
+  }
+
+  .normalNavbar {
+    display: none;
   }
 }
