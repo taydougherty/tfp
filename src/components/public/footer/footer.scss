@@ -25,3 +25,25 @@
   float: right;
   padding-right: 50px;
 }
+
+@media screen and (max-width: 900px) {
+
+  .copyright {
+    font-size: 12px;
+  }
+  
+  .right li {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+
+  .copyright {
+    font-size: 10px;
+  }
+  
+  .right li {
+    font-size: 10px;
+  }
+}
