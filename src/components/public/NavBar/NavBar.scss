@@ -87,6 +87,21 @@ a:hover {
   opacity: 0.7;
 }
 
+@media screen and (max-width: 900px) {
+
+  #hamburger_contact_button {
+    display: block;
+  }
+
+  #contact_button {
+    display: none;
+  }
+
+  .normalNavbar {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 600px) {
 
   #hamburger_contact_button {
