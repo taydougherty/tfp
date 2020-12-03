@@ -25,7 +25,7 @@ class Navigation extends Component {
     super(props);
 
     this.state = {
-      authenticated: false,
+      authenticated: false
     };
 
     this.logout = this.logout.bind(this);
@@ -33,11 +33,9 @@ class Navigation extends Component {
     this.deAuthenticate = this.deAuthenticate.bind(this);
   }
 
-
-
   authenticate() {
     this.setState({
-      authenticated: true,
+      authenticated: true
     });
   }
 
@@ -56,6 +54,7 @@ class Navigation extends Component {
           localStorage.removeItem("authenticated");
           localStorage.removeItem("user");
           window.location.reload();
+
         }.bind(this)
       )
       .catch(function (err) {
@@ -63,14 +62,14 @@ class Navigation extends Component {
       });
   }
 
-  render() {
 
+  render() {
     return (
       <div>
         <nav className="navbar navbar-expand-lg navbar-nav ">
           <div className="nameLogo float-left">Sheila Mojtehedi</div>
           <div className="ml-auto">
-            <StyledButton className="logout-btn " type="submit" onClick={this.logout}>LOG OUT</StyledButton>
+            <StyledButton className={this.props.authenticated ? "logout-btn" : "hide-logout-btn"} type="submit" onClick={this.logout}>LOG OUT</StyledButton>
           </div>
         </nav >
       </div >

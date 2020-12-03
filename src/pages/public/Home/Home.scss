@@ -4,7 +4,7 @@
   left: 40%;
   transform: translate(-50%, -50%);
   color: white;
-  font-size: 80px;
+  font-size: 70px;
   text-shadow: 1px 1px 6px black;
   font-weight: 400;
 }
@@ -15,10 +15,11 @@
   left: 40%;
   transform: translate(-50%, -50%);
   color: white;
-  font-size: 36px;
+  font-size: 34px;
   text-shadow: 1px 1px 6px black;
   opacity: 0.8;
   font-weight: 600;
+  margin-top: 10px;
 }
 
 .learnMore {
@@ -37,6 +38,7 @@
   height: 70px;
   width: 250px;
   text-decoration: none;
+  margin-top: 15px;
 }
 
 .learnMore:hover {
@@ -46,12 +48,7 @@
 }
 
 .homeWrapper {
-  //   min-height: 100%;
-  // position:relative;
   height: 100%;
-  // margin: 0 auto;
-  // overflow: auto;
-  // margin-bottom: -100px;
 }
 
 .Home {
@@ -63,11 +60,50 @@
 .homeContent {
   margin-left: 50px;
   margin-right: 50px;
-  // margin-bottom: 100px;
-  // display: block;
-  // position:relative;
 }
 
 .card {
   border: none;
+}
+
+@media screen and (max-width: 800px) {
+  .overlayHeader {
+    font-size: 30px;
+  }
+
+  .overlayTagline {
+    font-size: 20px;
+    padding-bottom: 10px;
+  }
+
+  .learnMore {
+    height: 40px;
+    width: 140px;
+    font-size: 12px;
+    padding-top: 12px;
+    padding-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .homeContent {
+    width: 100%;
+  }
+
+  .overlayHeader {
+    font-size: 18px;
+  }
+
+  .overlayTagline {
+    font-size: 15px;
+    padding-bottom: 8px;
+  }
+
+  .learnMore {
+    height: 15px;
+    width: 116px;
+    font-size: 8px;
+    padding-top: 10px;
+    padding-bottom: 18px;
+  }
 }
