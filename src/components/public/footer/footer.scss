@@ -1,3 +1,11 @@
+.footer_wrapper {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 75px;
+  background-color: white;
+}
+
 .footer_container {
   display: flex;
 }
@@ -16,4 +24,26 @@
   list-style: none;
   float: right;
   padding-right: 50px;
+}
+
+@media screen and (max-width: 900px) {
+
+  .copyright {
+    font-size: 12px;
+  }
+  
+  .right li {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+
+  .copyright {
+    font-size: 10px;
+  }
+  
+  .right li {
+    font-size: 10px;
+  }
 }
