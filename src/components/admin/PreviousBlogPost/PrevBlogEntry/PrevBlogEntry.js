@@ -20,7 +20,7 @@ function PrevBlogEntry(props) {
 
     return (
         <tbody>
-            <tr key={props.key}>
+            <tr >
                 <td > {moment(props.date).format("MMM Do YYYY")} </td>
                 <td className="card-title" defaultValue={props.title}>{props.title}</td>
                 <td className="card-text" defaultValue={props.body}><div onClick={onToggle} className={showText ? "full-text" : "line-clamp"}> {props.body}</div></td>

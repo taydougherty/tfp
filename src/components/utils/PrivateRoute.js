@@ -7,7 +7,9 @@ function PrivateRoute({ component: Component, authenticate, deauthenticate, auth
             {...rest}
             render={props =>
                 localStorage.getItem("authenticated") ? (
-                    <Component {...props} logout={logout} />
+                    <Component {...props}
+                        authenticated={authenticated}
+                        logout={logout} />
                 ) : (
                         <Redirect
                             to={{
