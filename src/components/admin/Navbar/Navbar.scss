@@ -14,7 +14,6 @@
 }
 
 .logout-btn {
-  // float: right;
   width: 150px;
   cursor: pointer;
   margin-right: 0.25em;
@@ -25,4 +24,8 @@
   background-color: black;
   color: #fefefe;
   letter-spacing: 3px;
+}
+
+.hide-logout-btn {
+  visibility: hidden;
 }

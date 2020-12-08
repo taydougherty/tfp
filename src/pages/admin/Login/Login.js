@@ -57,7 +57,6 @@ export default class Login extends Component {
       .post("/user/login", submitObject)
       .then(
         function (data) {
-          // console.log(data.data);
           if (data.data.success) {
             this.props.authenticate();
             localStorage.setItem("authenticated", this.props.authenticated);
@@ -93,7 +92,7 @@ export default class Login extends Component {
     if (!objSubmit.email || !objSubmit.password) {
       return;
     }
-    // If we have an email and password we run the loginUser function and clear the form
+
     this.loginUser(objSubmit);
 
     this.setState({ errorCount: countErrors(this.state.errors) });
@@ -113,7 +112,12 @@ export default class Login extends Component {
 
     return (
       <div>
-        <Navigation />
+        <Navigation
+          authenticated={this.props.authenticated}
+          authenticate={this.props.authenticate}
+          deAuthenticate={this.props.deAuthenticate}
+          logout={this.props.logout} />
+
         <div className="wrapper loginWrapper">
           <div className="form-wrapper">
             <h2>LOGIN</h2>
@@ -131,6 +135,7 @@ export default class Login extends Component {
                   <span className="error">{errors.email}</span>
                 )}
               </div>
+
               <div className="password">
                 <label htmlFor="password">Password</label>
                 <input
